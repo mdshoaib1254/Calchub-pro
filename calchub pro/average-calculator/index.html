@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Average Calculator – Mean, Median, Mode &amp; Range | CalcHub Pro</title>
+  <meta name="description" content="Calculate mean, median, mode, range, sum, and count from any set of numbers with our free online average calculator. Enter numbers separated by commas or spaces.">
+  <link rel="canonical" href="https://calchubpro.in/average-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Average Calculator | CalcHub Pro">
+  <meta property="og:description" content="Calculate mean, median, mode, range, sum, and count from any set of numbers with our free online average calculator.">
+  <meta property="og:url" content="https://calchubpro.in/average-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/average-calculator/#app",
+        "name": "Average Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/average-calculator/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Comprehensive statistical average calculator for mean, median, mode, range, and standard deviations."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/average-calculator/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calchubpro.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Math Calculators",
+            "item": "https://calchubpro.in/#math"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Average Calculator",
+            "item": "https://calchubpro.in/average-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/average-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between Mean, Median, and Mode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Mean is the arithmetic sum of numbers divided by the count. The Median is the middle value when numbers are sorted in order. The Mode is the number that appears most frequently in the dataset."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When should you use the median instead of the mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The median is preferred when data contains significant extreme outliers or is heavily skewed (such as income distributions or home prices), because outliers distort the arithmetic mean."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can a dataset have more than one mode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A dataset can have one mode (unimodal), two modes (bimodal), multiple modes (multimodal), or no mode at all if all values occur with equal frequency."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#finance">Finance</a></li>
+      <li><a href="../index.html#math">Math</a></li>
+      <li><a href="../index.html#health">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../index.html#finance" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="../index.html#math" onclick="closeDrawer()">Math Calculators</a>
+    <a href="../index.html#health" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="../index.html" class="dcta" onclick="closeDrawer()">All 17 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#math">Math</a>
+    <span class="sep">/</span>
+    <span class="current">Average Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">🔢 Statistical Analysis Tool</div>
+    <h1>Average <em>Calculator</em></h1>
+    <p>Compute arithmetic mean, median, mode, range, minimum, maximum, and sum across any sequence of numbers instantly.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main class="calc-main-wrap">
+    <!-- Interactive Card -->
+    <section class="calc-box" aria-labelledby="avg-title">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="avg-title">🔢 Enter Data Values</h2>
+        <button type="button" class="calc-box-reset" onclick="resetAvg()">Reset</button>
+      </div>
+
+      <div class="field">
+        <label for="avg-input">
+          Input Numbers
+          <span class="field-hint">Separated by commas, spaces, or lines</span>
+        </label>
+        <textarea id="avg-input" style="min-height: 140px; font-family: var(--ff-mono);" placeholder="e.g. 15, 22, 35, 40, 22, 18, 55, 92">15, 22, 35, 40, 22, 18, 55, 92</textarea>
+        <div class="ferr" id="err-avg-input">Please enter at least one valid number.</div>
+      </div>
+
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcAverage()">Compute Statistics →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetAvg()">Clear</button>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <section class="res-card" aria-label="Statistical Results" aria-live="polite">
+      <div class="res-banner">
+        <div class="res-banner-label">Arithmetic Mean (Average)</div>
+        <div class="res-banner-value highlight" id="out-avg-mean">37.38</div>
+      </div>
+
+      <div class="res-grid">
+        <div class="rrow">
+          <span class="rl">Median (Middle Value)</span>
+          <span class="rv" style="color: var(--teal);" id="out-avg-median">28.50</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Mode (Most Frequent)</span>
+          <span class="rv" style="color: var(--sky);" id="out-avg-mode">22</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Range (Max − Min)</span>
+          <span class="rv" id="out-avg-range">77.00</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Minimum Value</span>
+          <span class="rv" id="out-avg-min">15.00</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Maximum Value</span>
+          <span class="rv" id="out-avg-max">92.00</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Sum of All Numbers</span>
+          <span class="rv" id="out-avg-sum">299.00</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Count of Values (N)</span>
+          <span class="rv" id="out-avg-count">8 numbers</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>Statistical Measures of Central Tendency</h2>
+    <p>In statistics, central tendency describes the central or typical value for a probability distribution. The three most common measures are:</p>
+    <ul>
+      <li><strong>Mean (Average):</strong> The sum of all observations divided by the total number of items: $\bar{x} = \frac{\sum x}{n}$.</li>
+      <li><strong>Median:</strong> The middle score in a dataset arranged in ascending order. If $n$ is even, it is the average of the two middle scores.</li>
+      <li><strong>Mode:</strong> The value that occurs with the highest frequency in the dataset.</li>
+      <li><strong>Range:</strong> The difference between the highest and lowest scores ($Max - Min$), describing statistical dispersion.</li>
+    </ul>
+
+    <!-- Formula Box -->
+    <div class="formula-box">
+      • Mean = (x₁ + x₂ + ... + xₙ) ÷ n<br>
+      • Median (Odd n) = Value at position (n + 1) ÷ 2<br>
+      • Median (Even n) = [Value at (n÷2) + Value at (n÷2 + 1)] ÷ 2<br>
+      • Range = Maximum Value − Minimum Value
+    </div>
+
+    <h2>Worked Example with Outliers</h2>
+    <div class="example-card">
+      <h4>Dataset: 15, 18, 22, 22, 35, 40, 55, 92</h4>
+      <ol class="example-steps">
+        <li>Count ($n$) = 8 items</li>
+        <li>Sorted order: 15, 18, 22, 22, 35, 40, 55, 92</li>
+        <li>Sum = 15 + 18 + 22 + 22 + 35 + 40 + 55 + 92 = <strong>299</strong></li>
+        <li>Mean = $299 \div 8 =$ <strong>37.38</strong></li>
+        <li>Median (middle 2 values: 22 and 35) = $(22 + 35) \div 2 =$ <strong>28.50</strong></li>
+        <li>Mode = <strong>22</strong> (occurs twice)</li>
+        <li>Range = $92 - 15 =$ <strong>77</strong></li>
+      </ol>
+      <p style="margin-top: 10px; font-size: 0.88rem; color: var(--muted);">Notice how the outlier 92 pulls the Mean (37.38) significantly higher than the Median (28.50). In skewed datasets, the median provides a more realistic representation of typical values.</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the difference between Mean, Median, and Mode?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The Mean is the arithmetic sum of numbers divided by the count. The Median is the middle value when numbers are sorted in order. The Mode is the number that appears most frequently in the dataset.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          When should you use the median instead of the mean?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The median is preferred when data contains significant extreme outliers or is heavily skewed (such as income distributions or home prices), because outliers distort the arithmetic mean.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Can a dataset have more than one mode?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. A dataset can have one mode (unimodal), two modes (bimodal), multiple modes (multimodal), or no mode at all if all values occur with equal frequency.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Math Calculators</h2>
+        <p>Explore tools for arithmetic, scientific notation, and percentages.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../percentage-calculator/" class="rel-card">
+          <div class="rel-ico">🔢</div>
+          <div class="rel-name">Percentage Calculator</div>
+          <div class="rel-desc">Calculate percentages, percentage increases, and portions with ease.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../basic-calculator/" class="rel-card">
+          <div class="rel-ico">➕</div>
+          <div class="rel-name">Basic Calculator</div>
+          <div class="rel-desc">Fast arithmetic calculator with keyboard shortcuts and instant results.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../scientific-calculator/" class="rel-card">
+          <div class="rel-ico">🔬</div>
+          <div class="rel-name">Scientific Calculator</div>
+          <div class="rel-desc">Perform trigonometry, logarithms, roots, and advanced STEM math.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../discount-calculator/" class="rel-card">
+          <div class="rel-ico">🏷️</div>
+          <div class="rel-name">Discount Calculator</div>
+          <div class="rel-desc">Find final sale prices and savings from promotional discounts.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans & Finance</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math & Health</h4>
+          <ul>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational & client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+    function parseNumbers(raw) {
+      return raw
+        .split(/[\s,;\n]+/)
+        .map(s => s.trim())
+        .filter(s => s.length > 0 && !isNaN(Number(s)))
+        .map(Number);
+    }
+
+    function calcAverage() {
+      const txt = document.getElementById('avg-input').value;
+      const nums = parseNumbers(txt);
+      const err = document.getElementById('err-avg-input');
+
+      if (nums.length === 0) {
+        document.getElementById('avg-input').classList.add('bad');
+        err.classList.add('show');
+        return;
+      }
+
+      document.getElementById('avg-input').classList.remove('bad');
+      err.classList.remove('show');
+
+      // Mean
+      const sum = nums.reduce((a, b) => a + b, 0);
+      const mean = sum / nums.length;
+
+      // Median
+      const sorted = [...nums].sort((a, b) => a - b);
+      const mid = Math.floor(sorted.length / 2);
+      const median = sorted.length % 2 !== 0
+        ? sorted[mid]
+        : (sorted[mid - 1] + sorted[mid]) / 2;
+
+      // Mode
+      const freq = {};
+      let maxFreq = 0;
+      nums.forEach(n => {
+        freq[n] = (freq[n] || 0) + 1;
+        if (freq[n] > maxFreq) maxFreq = freq[n];
+      });
+
+      let modes = [];
+      if (maxFreq > 1) {
+        for (let k in freq) {
+          if (freq[k] === maxFreq) modes.push(Number(k));
+        }
+      }
+      const modeStr = modes.length > 0 ? modes.join(', ') : 'No unique mode';
+
+      // Min, Max, Range
+      const minVal = Math.min(...nums);
+      const maxVal = Math.max(...nums);
+      const range = maxVal - minVal;
+
+      document.getElementById('out-avg-mean').textContent = formatNum(mean, 2);
+      document.getElementById('out-avg-median').textContent = formatNum(median, 2);
+      document.getElementById('out-avg-mode').textContent = modeStr;
+      document.getElementById('out-avg-range').textContent = formatNum(range, 2);
+      document.getElementById('out-avg-min').textContent = formatNum(minVal, 2);
+      document.getElementById('out-avg-max').textContent = formatNum(maxVal, 2);
+      document.getElementById('out-avg-sum').textContent = formatNum(sum, 2);
+      document.getElementById('out-avg-count').textContent = `${nums.length} numbers`;
+    }
+
+    function resetAvg() {
+      document.getElementById('avg-input').value = '15, 22, 35, 40, 22, 18, 55, 92';
+      document.getElementById('avg-input').classList.remove('bad');
+      document.getElementById('err-avg-input').classList.remove('show');
+      calcAverage();
+    }
+
+    document.getElementById('avg-input').addEventListener('input', calcAverage);
+    calcAverage();
+  </script>
+</body>
+</html>

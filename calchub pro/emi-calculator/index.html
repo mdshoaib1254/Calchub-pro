@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMI Calculator – Calculate Monthly Loan Payment | CalcHub Pro</title>
+  <meta name="description" content="Calculate monthly loan EMI, total interest payable, and total payment for home, car, or personal loans with our free, accurate online EMI calculator.">
+  <link rel="canonical" href="https://calchubpro.in/emi-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EMI Calculator – Calculate Monthly Loan Payment | CalcHub Pro">
+  <meta property="og:description" content="Calculate monthly loan EMI, total interest payable, and total payment for home, car, or personal loans with our free, accurate online EMI calculator.">
+  <meta property="og:url" content="https://calchubpro.in/emi-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <!-- Structured Data: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/emi-calculator/#app",
+        "name": "EMI Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/emi-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "Free online EMI calculator for home, car, and personal loans using standard reducing-balance calculations."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/emi-calculator/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calchubpro.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance Calculators",
+            "item": "https://calchubpro.in/#finance"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "EMI Calculator",
+            "item": "https://calchubpro.in/emi-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/emi-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is EMI and how is it calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EMI stands for Equated Monthly Instalment. It is calculated using the formula: EMI = [P x r x (1+r)^n] / [(1+r)^n - 1], where P is the principal amount, r is the monthly interest rate, and n is the tenure in months."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this EMI calculator include processing fees or taxes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The calculator computes the pure financial repayment based on interest and principal. Processing fees, documentation charges, and GST charged by banks are separate one-time upfront costs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does increasing loan tenure affect my EMI and total interest?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Increasing the loan tenure reduces your monthly EMI payment, making it more affordable each month. However, it significantly increases the total interest paid over the entire life of the loan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I prepay my loan to reduce my EMI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Most banks allow part-prepayments which directly reduce the outstanding principal balance. This allows you to either lower your subsequent monthly EMIs or shorten your remaining loan tenure."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#finance">Finance</a></li>
+      <li><a href="../index.html#math">Math</a></li>
+      <li><a href="../index.html#health">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../index.html#finance" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="../index.html#math" onclick="closeDrawer()">Math Calculators</a>
+    <a href="../index.html#health" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="../index.html" class="dcta" onclick="closeDrawer()">All 17 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#finance">Finance</a>
+    <span class="sep">/</span>
+    <span class="current">EMI Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">💰 Loan Planning Tool</div>
+    <h1>EMI <em>Calculator</em></h1>
+    <p>Calculate your monthly loan instalment, total interest payable, and total repayment amount with precision for home, car, and personal loans.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main class="calc-main-wrap">
+    <!-- Interactive Card -->
+    <section class="calc-box" aria-labelledby="calc-title">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="calc-title">🔢 Enter Loan Details</h2>
+        <button type="button" class="calc-box-reset" onclick="resetEMI()">Reset</button>
+      </div>
+
+      <div class="field">
+        <label for="emi-amount">
+          Loan Amount
+          <span class="field-hint">Principal Borrowed</span>
+        </label>
+        <div class="input-wrap">
+          <span class="input-affix input-prefix">₹</span>
+          <input type="number" id="emi-amount" class="has-prefix" value="1000000" min="1000" max="1000000000" step="5000" placeholder="e.g. 1000000">
+        </div>
+        <div class="ferr" id="err-amount">Please enter a valid loan amount (min ₹1,000).</div>
+      </div>
+
+      <div class="field">
+        <label for="emi-rate">
+          Annual Interest Rate
+          <span class="field-hint">Per annum (% p.a.)</span>
+        </label>
+        <div class="input-wrap">
+          <input type="number" id="emi-rate" class="has-suffix" value="9.5" min="0.1" max="50" step="0.1" placeholder="e.g. 9.5">
+          <span class="input-affix input-suffix">%</span>
+        </div>
+        <div class="ferr" id="err-rate">Please enter an interest rate between 0.1% and 50%.</div>
+      </div>
+
+      <div class="field">
+        <label for="emi-tenure">
+          Loan Tenure
+          <span class="field-hint" id="tenure-hint">Duration in Years</span>
+        </label>
+        <div style="display: grid; grid-template-columns: 1fr 110px; gap: 10px;">
+          <input type="number" id="emi-tenure" value="5" min="1" max="40" step="1" placeholder="e.g. 5">
+          <select id="emi-tenure-type" onchange="onTenureTypeChange()">
+            <option value="years" selected>Years</option>
+            <option value="months">Months</option>
+          </select>
+        </div>
+        <div class="ferr" id="err-tenure">Please enter a valid loan tenure.</div>
+      </div>
+
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calculateEMI()">Calculate EMI →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetEMI()">Clear</button>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <section class="res-card" aria-label="Calculation Results" aria-live="polite">
+      <div class="res-banner">
+        <div class="res-banner-label">Monthly EMI Payment</div>
+        <div class="res-banner-value highlight" id="out-emi">₹21,002</div>
+      </div>
+
+      <div class="res-grid">
+        <div class="rrow">
+          <span class="rl">Principal Loan Amount</span>
+          <span class="rv" id="out-principal">₹10,00,000</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Interest Payable</span>
+          <span class="rv" style="color: var(--amber);" id="out-interest">₹2,60,117</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Payment (P + I)</span>
+          <span class="rv" style="color: var(--sky);" id="out-total">₹12,60,117</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Number of EMIs</span>
+          <span class="rv" id="out-months">60 months</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Interest to Principal Ratio</span>
+          <span class="rv" id="out-ratio">26.0%</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>How EMI is Calculated</h2>
+    <p>An <strong>Equated Monthly Instalment (EMI)</strong> is the fixed monthly amount paid by a borrower to a lender to repay a debt. Each EMI payment is structured to cover both the interest accrued on the outstanding balance and a portion of the principal loan amount.</p>
+    <p>In standard retail lending (including home loans, auto loans, and personal loans), banks utilize the <strong>reducing balance method</strong>. In the initial tenure, the interest component accounts for a substantial proportion of the EMI. As payments are made, the principal balance shrinks, reducing the interest charges and accelerating principal reduction.</p>
+
+    <!-- Formula Box -->
+    <div class="formula-box">
+      EMI = [P × r × (1 + r)ⁿ] ÷ [(1 + r)ⁿ − 1]
+      <span>
+        Where:<br>
+        • <strong>P</strong> = Principal loan amount borrowed<br>
+        • <strong>r</strong> = Periodic monthly interest rate (Annual Interest Rate ÷ 12 ÷ 100)<br>
+        • <strong>n</strong> = Total number of monthly installments (Tenure in years × 12)
+      </span>
+    </div>
+
+    <h2>Worked Example: EMI on a ₹10 Lakh Loan</h2>
+    <div class="example-card">
+      <h4>Loan Scenario</h4>
+      <p>Consider taking a personal or auto loan with the following parameters:</p>
+      <ul class="example-steps">
+        <li><strong>Principal Amount (P):</strong> ₹10,00,000</li>
+        <li><strong>Annual Interest Rate (R):</strong> 9.5% per annum</li>
+        <li><strong>Loan Tenure:</strong> 5 years (60 months)</li>
+      </ul>
+      <h4 style="margin-top: 14px;">Calculation Breakdown</h4>
+      <ol class="example-steps">
+        <li>Monthly interest rate: $r = \frac{9.5}{12 \times 100} = 0.0079167$</li>
+        <li>Number of monthly installments: $n = 5 \times 12 = 60$</li>
+        <li>Factor: $(1 + r)^{60} = (1.0079167)^{60} \approx 1.605009$</li>
+        <li>Numerator: $10,00,000 \times 0.0079167 \times 1.605009 \approx 12,706.33$</li>
+        <li>Denominator: $1.605009 - 1 = 0.605009$</li>
+        <li>Monthly EMI: $12,706.33 \div 0.605009 \approx$ <strong>₹21,002</strong></li>
+        <li>Total Payment over 5 years: $21,002 \times 60 =$ <strong>₹12,60,117</strong></li>
+        <li>Total Interest Paid: $12,60,117 - 10,00,000 =$ <strong>₹2,60,117</strong></li>
+      </ol>
+    </div>
+
+    <h2>Practical Use Cases</h2>
+    <div class="use-case-grid">
+      <div class="uc-card">
+        <div class="uc-icon">🏡</div>
+        <h3 class="uc-title">Home Loan Comparison</h3>
+        <p class="uc-desc">Assess how varying interest rates from competing lenders (e.g. 8.5% vs 8.8%) impact your monthly cash outflow over 15 to 30 years.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">🚗</div>
+        <h3 class="uc-title">Car & Two-Wheeler Loans</h3>
+        <p class="uc-desc">Plan your vehicle purchase by balancing down payment against affordable monthly payments across 3 to 7 years.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">💳</div>
+        <h3 class="uc-title">Personal Loan Management</h3>
+        <p class="uc-desc">Evaluate short-term personal or education loans to prevent overextending your monthly debt-to-income ratio.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">📉</div>
+        <h3 class="uc-title">Prepayment Planning</h3>
+        <p class="uc-desc">Determine how much interest you can save by prepaying extra principal lump sums or choosing a slightly higher monthly EMI.</p>
+      </div>
+    </div>
+
+    <h2>Important Assumptions & Limitations</h2>
+    <div class="highlight-box info">
+      <p><strong>Reducing Balance Assumption:</strong> Calculations assume fixed periodic compounding on a reducing balance basis. If your bank applies a flat interest rate or changes floating rates during the tenure, actual monthly figures will vary.</p>
+    </div>
+    <p>Our EMI calculator computes pure principal and interest obligations. Keep the following factors in mind when taking an actual loan:</p>
+    <ul>
+      <li><strong>Processing Fees:</strong> Most lenders charge 0.25% to 2% upfront processing fees plus GST.</li>
+      <li><strong>Prepayment Rules:</strong> RBI mandates zero foreclosure charges on floating-rate individual home loans, but fixed-rate or commercial loans may carry prepayment penalties.</li>
+      <li><strong>Floating vs Fixed:</strong> Floating interest rates fluctuate with the RBI repo rate or lender MCLR/EBLR benchmarks.</li>
+    </ul>
+
+    <h2>Tips to Reduce Your Total Loan Cost</h2>
+    <div class="highlight-box ok">
+      <p><strong>Tip 1: Pay one extra EMI each year.</strong> Making just one additional monthly payment per calendar year can trim 3 to 4 years off a 20-year home loan and save lakhs in compound interest.</p>
+    </div>
+    <div class="highlight-box ok">
+      <p><strong>Tip 2: Prioritize shorter tenures when budget permits.</strong> While extending your tenure from 15 to 25 years reduces your EMI slightly, it nearly doubles the total interest paid to the bank.</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is EMI and how is it calculated?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>EMI stands for Equated Monthly Instalment. It is calculated using the formula: EMI = [P × r × (1+r)ⁿ] ÷ [(1+r)ⁿ − 1], where P is the principal amount, r is the monthly interest rate, and n is the tenure in months.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Does this EMI calculator include processing fees or taxes?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The calculator computes the pure financial repayment based on interest and principal. Processing fees, documentation charges, and GST charged by banks are separate one-time upfront costs.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How does increasing loan tenure affect my EMI and total interest?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Increasing the loan tenure reduces your monthly EMI payment, making it more affordable each month. However, it significantly increases the total interest paid over the entire life of the loan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Can I prepay my loan to reduce my EMI?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. Most banks allow part-prepayments which directly reduce the outstanding principal balance. This allows you to either lower your subsequent monthly EMIs or shorten your remaining loan tenure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <div class="legal-disc">
+      <h4>⚠️ Financial Disclaimer</h4>
+      <p>This EMI calculator provides estimates for educational and planning purposes only. Actual loan terms, interest calculations, taxes, and fees are determined by individual lending institutions. Consult a qualified financial advisor or your bank before making financial commitments.</p>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Financial Calculators</h2>
+        <p>Explore tools designed to help you optimize loans, interest, and savings.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../home-loan-calculator/" class="rel-card">
+          <div class="rel-ico">🏠</div>
+          <div class="rel-name">Home Loan Calculator</div>
+          <div class="rel-desc">Calculate home loan repayments up to 30 years and estimate tax deductions.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../car-loan-calculator/" class="rel-card">
+          <div class="rel-ico">🚗</div>
+          <div class="rel-name">Car Loan Calculator</div>
+          <div class="rel-desc">Plan automobile financing with tailored vehicle tenures and down payments.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../personal-loan-calculator/" class="rel-card">
+          <div class="rel-ico">💳</div>
+          <div class="rel-name">Personal Loan Calculator</div>
+          <div class="rel-desc">Determine monthly instalments and interest impact on unsecured personal credit.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../compound-interest-calculator/" class="rel-card">
+          <div class="rel-ico">📈</div>
+          <div class="rel-name">Compound Interest</div>
+          <div class="rel-desc">See how investments grow over time with periodic compounding frequencies.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans & Finance</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math & Health</h4>
+          <ul>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational & client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+    function onTenureTypeChange() {
+      const type = document.getElementById('emi-tenure-type').value;
+      const hint = document.getElementById('tenure-hint');
+      const input = document.getElementById('emi-tenure');
+      if (type === 'years') {
+        hint.textContent = 'Duration in Years';
+        input.max = '40';
+        input.value = Math.max(1, Math.round(Number(input.value) / 12) || 5);
+      } else {
+        hint.textContent = 'Duration in Months';
+        input.max = '480';
+        input.value = Math.max(1, (Number(input.value) * 12) || 60);
+      }
+      calculateEMI();
+    }
+
+    function calculateEMI() {
+      const pInp = document.getElementById('emi-amount');
+      const rInp = document.getElementById('emi-rate');
+      const tInp = document.getElementById('emi-tenure');
+      const tType = document.getElementById('emi-tenure-type').value;
+
+      const p = parseFloat(pInp.value);
+      const annRate = parseFloat(rInp.value);
+      const tenureVal = parseFloat(tInp.value);
+
+      let isValid = true;
+
+      // Validate Principal
+      if (isNaN(p) || p < 1000) {
+        pInp.classList.add('bad');
+        document.getElementById('err-amount').classList.add('show');
+        isValid = false;
+      } else {
+        pInp.classList.remove('bad');
+        document.getElementById('err-amount').classList.remove('show');
+      }
+
+      // Validate Rate
+      if (isNaN(annRate) || annRate <= 0 || annRate > 50) {
+        rInp.classList.add('bad');
+        document.getElementById('err-rate').classList.add('show');
+        isValid = false;
+      } else {
+        rInp.classList.remove('bad');
+        document.getElementById('err-rate').classList.remove('show');
+      }
+
+      // Validate Tenure
+      const maxTenure = tType === 'years' ? 40 : 480;
+      if (isNaN(tenureVal) || tenureVal <= 0 || tenureVal > maxTenure) {
+        tInp.classList.add('bad');
+        document.getElementById('err-tenure').classList.add('show');
+        isValid = false;
+      } else {
+        tInp.classList.remove('bad');
+        document.getElementById('err-tenure').classList.remove('show');
+      }
+
+      if (!isValid) return;
+
+      const n = tType === 'years' ? tenureVal * 12 : tenureVal;
+      const r = annRate / 12 / 100;
+
+      // Standard Reducing Balance EMI formula
+      const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      const totalPay = emi * n;
+      const totalInterest = totalPay - p;
+      const ratio = (totalInterest / p) * 100;
+
+      document.getElementById('out-emi').textContent = '₹' + formatINR(Math.round(emi));
+      document.getElementById('out-principal').textContent = '₹' + formatINR(p);
+      document.getElementById('out-interest').textContent = '₹' + formatINR(Math.round(totalInterest));
+      document.getElementById('out-total').textContent = '₹' + formatINR(Math.round(totalPay));
+      document.getElementById('out-months').textContent = `${n} months (${(n / 12).toFixed(1)} yrs)`;
+      document.getElementById('out-ratio').textContent = `${ratio.toFixed(1)}%`;
+    }
+
+    function resetEMI() {
+      document.getElementById('emi-amount').value = '1000000';
+      document.getElementById('emi-rate').value = '9.5';
+      document.getElementById('emi-tenure').value = '5';
+      document.getElementById('emi-tenure-type').value = 'years';
+      document.getElementById('tenure-hint').textContent = 'Duration in Years';
+
+      document.getElementById('emi-amount').classList.remove('bad');
+      document.getElementById('emi-rate').classList.remove('bad');
+      document.getElementById('emi-tenure').classList.remove('bad');
+      document.getElementById('err-amount').classList.remove('show');
+      document.getElementById('err-rate').classList.remove('show');
+      document.getElementById('err-tenure').classList.remove('show');
+
+      calculateEMI();
+    }
+
+    // Auto-calculate on input changes
+    ['emi-amount', 'emi-rate', 'emi-tenure'].forEach(id => {
+      document.getElementById(id).addEventListener('input', calculateEMI);
+    });
+
+    // Run initial calculation
+    calculateEMI();
+  </script>
+</body>
+</html>

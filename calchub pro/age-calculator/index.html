@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator – Exact Age in Years, Months &amp; Days | CalcHub Pro</title>
+  <meta name="description" content="Calculate your exact age in years, months, weeks, and days with our free online age calculator. Find out days lived and days until your next birthday.">
+  <link rel="canonical" href="https://calchubpro.in/age-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Age Calculator | CalcHub Pro">
+  <meta property="og:description" content="Calculate your exact age in years, months, weeks, and days with our free online age calculator.">
+  <meta property="og:url" content="https://calchubpro.in/age-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/age-calculator/#app",
+        "name": "Age Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/age-calculator/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Calculate exact age in years, months, and days, total days lived, and countdown to next birthday."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/age-calculator/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calchubpro.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Date & Age Calculators",
+            "item": "https://calchubpro.in/#date"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Age Calculator",
+            "item": "https://calchubpro.in/age-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/age-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the age calculator handle leap years?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our calculator accounts for full calendar leap years containing 366 days and the varying length of individual months (28, 29, 30, or 31 days) to ensure exact day-level accuracy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I calculate age on a specific date in the past or future?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can customize the 'Calculate Age As Of' field to any past or future date to determine milestone ages, exam eligibility cutoff dates, or retirement timing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does my age in days differ from simple multiplication?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Multiplying years by 365 ignores leap years and irregular month lengths. Our algorithm calculates true elapsed astronomical days between the two calendar dates."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#finance">Finance</a></li>
+      <li><a href="../index.html#math">Math</a></li>
+      <li><a href="../index.html#health">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../index.html#finance" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="../index.html#math" onclick="closeDrawer()">Math Calculators</a>
+    <a href="../index.html#health" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="../index.html" class="dcta" onclick="closeDrawer()">All 17 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#date">Date &amp; Age</a>
+    <span class="sep">/</span>
+    <span class="current">Age Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">🎂 Chronological Age Tool</div>
+    <h1>Age <em>Calculator</em></h1>
+    <p>Calculate your exact chronological age in years, months, and days. Discover total days lived, weekday born, and next birthday countdown.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main class="calc-main-wrap">
+    <!-- Interactive Card -->
+    <section class="calc-box" aria-labelledby="age-box-title">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="age-box-title">📅 Enter Date of Birth</h2>
+        <button type="button" class="calc-box-reset" onclick="resetAge()">Reset</button>
+      </div>
+
+      <div class="field">
+        <label for="age-dob">
+          Date of Birth
+          <span class="field-hint">Day, Month, Year</span>
+        </label>
+        <input type="date" id="age-dob" value="2000-01-15">
+        <div class="ferr" id="err-age-dob">Please select a valid date of birth in the past.</div>
+      </div>
+
+      <div class="field">
+        <label for="age-target">
+          Calculate Age As Of
+          <span class="field-hint">Defaults to today's date</span>
+        </label>
+        <input type="date" id="age-target">
+        <div class="ferr" id="err-age-target">Target date cannot be earlier than birth date.</div>
+      </div>
+
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcAge()">Calculate Age →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetAge()">Clear</button>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <section class="res-card" aria-label="Age Calculation Results" aria-live="polite">
+      <div class="res-banner">
+        <div class="res-banner-label">Exact Age</div>
+        <div class="res-banner-value highlight" id="out-age-main">26 Years, 7 Months, 30 Days</div>
+      </div>
+
+      <div class="res-grid">
+        <div class="rrow">
+          <span class="rl">Total Days Lived</span>
+          <span class="rv" style="color: var(--teal);" id="out-age-days">9,739 days</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Weeks Lived</span>
+          <span class="rv" id="out-age-weeks">1,391 weeks</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Months Lived</span>
+          <span class="rv" id="out-age-months">319 months</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Day of Week Born</span>
+          <span class="rv" style="color: var(--sky);" id="out-age-born-day">Saturday</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Days Until Next Birthday</span>
+          <span class="rv" style="color: var(--amber);" id="out-age-next-bday">123 days</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>How Chronological Age is Determined</h2>
+    <p>Calculating exact chronological age is more intricate than subtracting birth year from the current year. Because months have differing numbers of days (28, 29, 30, or 31) and leap years introduce an additional day every 4 years, an accurate calculation must borrow days from preceding months when subtraction yields negative values.</p>
+
+    <h2>Calendar Borrowing Method</h2>
+    <div class="formula-box">
+      If Current Day &lt; Birth Day:<br>
+      • Borrow days from the previous month (e.g. 31 or 30 days)<br>
+      • Decrement the current month by 1<br><br>
+      If Current Month &lt; Birth Month:<br>
+      • Borrow 12 months from the current year<br>
+      • Decrement the current year by 1
+    </div>
+
+    <h2>Common Practical Uses</h2>
+    <div class="use-case-grid">
+      <div class="uc-card">
+        <div class="uc-icon">📝</div>
+        <h3 class="uc-title">Government Exam Eligibility</h3>
+        <p class="uc-desc">Verify your exact age against cutoff criteria for UPSC, SSC, banking, or state civil service recruitment notices.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">💼</div>
+        <h3 class="uc-title">Retirement Planning</h3>
+        <p class="uc-desc">Determine remaining working years and milestones for provident fund or gratuity vesting.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">🏥</div>
+        <h3 class="uc-title">Insurance Underwriting</h3>
+        <p class="uc-desc">Life and health insurance premiums are strictly pegged to your age nearest birthday (ANB).</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">👶</div>
+        <h3 class="uc-title">Infant &amp; Child Growth</h3>
+        <p class="uc-desc">Pediatric milestones and vaccination schedules require precise age tracking in months and weeks.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How does the age calculator handle leap years?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Our calculator accounts for full calendar leap years containing 366 days and the varying length of individual months (28, 29, 30, or 31 days) to ensure exact day-level accuracy.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Can I calculate age on a specific date in the past or future?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. You can customize the 'Calculate Age As Of' field to any past or future date to determine milestone ages, exam eligibility cutoff dates, or retirement timing.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Why does my age in days differ from simple multiplication?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Multiplying years by 365 ignores leap years and irregular month lengths. Our algorithm calculates true elapsed astronomical days between the two calendar dates.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Date &amp; Health Calculators</h2>
+        <p>Explore tools for birthdays, calendar differences, and health markers.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../birthday-calculator/" class="rel-card">
+          <div class="rel-ico">🎂</div>
+          <div class="rel-name">Birthday Calculator</div>
+          <div class="rel-desc">Find zodiac signs, day born, and milestone celebration countdowns.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../date-difference-calculator/" class="rel-card">
+          <div class="rel-ico">📅</div>
+          <div class="rel-name">Date Difference Calculator</div>
+          <div class="rel-desc">Compute total calendar and business days between any two dates.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../bmi-calculator/" class="rel-card">
+          <div class="rel-ico">💪</div>
+          <div class="rel-name">BMI Calculator</div>
+          <div class="rel-desc">Assess healthy weight targets based on WHO and Asian-Indian standards.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../percentage-calculator/" class="rel-card">
+          <div class="rel-ico">🔢</div>
+          <div class="rel-name">Percentage Calculator</div>
+          <div class="rel-desc">Calculate percentages, percentage increases, and portions with ease.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans & Finance</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math & Health</h4>
+          <ul>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational & client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+    const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    function initDates() {
+      const now = new Date();
+      const todayStr = now.toISOString().split('T')[0];
+      const targetInp = document.getElementById('age-target');
+      if (!targetInp.value) targetInp.value = todayStr;
+      targetInp.max = '2099-12-31';
+      document.getElementById('age-dob').max = todayStr;
+    }
+
+    function calcAge() {
+      const dobVal = document.getElementById('age-dob').value;
+      const targetVal = document.getElementById('age-target').value;
+      const dobInp = document.getElementById('age-dob');
+      const targetInp = document.getElementById('age-target');
+      const errDob = document.getElementById('err-age-dob');
+      const errTarget = document.getElementById('err-age-target');
+
+      if (!dobVal) {
+        dobInp.classList.add('bad');
+        errDob.classList.add('show');
+        return;
+      }
+      dobInp.classList.remove('bad');
+      errDob.classList.remove('show');
+
+      const dob = new Date(dobVal + 'T00:00:00');
+      const target = targetVal ? new Date(targetVal + 'T00:00:00') : new Date();
+
+      if (dob > target) {
+        targetInp.classList.add('bad');
+        errTarget.classList.add('show');
+        return;
+      }
+      targetInp.classList.remove('bad');
+      errTarget.classList.remove('show');
+
+      let years = target.getFullYear() - dob.getFullYear();
+      let months = target.getMonth() - dob.getMonth();
+      let days = target.getDate() - dob.getDate();
+
+      if (days < 0) {
+        months--;
+        const prevMonth = new Date(target.getFullYear(), target.getMonth(), 0);
+        days += prevMonth.getDate();
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      const diffMs = target - dob;
+      const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      const totalWeeks = Math.floor(totalDays / 7);
+      const totalMonths = (years * 12) + months;
+      const bornDay = DAYS[dob.getDay()];
+
+      // Next birthday countdown
+      let nextBday = new Date(target.getFullYear(), dob.getMonth(), dob.getDate());
+      if (nextBday < target) {
+        nextBday.setFullYear(target.getFullYear() + 1);
+      }
+      const daysToNext = Math.ceil((nextBday - target) / (1000 * 60 * 60 * 24));
+
+      document.getElementById('out-age-main').textContent = `${years} Years, ${months} Months, ${days} Days`;
+      document.getElementById('out-age-days').textContent = formatINR(totalDays) + ' days';
+      document.getElementById('out-age-weeks').textContent = formatINR(totalWeeks) + ' weeks';
+      document.getElementById('out-age-months').textContent = formatINR(totalMonths) + ' months';
+      document.getElementById('out-age-born-day').textContent = bornDay;
+      document.getElementById('out-age-next-bday').textContent = daysToNext === 0 ? '🎉 Today!' : `${daysToNext} days left`;
+    }
+
+    function resetAge() {
+      document.getElementById('age-dob').value = '2000-01-15';
+      const now = new Date();
+      document.getElementById('age-target').value = now.toISOString().split('T')[0];
+
+      document.getElementById('age-dob').classList.remove('bad');
+      document.getElementById('age-target').classList.remove('bad');
+      document.getElementById('err-age-dob').classList.remove('show');
+      document.getElementById('err-age-target').classList.remove('show');
+
+      calcAge();
+    }
+
+    initDates();
+    document.getElementById('age-dob').addEventListener('input', calcAge);
+    document.getElementById('age-target').addEventListener('input', calcAge);
+    calcAge();
+  </script>
+</body>
+</html>

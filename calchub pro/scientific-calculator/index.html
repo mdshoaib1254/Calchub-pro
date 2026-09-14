@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator Online – Advanced STEM Math &amp; Trigonometry | CalcHub Pro</title>
+  <meta name="description" content="Free online scientific calculator with trigonometry (sin, cos, tan), logarithms, powers, roots, factorials, and constants. Supports Degree and Radian modes.">
+  <link rel="canonical" href="https://calchubpro.in/scientific-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Scientific Calculator Online | CalcHub Pro">
+  <meta property="og:description" content="Free online scientific calculator with trigonometry, logarithms, powers, roots, factorials, and constants. Supports Degree and Radian modes.">
+  <meta property="og:url" content="https://calchubpro.in/scientific-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.min.js"></script>
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <style>
+    /* Scientific Keypad Styles */
+    .calc-screen-box {
+      background: linear-gradient(135deg, #0c1030, #1b2578);
+      border-radius: var(--rs);
+      margin-bottom: 16px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .screen-history {
+      padding: 10px 16px 0;
+      font-family: var(--ff-mono);
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: right;
+      min-height: 24px;
+      word-break: break-all;
+    }
+    .screen-input {
+      width: 100%;
+      padding: 6px 16px 14px;
+      font-family: var(--ff-mono);
+      font-size: 2.2rem;
+      font-weight: 500;
+      text-align: right;
+      color: #fff;
+      background: transparent;
+      border: none;
+      outline: none;
+      letter-spacing: -1px;
+    }
+    .sci-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+    .btn-key {
+      padding: 13px 4px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      border-radius: var(--rx);
+      background: var(--bg3);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-key:hover {
+      background: var(--glass2);
+      border-color: var(--border2);
+      transform: translateY(-2px);
+    }
+    .btn-key:active {
+      transform: scale(0.95);
+    }
+    .btn-key.fn {
+      background: rgba(167, 139, 250, 0.12);
+      color: #c4b5fd;
+      border-color: rgba(167, 139, 250, 0.25);
+    }
+    .btn-key.fn:hover {
+      background: rgba(167, 139, 250, 0.22);
+    }
+    .btn-key.op {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--sky);
+      border-color: rgba(56, 189, 248, 0.25);
+    }
+    .btn-key.op:hover {
+      background: rgba(56, 189, 248, 0.2);
+    }
+    .btn-key.eq {
+      background: var(--red);
+      color: #fff;
+      grid-column: span 2;
+      border-color: var(--red);
+      box-shadow: 0 4px 16px var(--red-glow);
+    }
+    .btn-key.eq:hover {
+      background: #c9182c;
+    }
+    .btn-key.cl {
+      background: rgba(239, 68, 68, 0.12);
+      color: var(--danger);
+      border-color: rgba(239, 68, 68, 0.25);
+    }
+    .btn-key.bk {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--amber);
+      border-color: rgba(245, 158, 11, 0.25);
+    }
+    .angle-toggle-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .angle-btn {
+      padding: 4px 14px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 50px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .angle-btn.active {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/scientific-calculator/#app",
+        "name": "Scientific Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/scientific-calculator/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Comprehensive scientific calculator for engineering, algebra, physics, and higher mathematics with degree and radian support."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/scientific-calculator/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calchubpro.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Math Calculators",
+            "item": "https://calchubpro.in/#math"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Scientific Calculator",
+            "item": "https://calchubpro.in/scientific-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/scientific-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does the calculator use Degrees or Radians for trigonometry?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By default, trigonometry functions (sin, cos, tan) evaluate in Degrees (DEG). You can toggle to Radians (RAD) using the button directly above the keypad."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between log and ln?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 'log' button calculates the common logarithm using base 10: log(100) = 2. The 'ln' button calculates the natural logarithm using base e (Euler's number ~ 2.71828): ln(e) = 1."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I compute powers and exponents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For squares and cubes, click the x² or x³ buttons. For arbitrary powers (such as 2 raised to the 10th power), enter 2, press xʸ, type 10, and press equals."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#finance">Finance</a></li>
+      <li><a href="../index.html#math">Math</a></li>
+      <li><a href="../index.html#health">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../index.html#finance" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="../index.html#math" onclick="closeDrawer()">Math Calculators</a>
+    <a href="../index.html#health" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="../index.html" class="dcta" onclick="closeDrawer()">All 17 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#math">Math</a>
+    <span class="sep">/</span>
+    <span class="current">Scientific Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">🔬 Advanced STEM Tool</div>
+    <h1>Scientific <em>Calculator</em></h1>
+    <p>Perform advanced mathematical equations: trigonometry, logarithms, roots, powers, factorials, and constants with 64-bit precision.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main class="calc-main-wrap single-col">
+    <section class="calc-box">
+      <!-- Angle Mode Toggle -->
+      <div class="angle-toggle-bar">
+        <button type="button" class="angle-btn active" id="btn-deg" onclick="setAngleMode('deg')">DEG</button>
+        <button type="button" class="angle-btn" id="btn-rad" onclick="setAngleMode('rad')">RAD</button>
+      </div>
+
+      <!-- Calculator Display Screen -->
+      <div class="calc-screen-box">
+        <div class="screen-history" id="s-expr"></div>
+        <input type="text" class="screen-input" id="s-disp" value="0" readonly aria-label="Scientific calculator display">
+      </div>
+
+      <!-- Keypad Grid (5 columns) -->
+      <div class="sci-grid">
+        <button type="button" class="btn-key fn" onclick="sApp('sin(')">sin</button>
+        <button type="button" class="btn-key fn" onclick="sApp('cos(')">cos</button>
+        <button type="button" class="btn-key fn" onclick="sApp('tan(')">tan</button>
+        <button type="button" class="btn-key fn" onclick="sApp('log10(')">log</button>
+        <button type="button" class="btn-key fn" onclick="sApp('log(')">ln</button>
+
+        <button type="button" class="btn-key fn" onclick="sApp('sqrt(')">√x</button>
+        <button type="button" class="btn-key fn" onclick="sApp('^2')">x²</button>
+        <button type="button" class="btn-key fn" onclick="sApp('^3')">x³</button>
+        <button type="button" class="btn-key fn" onclick="sApp('^')">xʸ</button>
+        <button type="button" class="btn-key fn" onclick="sApp('!')">n!</button>
+
+        <button type="button" class="btn-key fn" onclick="sApp('pi')">π</button>
+        <button type="button" class="btn-key fn" onclick="sApp('e')">e</button>
+        <button type="button" class="btn-key fn" onclick="sApp('(')">(</button>
+        <button type="button" class="btn-key fn" onclick="sApp(')')">)</button>
+        <button type="button" class="btn-key bk" onclick="sBack()">⌫</button>
+
+        <button type="button" class="btn-key cl" onclick="sClear()">C</button>
+        <button type="button" class="btn-key" onclick="sApp('7')">7</button>
+        <button type="button" class="btn-key" onclick="sApp('8')">8</button>
+        <button type="button" class="btn-key" onclick="sApp('9')">9</button>
+        <button type="button" class="btn-key op" onclick="sApp('÷')">÷</button>
+
+        <button type="button" class="btn-key op" onclick="sNegate()">+/−</button>
+        <button type="button" class="btn-key" onclick="sApp('4')">4</button>
+        <button type="button" class="btn-key" onclick="sApp('5')">5</button>
+        <button type="button" class="btn-key" onclick="sApp('6')">6</button>
+        <button type="button" class="btn-key op" onclick="sApp('×')">×</button>
+
+        <button type="button" class="btn-key op" onclick="sApp('%')">%</button>
+        <button type="button" class="btn-key" onclick="sApp('1')">1</button>
+        <button type="button" class="btn-key" onclick="sApp('2')">2</button>
+        <button type="button" class="btn-key" onclick="sApp('3')">3</button>
+        <button type="button" class="btn-key op" onclick="sApp('−')">−</button>
+
+        <button type="button" class="btn-key" onclick="sApp('0')">0</button>
+        <button type="button" class="btn-key" onclick="sApp('.')">.</button>
+        <button type="button" class="btn-key op" onclick="sApp('+')">+</button>
+        <button type="button" class="btn-key eq" onclick="sCalc()">=</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>Scientific Functions Overview</h2>
+    <div class="use-case-grid">
+      <div class="uc-card">
+        <div class="uc-icon">📐</div>
+        <h3 class="uc-title">Trigonometric Functions</h3>
+        <p class="uc-desc">Sine (sin), Cosine (cos), and Tangent (tan). Toggle between Degrees and Radians to match physics and calculus problem requirements.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">📉</div>
+        <h3 class="uc-title">Logarithmic Functions</h3>
+        <p class="uc-desc">Base-10 log (used in acoustics and chemistry pH scales) and natural log ln (used in radioactive decay and continuous compound growth).</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">⚡</div>
+        <h3 class="uc-title">Powers &amp; Roots</h3>
+        <p class="uc-desc">Compute square roots, squares, cubes, and arbitrary exponents ($x^y$) for geometry, quadratic equations, and scientific notation.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">🎲</div>
+        <h3 class="uc-title">Factorials (n!) &amp; Combinatorics</h3>
+        <p class="uc-desc">Compute integer permutations and combinations ($5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$) for probability problems.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Does the calculator use Degrees or Radians for trigonometry?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>By default, trigonometry functions (sin, cos, tan) evaluate in Degrees (DEG). You can toggle to Radians (RAD) using the button directly above the keypad.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the difference between log and ln?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The 'log' button calculates the common logarithm using base 10: log(100) = 2. The 'ln' button calculates the natural logarithm using base e (Euler's number ~ 2.71828): ln(e) = 1.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How do I compute powers and exponents?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>For squares and cubes, click the x² or x³ buttons. For arbitrary powers (such as 2 raised to the 10th power), enter 2, press xʸ, type 10, and press equals.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Mathematics &amp; Statistics Tools</h2>
+        <p>Explore tools for everyday arithmetic, percentages, and statistical averages.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../basic-calculator/" class="rel-card">
+          <div class="rel-ico">➕</div>
+          <div class="rel-name">Basic Calculator</div>
+          <div class="rel-desc">Fast arithmetic calculator with keyboard shortcuts and instant results.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../percentage-calculator/" class="rel-card">
+          <div class="rel-ico">🔢</div>
+          <div class="rel-name">Percentage Calculator</div>
+          <div class="rel-desc">Calculate percentages, percentage increases, and portions with ease.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../average-calculator/" class="rel-card">
+          <div class="rel-ico">📊</div>
+          <div class="rel-name">Average Calculator</div>
+          <div class="rel-desc">Compute mean, median, mode, range, and sum across custom numbers.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../compound-interest-calculator/" class="rel-card">
+          <div class="rel-ico">📈</div>
+          <div class="rel-name">Compound Interest</div>
+          <div class="rel-desc">Calculate exponential growth with quarterly, monthly, or annual compounding.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans & Finance</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math & Health</h4>
+          <ul>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational & client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+    let isAngleDeg = true;
+    let isNewInput = true;
+    const sDisp = document.getElementById('s-disp');
+    const sHist = document.getElementById('s-expr');
+
+    function setAngleMode(mode) {
+      isAngleDeg = (mode === 'deg');
+      const bDeg = document.getElementById('btn-deg');
+      const bRad = document.getElementById('btn-rad');
+      if (isAngleDeg) {
+        bDeg.classList.add('active');
+        bRad.classList.remove('active');
+      } else {
+        bRad.classList.add('active');
+        bDeg.classList.remove('active');
+      }
+    }
+
+    function sApp(val) {
+      if (isNewInput && !'÷×−+^!%'.includes(val)) {
+        sDisp.value = '';
+        isNewInput = false;
+      }
+      sDisp.value += val;
+      sHist.textContent = sDisp.value;
+    }
+
+    function sNegate() {
+      if (sDisp.value.startsWith('-')) {
+        sDisp.value = sDisp.value.slice(1);
+      } else if (sDisp.value !== '0' && sDisp.value.length > 0) {
+        sDisp.value = '-' + sDisp.value;
+      }
+      sHist.textContent = sDisp.value;
+    }
+
+    function sClear() {
+      sDisp.value = '0';
+      sHist.textContent = '';
+      isNewInput = true;
+    }
+
+    function sBack() {
+      sDisp.value = sDisp.value.length > 1 ? sDisp.value.slice(0, -1) : '0';
+      sHist.textContent = sDisp.value;
+    }
+
+    function sCalc() {
+      let raw = sDisp.value;
+      let expr = raw
+        .replace(/×/g, '*')
+        .replace(/÷/g, '/')
+        .replace(/−/g, '-');
+
+      if (isAngleDeg) {
+        // Wrap degrees into radians for mathjs trigonometric functions
+        expr = expr.replace(/sin\(([^)]+)\)/g, '(sin(($1) * pi / 180))')
+                   .replace(/cos\(([^)]+)\)/g, '(cos(($1) * pi / 180))')
+                   .replace(/tan\(([^)]+)\)/g, '(tan(($1) * pi / 180))');
+      }
+
+      try {
+        const res = math.evaluate(expr);
+        if (isNaN(res) || !isFinite(res)) {
+          sDisp.value = 'Error';
+        } else {
+          sHist.textContent = raw + ' =';
+          sDisp.value = String(parseFloat(res.toFixed(10)));
+        }
+        isNewInput = true;
+      } catch (e) {
+        sDisp.value = 'Error';
+        isNewInput = true;
+      }
+    }
+  </script>
+</body>
+</html>
