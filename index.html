@@ -156,13 +156,14 @@
       <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
     </a>
     <ul class="nav-links">
+      <li><a href="index.html" class="active"><span class="nl-ico" aria-hidden="true">⌂</span>Home</a></li>
       <li><a href="#directory">All 17 Calculators</a></li>
       <li><a href="#calc-zone">Quick Tool</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button class="nav-btn" onclick="scrollToId('calc-zone')">Try Free →</button>
+    <a href="#directory" class="nav-btn">Explore Calculators <span aria-hidden="true">→</span></a>
     <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Open Navigation Menu">
       <span></span><span></span><span></span>
     </button>
@@ -171,15 +172,13 @@
 
 <!-- MOBILE DRAWER -->
 <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+  <a href="index.html" onclick="closeDrawer()">Home</a>
   <a href="#directory" onclick="closeDrawer()">All 17 Calculators</a>
-  <a href="#calc-zone" onclick="closeDrawer()">Quick Calculator</a>
-  <a href="emi-calculator/" onclick="closeDrawer()">EMI Calculator</a>
-  <a href="gst-calculator/" onclick="closeDrawer()">GST Calculator</a>
-  <a href="bmi-calculator/" onclick="closeDrawer()">BMI Calculator</a>
-  <a href="about.html" onclick="closeDrawer()">About Creator</a>
+  <a href="#calc-zone" onclick="closeDrawer()">Quick Tool</a>
+  <a href="about.html" onclick="closeDrawer()">About</a>
+  <a href="#faq" onclick="closeDrawer()">FAQ</a>
   <a href="contact.html" onclick="closeDrawer()">Contact</a>
-  <a href="privacy-policy.html" onclick="closeDrawer()">Privacy Policy</a>
-  <a href="#calc-zone" class="dcta" onclick="closeDrawer()">🧮 Open Quick Tool</a>
+  <a href="#directory" class="dcta" onclick="closeDrawer()">Explore Calculators →</a>
 </div>
 
 <!-- HERO SECTION -->
@@ -196,27 +195,67 @@
     Free Online Calculators for Everyday Life
   </div>
 
+  <div class="hero-illo" aria-hidden="true">
+    <svg viewBox="0 0 300 260" class="hero-illo-svg">
+      <ellipse cx="150" cy="205" rx="108" ry="14" class="hi-shadow"/>
+      <g class="hi-orbit">
+        <rect x="98" y="38" width="104" height="150" rx="20" class="hi-body"/>
+        <rect x="112" y="54" width="76" height="38" rx="8" class="hi-screen"/>
+        <text x="178" y="80" text-anchor="end" class="hi-digits">0</text>
+        <g class="hi-keys">
+          <rect x="112" y="102" width="16" height="16" rx="4"/><rect x="136" y="102" width="16" height="16" rx="4"/>
+          <rect x="160" y="102" width="16" height="16" rx="4"/><rect x="184" y="102" width="16" height="16" rx="4"/>
+          <rect x="112" y="124" width="16" height="16" rx="4"/><rect x="136" y="124" width="16" height="16" rx="4"/>
+          <rect x="160" y="124" width="16" height="16" rx="4"/><rect x="184" y="124" width="16" height="16" rx="4"/>
+          <rect x="112" y="146" width="16" height="16" rx="4"/><rect x="136" y="146" width="16" height="16" rx="4"/>
+          <rect x="160" y="146" width="16" height="16" rx="4"/><rect x="184" y="146" width="16" height="16" rx="4"/>
+        </g>
+      </g>
+      <g class="hi-chip hi-chip1"><rect width="40" height="40" rx="12"/><text x="20" y="26">₹</text></g>
+      <g class="hi-chip hi-chip2"><rect width="40" height="40" rx="12"/><text x="20" y="26">%</text></g>
+      <g class="hi-chip hi-chip3"><rect width="40" height="40" rx="12"/><text x="20" y="26">♥</text></g>
+      <g class="hi-chip hi-chip4"><rect width="40" height="40" rx="12"/><text x="20" y="27">▤</text></g>
+    </svg>
+    <span class="hi-note">Calculate. Plan. Achieve.</span>
+  </div>
+
   <h1 class="hero-h1" id="hero-heading">
-    Accurate Calculators<br>
-    <span class="acc">for Real Life.</span>
+    Smart Calculators.<br>
+    <span class="acc">Simple Answers.</span>
   </h1>
 
   <p class="hero-p">
-    17+ free calculators for finance, math, health and everyday decisions. No signup, no limits, and every calculation runs in your browser.
+    17+ free calculators for money, math, health and everyday decisions.
   </p>
 
-  <div class="hero-actions">
-    <a href="#directory" class="hero-cta">Explore Calculators <span aria-hidden="true">→</span></a>
-    <button class="hero-ghost" onclick="scrollToId('calc-zone')">Quick Calculator</button>
+  <div class="tool-search">
+    <label for="calc-search" class="sr-only">Search calculators</label>
+    <span class="ts-icon" aria-hidden="true">🔍</span>
+    <input type="search" id="calc-search" class="tool-search-input"
+           placeholder="Search calculators… (e.g. EMI, BMI, GST, Age, Loan…)"
+           autocomplete="off" oninput="applyFilters()" onsearch="applyFilters()"
+           onkeydown="if(event.key==='Enter'){event.preventDefault();goToSearchResults();}">
+    <button type="button" class="ts-clear" id="ts-clear" onclick="clearSearch()" aria-label="Clear search" hidden>&times;</button>
+    <button type="button" class="ts-submit" onclick="goToSearchResults()">Search</button>
   </div>
 
   <!-- Quick Filter Pills -->
   <div class="hero-pills" role="tablist" aria-label="Filter calculator categories">
-    <button class="pill ap" data-cat="all" onclick="filterCards('all', this)" role="tab" aria-selected="true">All (17)</button>
-    <button class="pill" data-cat="finance" onclick="filterCards('finance', this)" role="tab" aria-selected="false">Finance &amp; Loans (8)</button>
-    <button class="pill" data-cat="math" onclick="filterCards('math', this)" role="tab" aria-selected="false">Math &amp; Arithmetic (5)</button>
-    <button class="pill" data-cat="date" onclick="filterCards('date', this)" role="tab" aria-selected="false">Dates &amp; Age (3)</button>
-    <button class="pill" data-cat="health" onclick="filterCards('health', this)" role="tab" aria-selected="false">Health (1)</button>
+    <button class="pill ap" data-cat="all" onclick="filterCards('all', this)" role="tab" aria-selected="true">
+      <span class="pill-ico" aria-hidden="true">▦</span>All 17
+    </button>
+    <button class="pill" data-cat="finance" onclick="filterCards('finance', this)" role="tab" aria-selected="false">
+      <span class="pill-ico" aria-hidden="true">💰</span>Finance &amp; Loans<span class="pill-count">8</span>
+    </button>
+    <button class="pill" data-cat="math" onclick="filterCards('math', this)" role="tab" aria-selected="false">
+      <span class="pill-ico" aria-hidden="true">∑</span>Math &amp; Arithmetic<span class="pill-count">5</span>
+    </button>
+    <button class="pill" data-cat="date" onclick="filterCards('date', this)" role="tab" aria-selected="false">
+      <span class="pill-ico" aria-hidden="true">📅</span>Dates &amp; Age<span class="pill-count">3</span>
+    </button>
+    <button class="pill" data-cat="health" onclick="filterCards('health', this)" role="tab" aria-selected="false">
+      <span class="pill-ico" aria-hidden="true">💗</span>Health<span class="pill-count">1</span>
+    </button>
   </div>
 </section>
 
@@ -231,6 +270,138 @@
 </div>
 
 <!-- ========================================== -->
+<!-- POPULAR CALCULATORS -->
+<!-- ========================================== -->
+<section class="tools-wrap popular-wrap" aria-labelledby="popular-heading">
+  <div class="tools-hdr popular-hdr">
+    <h2 class="sec-h popular-h" id="popular-heading"><span class="ph-spark" aria-hidden="true">✦</span> Popular Calculators</h2>
+    <a href="#directory" class="popular-viewall">View All 17 <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="tgrid popular-grid">
+    <a href="emi-calculator/" class="tc tc-pop" data-cat="finance" style="--ico:#22c55e" aria-label="Open EMI Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">💰</div>
+      <h3 class="tc-name">EMI Calculator</h3>
+      <p class="tc-desc">Calculate monthly installments, total interest, and complete loan amortization schedules with reducing balance math.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">Monthly EMI</span>
+        <span class="tc-tag">Amortization</span>
+        <span class="tc-tag">Loans</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Finance &amp; Loans</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="home-loan-calculator/" class="tc tc-pop" data-cat="finance" style="--ico:#38bdf8" aria-label="Open Home Loan Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">🏠</div>
+      <h3 class="tc-name">Home Loan Calculator</h3>
+      <p class="tc-desc">Plan housing finance, mortgage tenures up to 30 years, interest savings, and down payment scenarios.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">Housing Loan</span>
+        <span class="tc-tag">Tenure</span>
+        <span class="tc-tag">Mortgage</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Finance &amp; Loans</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="car-loan-calculator/" class="tc tc-pop" data-cat="finance" style="--ico:#38bdf8" aria-label="Open Car Loan Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">🚗</div>
+      <h3 class="tc-name">Car Loan Calculator</h3>
+      <p class="tc-desc">Determine on-road vehicle financing, down payments, monthly repayments, and total ownership interest costs.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">Auto Loan</span>
+        <span class="tc-tag">Down Payment</span>
+        <span class="tc-tag">Vehicles</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Finance &amp; Loans</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="personal-loan-calculator/" class="tc tc-pop" data-cat="finance" style="--ico:#d97706" aria-label="Open Personal Loan Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">💳</div>
+      <h3 class="tc-name">Personal Loan Calculator</h3>
+      <p class="tc-desc">Evaluate short-term credit, medical/wedding loans, and compare interest rates across banks before borrowing.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">Personal Credit</span>
+        <span class="tc-tag">Fixed Rate</span>
+        <span class="tc-tag">Fast Cash</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Finance &amp; Loans</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="age-calculator/" class="tc tc-pop" data-cat="date" style="--ico:#a78bfa" aria-label="Open Age Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">🎂</div>
+      <h3 class="tc-name">Age Calculator</h3>
+      <p class="tc-desc">Determine your exact age in years, months, and days with total days lived, hours, and next milestone countdown.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">Exact Years</span>
+        <span class="tc-tag">Total Days</span>
+        <span class="tc-tag">Milestones</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Dates &amp; Age</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="bmi-calculator/" class="tc tc-pop" data-cat="health" style="--ico:#ff5068" aria-label="Open BMI Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">💪</div>
+      <h3 class="tc-name">BMI Calculator</h3>
+      <p class="tc-desc">Body Mass Index screening supporting metric and imperial units with WHO and Asian-Indian ICMR health benchmarks.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">WHO Range</span>
+        <span class="tc-tag">Asian-Indian ICMR</span>
+        <span class="tc-tag">Health Screening</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Health</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="gst-calculator/" class="tc tc-pop" data-cat="finance" style="--ico:#38bdf8" aria-label="Open GST Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">🧾</div>
+      <h3 class="tc-name">GST Calculator</h3>
+      <p class="tc-desc">Calculate Goods and Services Tax: Add GST (Exclusive) or Remove GST (Inclusive) with CGST/SGST breakdowns across 5%, 12%, 18%, 28%.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">Exclusive / Inclusive</span>
+        <span class="tc-tag">CGST + SGST</span>
+        <span class="tc-tag">Tax Slabs</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Finance &amp; Loans</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <a href="discount-calculator/" class="tc tc-pop" data-cat="math" style="--ico:#f59e0b" aria-label="Open Discount Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico">🏷️</div>
+      <h3 class="tc-name">Discount Calculator</h3>
+      <p class="tc-desc">Calculate shopping savings, sale prices, flat discounts, stacked double discounts, and optional post-discount sales tax.</p>
+      <div class="tc-tags">
+        <span class="tc-tag">Savings</span>
+        <span class="tc-tag">Double Discount</span>
+        <span class="tc-tag">Shopping</span>
+      </div>
+      <div class="tc-foot">
+        <span class="tc-cat">Math &amp; Arithmetic</span>
+        <span class="tc-go">Calculate <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ========================================== -->
 <!-- 17 CALCULATORS COMPREHENSIVE DIRECTORY -->
 <!-- ========================================== -->
 <section id="directory" class="tools-wrap" aria-labelledby="dir-heading">
@@ -238,15 +409,6 @@
     <div class="section-chip" aria-hidden="true">✦ Complete Calculator Directory</div>
     <h2 class="sec-h" id="dir-heading">17 Standalone Tools. <em>Zero Hassle.</em></h2>
     <p class="sec-p">Every calculator has its own dedicated page with formulas, step-by-step examples, visual schedules, and practical FAQs.</p>
-
-    <div class="tool-search">
-      <label for="calc-search" class="sr-only">Search calculators</label>
-      <span class="ts-icon" aria-hidden="true">🔍</span>
-      <input type="search" id="calc-search" class="tool-search-input"
-             placeholder="Search calculators — try &quot;loan&quot;, &quot;gst&quot;, &quot;bmi&quot;…"
-             autocomplete="off" oninput="applyFilters()" onsearch="applyFilters()">
-      <button type="button" class="ts-clear" id="ts-clear" onclick="clearSearch()" aria-label="Clear search" hidden>&times;</button>
-    </div>
     <p class="tool-count" id="tool-count" role="status" aria-live="polite">Showing all 17 calculators</p>
   </div>
 
@@ -1081,6 +1243,12 @@ function clearSearch() {
   const box = document.getElementById('calc-search');
   if (box) { box.value = ''; box.focus(); }
   applyFilters();
+}
+
+/* Hero search "Search" button + Enter key: apply, then jump to the results. */
+function goToSearchResults() {
+  applyFilters();
+  scrollToId('directory');
 }
 
 function resetFilters() {
