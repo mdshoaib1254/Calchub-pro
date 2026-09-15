@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DNLZJ1ZD02');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457"
+     crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CalcHub Pro – Free All-in-One Calculator | EMI, BMI, Scientific & Birthday</title>
+<meta name="description" content="Free all-in-one calculator online: Basic, Scientific, EMI Loan, BMI, Birthday Age Calculator. No signup, works offline, 100% free. Used by students, professionals & everyone in between.">
+<link rel="canonical" href="https://calchubpro.in/">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"CalcHub Pro",
+  "url":"https://calchubpro.in/",
+  "applicationCategory":"UtilityApplication",
+  "description":"Free all-in-one calculator suite including Basic, Scientific, EMI Loan, BMI, and Birthday Age calculators.",
+  "operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Basic Calculator","Scientific Calculator","EMI Loan Calculator","BMI Calculator","Birthday Age Calculator"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is CalcHub Pro free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, CalcHub Pro is 100% free forever. No signup, no subscription, no hidden charges."}},
+    {"@type":"Question","name":"How is EMI calculated?","acceptedAnswer":{"@type":"Answer","text":"EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P is the principal, r is the monthly interest rate, and n is the number of monthly installments."}},
+    {"@type":"Question","name":"What is a healthy BMI range?","acceptedAnswer":{"@type":"Answer","text":"A BMI between 18.5 and 24.9 is considered normal and healthy according to WHO guidelines."}},
+    {"@type":"Question","name":"Does CalcHub Pro work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once the page is loaded, all five calculators work completely offline without any internet connection."}}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.min.js"></script>
+
+<style>
+/* ═══ RESET ═══ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',sans-serif;background:#07090f;color:#f0f2f8;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+a{text-decoration:none;color:inherit}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:#07090f}
+::-webkit-scrollbar-thumb{background:#e0293e;border-radius:4px}
+
+/* ═══ VARIABLES ═══ */
+:root{
+  --red:#e0293e;--red-dim:rgba(224,41,62,.12);--red-glow:rgba(224,41,62,.3);
+  --red2:#ff5068;
+  --sky:#38bdf8;--teal:#06d6a0;--amber:#f59e0b;
+  --bg:#07090f;--bg2:#0c0f1a;--bg3:#11152b;
+  --glass:rgba(255,255,255,.03);--glass2:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.13);
+  --text:#f0f2f8;--muted:rgba(240,242,248,.5);--dim:rgba(240,242,248,.25);
+  /* light zone */
+  --lbg:#f4f5fb;--lcard:#ffffff;--lborder:#e2e5f2;
+  --lprimary:#080c26;--lacce:#e0293e;--lacce2:#1b2578;
+  --lmuted:#6672a8;--llight:#eceef9;
+  --danger:#ef4444;--warn:#f59e0b;--ok:#22c55e;--info:#38bdf8;
+  --r:20px;--rs:12px;--rx:8px;
+  --ff-head:'Bricolage Grotesque',sans-serif;
+  --ff-mono:'Fira Code',monospace;
+}
+
+/* ═══ NAV ═══ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:flex;align-items:center;padding:0 max(20px,5vw);transition:background .35s,box-shadow .35s}
+.nav.stuck{background:rgba(7,9,15,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 1px 0 var(--border)}
+.nav-logo{display:flex;align-items:center;gap:11px;font-family:var(--ff-head);font-size:1.2rem;font-weight:800;letter-spacing:-.4px;flex-shrink:0}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--red),#9e0010);border-radius:10px;display:grid;place-items:center;font-size:1.1rem;box-shadow:0 4px 20px var(--red-glow);flex-shrink:0;position:relative;overflow:hidden}
+.logo-mark img{width:100%;height:100%;object-fit:cover;border-radius:10px;display:block}
+.logo-mark::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent)}
+.logo-text .hi{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto;margin-right:18px;list-style:none}
+.nav-links a{color:var(--muted);font-size:.875rem;font-weight:500;padding:7px 13px;border-radius:50px;transition:all .2s}
+.nav-links a:hover{color:var(--text);background:var(--glass2)}
+.nav-btn{background:var(--red);color:#fff;padding:9px 22px;border-radius:50px;font-size:.875rem;font-weight:700;border:none;box-shadow:0 4px 18px var(--red-glow);flex-shrink:0;transition:all .22s}
+.nav-btn:hover{background:#c9182c;transform:translateY(-1px);box-shadow:0 8px 26px var(--red-glow)}
+.hbg{display:none;flex-direction:column;gap:5.5px;background:none;border:none;padding:6px;margin-left:auto}
+.hbg span{width:22px;height:2px;background:var(--text);border-radius:2px;display:block;transition:all .3s}
+.hbg.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.nav-drawer{position:fixed;inset:0;background:rgba(7,9,15,.97);backdrop-filter:blur(28px);z-index:800;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;pointer-events:none;transition:opacity .3s}
+.nav-drawer.open{opacity:1;pointer-events:all}
+.nav-drawer a{color:#fff;font-family:var(--ff-head);font-size:1.7rem;font-weight:700;padding:10px 30px;border-radius:14px;transition:all .2s;letter-spacing:-.4px}
+.nav-drawer a:hover,.nav-drawer a:focus{color:var(--red);background:var(--red-dim)}
+.nav-drawer .dcta{background:var(--red);color:#fff;margin-top:14px;font-size:1.1rem;padding:14px 40px;box-shadow:0 8px 28px var(--red-glow)}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:88px 24px 72px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+/* Layered gradient mesh */
+.hg1{position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:min(800px,120vw);height:min(500px,70vw);background:radial-gradient(ellipse,rgba(224,41,62,.11) 0%,transparent 68%);border-radius:50%}
+.hg2{position:absolute;bottom:5%;left:15%;width:min(350px,50vw);height:min(350px,50vw);background:radial-gradient(circle,rgba(56,189,248,.06) 0%,transparent 65%);border-radius:50%}
+.hg3{position:absolute;top:20%;right:10%;width:min(250px,35vw);height:min(250px,35vw);background:radial-gradient(circle,rgba(6,214,160,.05) 0%,transparent 65%);border-radius:50%}
+/* Grid */
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 85% 80% at 50% 50%,#000 20%,transparent 100%)}
+/* Floating orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(60px);animation:orbFloat 8s ease-in-out infinite}
+.orb1{width:180px;height:180px;background:rgba(224,41,62,.07);top:25%;left:8%;animation-delay:0s}
+.orb2{width:140px;height:140px;background:rgba(56,189,248,.06);top:55%;right:6%;animation-delay:3s}
+.orb3{width:100px;height:100px;background:rgba(6,214,160,.05);bottom:20%;left:30%;animation-delay:6s}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--red-dim);border:1px solid rgba(224,41,62,.25);color:#ff8094;padding:6px 18px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:28px;animation:fadeUp .6s ease both}
+.live-dot{width:7px;height:7px;background:var(--red2);border-radius:50%;animation:livePulse 1.6s infinite;flex-shrink:0}
+.hero-h1{font-family:var(--ff-head);font-size:clamp(2.1rem,6vw,5.2rem);font-weight:800;line-height:1.04;letter-spacing:-2px;margin-bottom:22px;max-width:760px;animation:fadeUp .6s .1s ease both}
+.hero-h1 .acc{color:var(--red);display:block}
+.typed-word{border-right:3px solid var(--red);padding-right:4px}
+.hero-p{font-size:clamp(.92rem,2.1vw,1.08rem);color:var(--muted);max-width:530px;margin:0 auto 40px;line-height:1.8;animation:fadeUp .6s .2s ease both}
+.hero-actions{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin-bottom:52px;animation:fadeUp .6s .3s ease both}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;padding:15px 32px;border-radius:50px;font-size:1rem;font-weight:700;border:none;box-shadow:0 8px 32px var(--red-glow);transition:all .25s;position:relative;overflow:hidden}
+.hero-cta::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);pointer-events:none}
+.hero-cta:hover{background:#c9182c;transform:translateY(-3px);box-shadow:0 14px 40px var(--red-glow)}
+.hero-ghost{display:inline-flex;align-items:center;gap:10px;background:var(--glass2);color:var(--text);padding:15px 30px;border-radius:50px;font-size:1rem;font-weight:600;border:1px solid var(--border2);backdrop-filter:blur(12px);transition:all .25s}
+.hero-ghost:hover{background:var(--glass);transform:translateY(-3px);border-color:rgba(255,255,255,.22)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;animation:fadeUp .6s .4s ease both}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--glass);border:1px solid var(--border);padding:9px 18px;border-radius:50px;font-size:.8rem;font-weight:600;color:var(--muted);transition:all .25s;cursor:pointer}
+.pill:hover,.pill.ap{background:var(--red-dim);border-color:rgba(224,41,62,.3);color:var(--text)}
+
+/* ═══ AD ZONE ═══ */
+.ad-zone{width:100%;background:var(--glass);border:1px dashed var(--border2);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:.75rem;letter-spacing:.5px;text-transform:uppercase;font-weight:600;margin:0 auto}
+.ad-zone-728{max-width:728px;height:90px}
+.ad-zone-320{max-width:320px;height:100px}
+.ad-zone-responsive{max-width:970px;min-height:90px;padding:10px}
+.ad-strip{padding:20px max(20px,4vw);display:flex;justify-content:center}
+
+/* ═══ SECTION HELPERS ═══ */
+.section-chip{display:inline-flex;align-items:center;gap:7px;background:var(--red-dim);border:1px solid rgba(224,41,62,.22);color:#ff8094;padding:4px 13px;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:14px}
+.sec-h{font-family:var(--ff-head);font-size:clamp(1.55rem,3.6vw,2.7rem);font-weight:800;letter-spacing:-.9px;line-height:1.08;margin-bottom:12px}
+.sec-h em{color:var(--red);font-style:normal}
+.sec-p{color:var(--muted);font-size:.95rem;max-width:500px;line-height:1.75}
+
+/* ═══ TOOLS SECTION ═══ */
+.tools-wrap{padding:80px max(20px,5vw);max-width:1180px;margin:0 auto}
+.tools-hdr{text-align:center;margin-bottom:52px}
+.tools-hdr .sec-p{margin:0 auto}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.tc{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;cursor:pointer;transition:all .32s;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--tc-accent,var(--red)),transparent);opacity:0;transition:opacity .3s}
+.tc:hover{border-color:var(--tc-edge,rgba(224,41,62,.3));transform:translateY(-6px);box-shadow:0 18px 52px rgba(0,0,0,.45),0 0 0 1px var(--tc-edge,rgba(224,41,62,.15));background:var(--glass2)}
+.tc:hover::before{opacity:1}
+.tc.big{grid-column:span 2}
+.tc:nth-child(1){--tc-accent:var(--red);--tc-edge:rgba(224,41,62,.3)}
+.tc:nth-child(2){--tc-accent:var(--teal);--tc-edge:rgba(6,214,160,.28)}
+.tc:nth-child(3){--tc-accent:var(--sky);--tc-edge:rgba(56,189,248,.28)}
+.tc:nth-child(4){--tc-accent:var(--amber);--tc-edge:rgba(245,158,11,.28)}
+.tc:nth-child(5){--tc-accent:#a78bfa;--tc-edge:rgba(167,139,250,.28)}
+.tc-ico{width:48px;height:48px;border-radius:12px;background:var(--glass2);border:1px solid var(--border);display:grid;place-items:center;font-size:1.35rem;margin-bottom:16px;transition:transform .3s}
+.tc:hover .tc-ico{transform:scale(1.12) rotate(-7deg)}
+.tc-name{font-family:var(--ff-head);font-size:1.08rem;font-weight:700;margin-bottom:7px}
+.tc-desc{color:var(--muted);font-size:.83rem;line-height:1.65;margin-bottom:15px}
+.tc-tags{display:flex;flex-wrap:wrap;gap:5px}
+.tc-tag{background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--dim);padding:2px 9px;border-radius:50px;font-size:.67rem;font-weight:600;letter-spacing:.3px}
+.tc-arr{float:right;color:var(--dim);font-size:1.1rem;margin-top:-1px;transition:all .3s}
+.tc:hover .tc-arr{color:var(--text);transform:translate(3px,-3px)}
+.tc-bigico{font-size:4.2rem;opacity:.22;transition:all .35s;filter:blur(2px);align-self:center}
+.tc.big:hover .tc-bigico{opacity:.6;filter:blur(0);transform:scale(1.08) rotate(5deg)}
+
+/* ═══ STATS ═══ */
+.stats-band{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px max(20px,5vw)}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat-n{font-family:var(--ff-head);font-size:clamp(1.9rem,4.2vw,3rem);font-weight:800;letter-spacing:-1.5px;color:var(--text);display:block;margin-bottom:5px}
+.stat-n .r{color:var(--red)}
+.stat-l{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:1.2px;font-weight:600}
+
+/* ═══ CALCULATOR ZONE ═══ */
+#calc-zone{background:var(--lbg);padding:64px max(20px,5vw) 80px;border-top:3px solid var(--red)}
+.calc-head{text-align:center;margin-bottom:36px}
+.calc-head h2{font-family:var(--ff-head);font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;color:var(--lprimary);letter-spacing:-.6px;margin-bottom:8px}
+.calc-head p{color:var(--lmuted);font-size:.93rem}
+.calc-wrap{max-width:980px;margin:0 auto}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:24px}
+.tab{padding:9px 20px;background:#fff;border:2px solid var(--lborder);border-radius:50px;font-size:.85rem;font-weight:600;color:var(--lmuted);cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab:hover{border-color:var(--lacce);color:var(--lacce)}
+.tab.on{background:var(--lacce);color:#fff;border-color:var(--lacce);box-shadow:0 4px 16px rgba(224,41,62,.28)}
+
+/* PANELS */
+.panel{display:none;background:#fff;border-radius:var(--r);box-shadow:0 10px 48px rgba(8,12,38,.13);padding:30px}
+.panel.on{display:block;animation:panelIn .28s ease}
+@keyframes panelIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.panel-inner{max-width:500px;margin:0 auto}
+.panel h2{font-family:var(--ff-head);font-size:1.5rem;font-weight:800;color:var(--lprimary);text-align:center;margin-bottom:22px;letter-spacing:-.4px}
+
+/* SCREEN */
+.calc-screen{background:linear-gradient(135deg,#0c1030,#1b2578);border-radius:var(--rs);margin-bottom:14px;overflow:hidden;position:relative}
+.calc-screen::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.07),transparent 50%);pointer-events:none}
+.calc-expr{padding:10px 16px 0;font-family:var(--ff-mono);font-size:.73rem;color:rgba(255,255,255,.45);text-align:right;min-height:24px;word-break:break-all}
+.calc-disp{width:100%;padding:8px 16px 14px;font-family:var(--ff-mono);font-size:2.1rem;font-weight:500;text-align:right;color:#fff;background:transparent;border:none;outline:none;letter-spacing:-1px}
+
+/* BUTTONS */
+.calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cb{padding:16px 8px;font-size:1.1rem;font-weight:600;border:none;border-radius:var(--rx);background:var(--llight);color:var(--lprimary);cursor:pointer;transition:all .13s;font-family:inherit;-webkit-tap-highlight-color:transparent;border:1px solid transparent}
+.cb:hover{background:var(--lprimary);color:#fff;border-color:var(--lprimary)}
+.cb:active{transform:scale(.91)}
+.cb.op{background:#e8eafe;color:var(--lacce2);border-color:#d4d9fa}
+.cb.op:hover{background:var(--lacce2);color:#fff;border-color:var(--lacce2)}
+.cb.eq{background:var(--lacce);color:#fff;grid-column:span 2;border-color:var(--lacce);box-shadow:0 4px 14px rgba(224,41,62,.28)}
+.cb.eq:hover{background:#c9182c}
+.cb.cl{background:#fff0f0;color:var(--danger);border-color:#fecdd3}
+.cb.cl:hover{background:var(--danger);color:#fff;border-color:var(--danger)}
+.cb.bk{background:#fffbeb;color:var(--warn);border-color:#fde68a}
+.cb.bk:hover{background:var(--warn);color:#fff;border-color:var(--warn)}
+.cb.fn{font-size:.8rem;padding:13px 5px;background:#eef1ff;color:var(--lacce2);border-color:#dde3f8}
+.cb.fn:hover{background:var(--lacce2);color:#fff;border-color:var(--lacce2)}
+
+/* FORM */
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.875rem;font-weight:600;color:var(--lprimary);margin-bottom:7px}
+.field input,.field select{width:100%;padding:12px 15px;border:2px solid var(--lborder);border-radius:var(--rx);font-size:.95rem;font-family:inherit;color:var(--lprimary);background:var(--llight);outline:none;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus{border-color:var(--lacce);box-shadow:0 0 0 4px rgba(224,41,62,.08);background:#fff}
+.field input.bad{border-color:var(--danger);box-shadow:0 0 0 3px rgba(239,68,68,.1)}
+.ferr{display:none;color:var(--danger);font-size:.74rem;margin-top:4px;font-weight:500}
+.ferr.show{display:block}
+.calc-submit{width:100%;padding:14px;background:var(--lacce);color:#fff;border:none;border-radius:var(--rx);font-size:.98rem;font-weight:700;cursor:pointer;transition:all .22s;font-family:inherit;position:relative;overflow:hidden}
+.calc-submit::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.15),transparent);pointer-events:none}
+.calc-submit:hover{background:#c9182c;transform:translateY(-2px);box-shadow:0 7px 22px rgba(224,41,62,.35)}
+.calc-submit:active{transform:scale(.98)}
+
+/* RESULT */
+.result{background:linear-gradient(135deg,#f6f8ff,#edf1ff);border:2px solid #dde3f8;border-radius:var(--rx);padding:18px;margin-top:20px;animation:panelIn .3s ease}
+.rrow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e8ecf8;gap:14px}
+.rrow:last-child{border-bottom:none}
+.rrow .rl{font-size:.84rem;font-weight:600;color:var(--lmuted)}
+.rrow .rv{font-family:var(--ff-mono);font-size:1.38rem;font-weight:500;color:var(--lacce);letter-spacing:-.5px}
+
+/* CURRENCY ROW */
+.cur-row{display:grid;grid-template-columns:1fr 44px 1fr;gap:10px;align-items:end;margin-bottom:18px}
+.swap-btn{width:44px;height:44px;background:var(--llight);border:2px solid var(--lborder);border-radius:50%;font-size:1rem;cursor:pointer;display:grid;place-items:center;transition:all .22s;color:var(--lacce2)}
+.swap-btn:hover{background:var(--lacce);border-color:var(--lacce);color:#fff;transform:rotate(180deg)}
+
+/* CALC INFO */
+.calc-info{margin-top:28px;padding:22px;background:var(--llight);border-radius:var(--rs);border:1px solid var(--lborder)}
+.calc-info h3{font-family:var(--ff-head);font-size:1.05rem;font-weight:700;color:var(--lprimary);margin-bottom:10px}
+.calc-info p{font-size:.85rem;color:#4a5280;line-height:1.8}
+.calc-info ul{margin:10px 0 0 16px;display:flex;flex-direction:column;gap:6px}
+.calc-info li{font-size:.84rem;color:#4a5280;line-height:1.7}
+
+/* ═══ AD ZONES (light bg) ═══ */
+.ad-zone-light{background:rgba(224,41,62,.04);border:1px dashed rgba(224,41,62,.2);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;color:#aab1d0;font-size:.73rem;letter-spacing:.6px;text-transform:uppercase;font-weight:600;margin:24px auto 0}
+
+/* ═══ WHY SECTION ═══ */
+.why-wrap{padding:88px max(20px,5vw);max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.why-feats{display:flex;flex-direction:column;gap:13px;margin-top:26px}
+.wf{display:flex;gap:15px;padding:18px;background:var(--glass);border:1px solid var(--border);border-radius:13px;transition:all .28s}
+.wf:hover{background:var(--glass2);border-color:var(--border2);transform:translateX(5px)}
+.wf-ico{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;font-size:1rem;flex-shrink:0}
+.wf-text h4{font-family:var(--ff-head);font-size:.9rem;font-weight:700;margin-bottom:3px}
+.wf-text p{font-size:.78rem;color:var(--muted);line-height:1.55;margin:0}
+/* Preview mock */
+.preview{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);padding:22px;box-shadow:0 16px 56px rgba(0,0,0,.5);position:relative}
+.preview::before{content:'';position:absolute;top:-1px;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.p-bar{display:flex;align-items:center;gap:7px;margin-bottom:18px}
+.p-dot{width:9px;height:9px;border-radius:50%}
+.p-r{background:#ff5f57}.p-y{background:#febc2e}.p-g{background:#28c840}
+.p-lbl{margin-left:auto;font-size:.67rem;color:var(--dim);letter-spacing:.5px}
+.p-screen{background:linear-gradient(135deg,#0c1030,#1b2578);border-radius:9px;padding:14px 18px;margin-bottom:15px;text-align:right}
+.p-expr{font-size:.7rem;color:rgba(255,255,255,.38);margin-bottom:4px;font-family:var(--ff-mono)}
+.p-val{font-family:var(--ff-mono);font-size:1.9rem;font-weight:500;letter-spacing:-1px;background:linear-gradient(135deg,#fff,rgba(255,255,255,.7));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.p-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.pb{background:var(--glass2);border:1px solid var(--border);border-radius:6px;padding:10px 4px;text-align:center;font-size:.8rem;font-weight:600;color:var(--muted)}
+.pb.po{background:rgba(224,41,62,.14);color:#ff8094;border-color:rgba(224,41,62,.2)}
+.pb.pe{background:var(--red);color:#fff;border-color:var(--red);grid-column:span 2;box-shadow:0 4px 14px var(--red-glow)}
+.ft1{position:absolute;top:-15px;right:-15px;background:linear-gradient(135deg,var(--teal),#059669);color:#022c1a;padding:6px 14px;border-radius:50px;font-size:.68rem;font-weight:700;box-shadow:0 6px 20px rgba(6,214,160,.28);animation:floatY 3.2s ease-in-out infinite}
+.ft2{position:absolute;bottom:-15px;left:-15px;background:linear-gradient(135deg,var(--amber),#c97d00);color:#1c1000;padding:6px 14px;border-radius:50px;font-size:.68rem;font-weight:700;box-shadow:0 6px 20px rgba(245,158,11,.24);animation:floatY 3.2s 1.6s ease-in-out infinite}
+
+/* ═══ STEPS ═══ */
+.how-wrap{padding:72px max(20px,5vw);background:linear-gradient(180deg,transparent,rgba(224,41,62,.015),transparent)}
+.how-inner{max-width:1020px;margin:0 auto;text-align:center}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.step{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:30px 24px;transition:all .28s;text-align:left}
+.step:hover{background:var(--glass2);border-color:rgba(224,41,62,.22);transform:translateY(-5px);box-shadow:0 14px 44px rgba(0,0,0,.3)}
+.step-n{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,rgba(224,41,62,.16),rgba(224,41,62,.04));border:1px solid rgba(224,41,62,.22);display:grid;place-items:center;font-family:var(--ff-head);font-size:1.05rem;font-weight:800;color:#ff8094;margin:0 auto 18px}
+.step h3{font-family:var(--ff-head);font-size:.97rem;font-weight:700;margin-bottom:9px;letter-spacing:-.2px}
+.step p{color:var(--muted);font-size:.82rem;line-height:1.68;margin:0}
+
+/* ═══ CONTENT / SEO SECTION ═══ */
+.content-section{padding:80px max(20px,5vw);background:var(--bg2);border-top:1px solid var(--border)}
+.content-inner{max-width:900px;margin:0 auto}
+.content-inner h2{font-family:var(--ff-head);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:800;letter-spacing:-.5px;margin-bottom:14px}
+.content-inner p{color:var(--muted);font-size:.93rem;line-height:1.85;margin-bottom:16px}
+.content-inner h3{font-family:var(--ff-head);font-size:1.15rem;font-weight:700;margin:28px 0 10px;color:var(--text)}
+.content-inner ul{margin:0 0 16px 18px;display:flex;flex-direction:column;gap:8px}
+.content-inner li{color:var(--muted);font-size:.92rem;line-height:1.75}
+.content-inner strong{color:var(--text)}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:32px 0}
+.cg-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rs);padding:22px}
+.cg-card h4{font-family:var(--ff-head);font-size:.95rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.cg-card p{color:var(--muted);font-size:.84rem;line-height:1.7;margin:0}
+
+/* ═══ FAQ ═══ */
+.faq-section{padding:80px max(20px,5vw);max-width:900px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;color:var(--text);text-align:left;padding:20px 0;font-family:var(--ff-head);font-size:1rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;letter-spacing:-.2px;transition:color .2s}
+.faq-q:hover{color:var(--red2)}
+.faq-icon{width:24px;height:24px;border-radius:50%;background:var(--glass);border:1px solid var(--border);display:grid;place-items:center;font-size:.8rem;flex-shrink:0;transition:all .28s;color:var(--muted)}
+.faq-item.open .faq-icon{background:var(--red);border-color:var(--red);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{color:var(--muted);font-size:.89rem;line-height:1.8;padding:0 0 20px}
+
+/* ═══ CTA BANNER ═══ */
+.cta-wrap{padding:64px max(20px,5vw)}
+.cta-box{max-width:820px;margin:0 auto;background:var(--bg2);border:1px solid var(--border2);border-radius:26px;padding:60px 44px;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.cta-box::after{content:'';position:absolute;bottom:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(224,41,62,.08),transparent 70%);border-radius:50%}
+.cta-box h2{font-family:var(--ff-head);font-size:clamp(1.55rem,3.5vw,2.5rem);font-weight:800;letter-spacing:-.6px;margin-bottom:13px}
+.cta-box p{color:var(--muted);margin-bottom:30px;font-size:.96rem}
+.cta-chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:30px}
+.cta-chip{background:var(--glass2);border:1px solid var(--border);color:var(--muted);padding:5px 15px;border-radius:50px;font-size:.78rem;font-weight:500}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px max(20px,5vw) 26px}
+.foot-inner{max-width:1180px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+.foot-brand-desc{color:var(--muted);font-size:.83rem;line-height:1.75;margin:13px 0 18px;max-width:260px}
+.foot-soc{display:flex;gap:8px}
+.soc-btn{width:33px;height:33px;background:var(--glass);border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:.82rem;transition:all .22s}
+.soc-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.foot-col h4{font-family:var(--ff-head);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:1.3px;color:var(--text);margin-bottom:15px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{color:var(--muted);font-size:.83rem;transition:color .2s}
+.foot-col a:hover{color:var(--text)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;padding-top:24px;border-top:1px solid var(--border)}
+.foot-copy{color:var(--dim);font-size:.76rem}
+.foot-status{display:flex;align-items:center;gap:7px;color:var(--dim);font-size:.72rem}
+.status-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:livePulse 2s infinite}
+
+/* ═══ ANIMATIONS ═══ */
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(224,41,62,.4)}50%{box-shadow:0 0 0 6px transparent}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.tc{opacity:0;transform:translateY(26px);transition:opacity .5s ease,transform .5s ease,border-color .32s,box-shadow .32s,background .32s}
+.tc.in{opacity:1;transform:translateY(0)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:980px){
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .tc.big{grid-column:span 2}
+  .why-wrap{grid-template-columns:1fr;gap:50px}
+  .steps{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr 1fr;gap:28px}
+  .content-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-btn{display:none}
+  .hbg{display:flex}
+  .tgrid{grid-template-columns:1fr}
+  .tc.big{grid-column:span 1}
+  .tc-bigico{display:none}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .cta-box{padding:40px 22px}
+  .hero{padding:84px 18px 58px}
+  .hero-h1{letter-spacing:-1.2px}
+  .steps{gap:13px}
+}
+@media(max-width:440px){
+  .tab{padding:8px 13px;font-size:.79rem}
+  .cb{padding:14px 5px;font-size:1rem}
+  .cb.fn{font-size:.74rem;padding:11px 3px}
+  .cur-row{grid-template-columns:1fr 40px 1fr;gap:8px}
+  .cta-box{padding:32px 18px}
+}
+
+/* ═══ GUIDE SECTIONS ═══ */
+.guide-section{padding:80px max(20px,5vw);border-top:1px solid var(--border)}
+.guide-section.alt{background:var(--bg2)}
+.guide-inner{max-width:900px;margin:0 auto}
+.guide-inner h2{font-family:var(--ff-head);font-size:clamp(1.4rem,3vw,2.1rem);font-weight:800;letter-spacing:-.5px;margin-bottom:10px;color:var(--text)}
+.guide-inner h2 em{color:var(--red);font-style:normal}
+.guide-inner h3{font-family:var(--ff-head);font-size:1.18rem;font-weight:700;margin:32px 0 10px;color:var(--text)}
+.guide-inner h4{font-family:var(--ff-head);font-size:1rem;font-weight:700;margin:20px 0 8px;color:var(--text)}
+.guide-inner p{color:var(--muted);font-size:.93rem;line-height:1.88;margin-bottom:15px}
+.guide-inner ul,.guide-inner ol{margin:0 0 18px 20px;display:flex;flex-direction:column;gap:9px}
+.guide-inner li{color:var(--muted);font-size:.92rem;line-height:1.78}
+.guide-inner strong{color:var(--text)}
+.guide-chip{display:inline-flex;align-items:center;gap:7px;background:var(--red-dim);border:1px solid rgba(224,41,62,.22);color:#ff8094;padding:4px 13px;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:14px}
+.guide-lead{color:var(--muted);font-size:1rem;line-height:1.82;margin-bottom:28px;max-width:800px}
+.highlight-box{background:linear-gradient(135deg,rgba(224,41,62,.07),rgba(224,41,62,.02));border:1px solid rgba(224,41,62,.2);border-left:3px solid var(--red);border-radius:var(--rs);padding:18px 22px;margin:22px 0}
+.highlight-box.info{background:linear-gradient(135deg,rgba(56,189,248,.07),rgba(56,189,248,.02));border-color:rgba(56,189,248,.22);border-left-color:var(--sky)}
+.highlight-box.ok{background:linear-gradient(135deg,rgba(6,214,160,.07),rgba(6,214,160,.02));border-color:rgba(6,214,160,.22);border-left-color:var(--teal)}
+.highlight-box.warn{background:linear-gradient(135deg,rgba(245,158,11,.07),rgba(245,158,11,.02));border-color:rgba(245,158,11,.22);border-left-color:var(--amber)}
+.highlight-box p{margin:0;font-size:.88rem;line-height:1.78}
+.highlight-box strong{color:var(--red)}
+.highlight-box.info strong{color:var(--sky)}
+.highlight-box.ok strong{color:var(--teal)}
+.highlight-box.warn strong{color:var(--amber)}
+.formula-box{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);padding:18px 22px;margin:18px 0;font-family:var(--ff-mono);font-size:.9rem;color:var(--sky);letter-spacing:.3px}
+.formula-box span{color:var(--dim);font-size:.78rem;display:block;margin-top:6px;font-family:'DM Sans',sans-serif;letter-spacing:0}
+.guide-grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:26px 0}
+.guide-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}
+.guide-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--rs);padding:22px}
+.guide-card h4{font-family:var(--ff-head);font-size:.93rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.guide-card p{color:var(--muted);font-size:.83rem;line-height:1.72;margin:0}
+.guide-card ul{margin:10px 0 0 14px;display:flex;flex-direction:column;gap:6px}
+.guide-card li{color:var(--muted);font-size:.82rem;line-height:1.65}
+.comp-table-wrap{overflow-x:auto;margin:22px 0;border-radius:var(--rs)}
+.comp-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.comp-table th{background:var(--bg3);color:var(--text);font-family:var(--ff-head);font-weight:700;padding:13px 16px;text-align:left;border-bottom:2px solid var(--border2);white-space:nowrap}
+.comp-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:var(--glass);color:var(--text)}
+.comp-table .good{color:var(--teal);font-weight:600}
+.comp-table .bad{color:var(--danger);font-weight:600}
+.comp-table .mid{color:var(--amber);font-weight:600}
+.guide-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}
+.gs-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--rs);padding:18px;text-align:center}
+.gs-n{font-family:var(--ff-head);font-size:1.6rem;font-weight:800;color:var(--red);display:block;margin-bottom:4px}
+.gs-l{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.bmi-scale{background:var(--glass);border:1px solid var(--border);border-radius:var(--rs);padding:20px 22px;margin:22px 0}
+.bmi-scale h4{font-family:var(--ff-head);font-size:.9rem;font-weight:700;margin-bottom:14px}
+.bmi-bar{display:flex;border-radius:50px;overflow:hidden;height:14px;margin-bottom:12px}
+.bmi-seg:nth-child(1){flex:1.85;background:rgba(56,189,248,.5)}
+.bmi-seg:nth-child(2){flex:6.4;background:rgba(6,214,160,.5)}
+.bmi-seg:nth-child(3){flex:4.9;background:rgba(245,158,11,.5)}
+.bmi-seg:nth-child(4){flex:5.85;background:rgba(239,68,68,.5)}
+.bmi-rows{display:flex;flex-direction:column;gap:7px;margin-top:10px}
+.bmi-row{display:flex;align-items:center;gap:12px;font-size:.83rem}
+.bmi-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.bmi-range{color:var(--text);font-weight:600;min-width:110px;font-family:var(--ff-mono);font-size:.8rem}
+.bmi-cat{color:var(--muted)}
+@media(max-width:980px){.guide-grid2{grid-template-columns:1fr}.guide-grid3{grid-template-columns:1fr 1fr}.guide-stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.guide-grid3{grid-template-columns:1fr}.guide-stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══ COOKIE BANNER ═══ */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(12,15,26,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border2);padding:18px max(20px,4vw);display:flex;align-items:center;gap:16px;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;box-shadow:0 -8px 40px rgba(0,0,0,.5)}
+#cookie-banner.show{transform:translateY(0)}
+.ck-ico{font-size:1.6rem;flex-shrink:0}
+.ck-text{flex:1;min-width:220px}
+.ck-text p{margin:0;font-size:.83rem;color:var(--muted);line-height:1.65}
+.ck-text p strong{color:var(--text)}
+.ck-text a{color:var(--sky);text-decoration:underline}
+.ck-btns{display:flex;gap:9px;flex-shrink:0;flex-wrap:wrap}
+.ck-accept{background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;box-shadow:0 4px 16px var(--red-glow)}
+.ck-accept:hover{background:#c9182c;transform:translateY(-1px)}
+.ck-decline{background:var(--glass2);color:var(--muted);border:1px solid var(--border2);padding:10px 18px;border-radius:50px;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+.ck-decline:hover{background:var(--glass);color:var(--text)}
+@media(max-width:500px){#cookie-banner{flex-direction:column;align-items:flex-start;gap:12px}.ck-btns{width:100%}.ck-accept,.ck-decline{flex:1;text-align:center}}
+</style>
+</head>
+<body>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="ck-ico">🍪</div>
+  <div class="ck-text">
+    <p><strong>We use cookies</strong> to improve your experience and show relevant ads. By clicking <em>Accept</em>, you agree to our <a href="privacy-policy.html">Privacy Policy</a> and use of cookies.</p>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-accept" onclick="setCookie('accept')">✓ Accept All</button>
+    <button class="ck-decline" onclick="setCookie('decline')">Decline</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo" onclick="topScroll(event)">
+    <div class="logo-mark"><img src="logo.png" alt="CalcHub Pro Logo"></div>
+    <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#calc-zone">Calculator</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-btn" onclick="goCalc('basic')">Try Free →</button>
+  <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Open Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <a href="#tools" onclick="closeDrawer()">Our Tools</a>
+  <a href="#calc-zone" onclick="closeDrawer()">Calculator</a>
+  <a href="about.html" onclick="closeDrawer()">About</a>
+  <a href="#faq" onclick="closeDrawer()">FAQ</a>
+  <a href="contact.html" onclick="closeDrawer()">Contact</a>
+  <a href="privacy-policy.html" onclick="closeDrawer()">Privacy</a>
+  <a href="#calc-zone" class="dcta" onclick="closeDrawer()">🧮 Open Calculator</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hg1"></div><div class="hg2"></div><div class="hg3"></div>
+    <div class="hero-grid"></div>
+    <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  </div>
+  <div class="hero-badge" role="status"><div class="live-dot" aria-hidden="true"></div>World's Best Free Calculator Suite</div>
+  <h1 class="hero-h1">
+    Your free calculator<br>
+    <span class="acc"><span class="typed-word" id="tword">for Everything</span></span>
+  </h1>
+  <p class="hero-p">5 powerful tools in one place — Basic, Scientific, Loan/EMI, BMI & Birthday Age Calculator. Zero signup. Works offline. Always free.</p>
+  <div class="hero-actions">
+    <button class="hero-cta" onclick="goCalc('basic')">🧮 Open Calculator</button>
+    <a href="#why" class="hero-ghost">Learn More ↓</a>
+  </div>
+  <div class="hero-pills" role="list">
+    <div class="pill" role="listitem" onclick="goCalc('basic')">🔢 Basic</div>
+    <div class="pill" role="listitem" onclick="goCalc('scientific')">🔬 Scientific</div>
+    <div class="pill" role="listitem" onclick="goCalc('emi')">💰 EMI/Loan</div>
+    <div class="pill" role="listitem" onclick="goCalc('bmi')">💪 BMI</div>
+    <div class="pill" role="listitem" onclick="goCalc('birthday')">🎂 Birthday</div>
+  </div>
+</section>
+
+</div>
+<!-- TOOLS -->
+<section id="tools" aria-labelledby="tools-heading">
+<div class="tools-wrap">
+  <div class="tools-hdr reveal">
+    <div class="section-chip" aria-hidden="true">✦ Our Tools</div>
+    <h2 class="sec-h" id="tools-heading">5 Calculators. <em>One Place.</em></h2>
+    <p class="sec-p">Click any tool to jump straight to that calculator — no page reload, instant results.</p>
+  </div>
+  <div class="tgrid">
+    <div class="tc big" onclick="goCalc('basic')" role="button" tabindex="0" aria-label="Open Basic Calculator">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div class="tc-ico" aria-hidden="true">🔢</div>
+          <div class="tc-name">Basic Calculator</div>
+          <div class="tc-desc">Fast arithmetic for everyday use. Full keyboard support, percentage, backspace. Results in real time.</div>
+          <div class="tc-tags"><span class="tc-tag">+−×÷</span><span class="tc-tag">Keyboard</span><span class="tc-tag">Instant</span><span class="tc-tag">Offline</span></div>
+        </div>
+        <div class="tc-bigico" aria-hidden="true">🔢</div>
+      </div>
+    </div>
+    <div class="tc" onclick="goCalc('scientific')" role="button" tabindex="0" aria-label="Open Scientific Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico" aria-hidden="true">🔬</div>
+      <div class="tc-name">Scientific</div>
+      <div class="tc-desc">sin, cos, tan, log, ln, √, x², xʸ, n!, π, e — built for STEM, students and engineers.</div>
+      <div class="tc-tags"><span class="tc-tag">Trig</span><span class="tc-tag">Logarithm</span><span class="tc-tag">Factorial</span></div>
+    </div>
+    <div class="tc" onclick="goCalc('emi')" role="button" tabindex="0" aria-label="Open EMI Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico" aria-hidden="true">💰</div>
+      <div class="tc-name">EMI / Loan</div>
+      <div class="tc-desc">Monthly EMI, total interest & total payment. Ideal for home, car and personal loans.</div>
+      <div class="tc-tags"><span class="tc-tag">Home Loan</span><span class="tc-tag">Car Loan</span><span class="tc-tag">Interest</span></div>
+    </div>
+    <div class="tc" onclick="goCalc('bmi')" role="button" tabindex="0" aria-label="Open BMI Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico" aria-hidden="true">💪</div>
+      <div class="tc-name">BMI Calculator</div>
+      <div class="tc-desc">Body Mass Index with WHO health category. Covers Underweight, Normal, Overweight and Obese ranges.</div>
+      <div class="tc-tags"><span class="tc-tag">WHO</span><span class="tc-tag">Health</span><span class="tc-tag">Fitness</span></div>
+    </div>
+    <div class="tc" onclick="goCalc('birthday')" role="button" tabindex="0" aria-label="Open Birthday Age Calculator">
+      <span class="tc-arr" aria-hidden="true">↗</span>
+      <div class="tc-ico" aria-hidden="true">🎂</div>
+      <div class="tc-name">Birthday / Age</div>
+      <div class="tc-desc">Exact age in years, months & days. Next birthday countdown. Day of week born. Zodiac sign.</div>
+      <div class="tc-tags"><span class="tc-tag">Age</span><span class="tc-tag">Countdown</span><span class="tc-tag">Zodiac</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band" aria-label="Key statistics">
+  <div class="stats-inner">
+    <div class="reveal"><span class="stat-n">5<span class="r">+</span></span><span class="stat-l">Free Tools</span></div>
+    <div class="reveal"><span class="stat-n">100<span class="r">%</span></span><span class="stat-l">Free Forever</span></div>
+    <div class="reveal"><span class="stat-n">0</span><span class="stat-l">Data Stored</span></div>
+    <div class="reveal"><span class="stat-n">10<span class="r">+</span></span><span class="stat-l">Currencies</span></div>
+  </div>
+</div>
+
+<!-- ═══════ ALL CALCULATORS ═══════ -->
+<div id="calc-zone" role="main">
+  <div class="calc-head">
+    <h2>🧮 All-in-One Calculator Suite</h2>
+    <p>Select a calculator below and start calculating instantly — no page reload</p>
+  </div>
+  <div class="calc-wrap">
+    <div class="tabs" role="tablist" aria-label="Calculator types">
+      <button class="tab on" onclick="switchTab(event,'basic')" role="tab" aria-selected="true" aria-controls="basic" id="tab-basic">🔢 Basic</button>
+      <button class="tab" onclick="switchTab(event,'scientific')" role="tab" aria-selected="false" aria-controls="scientific" id="tab-scientific">🔬 Scientific</button>
+      <button class="tab" onclick="switchTab(event,'emi')" role="tab" aria-selected="false" aria-controls="emi" id="tab-emi">💰 EMI</button>
+      <button class="tab" onclick="switchTab(event,'bmi')" role="tab" aria-selected="false" aria-controls="bmi" id="tab-bmi">💪 BMI</button>
+      <button class="tab" onclick="switchTab(event,'birthday')" role="tab" aria-selected="false" aria-controls="birthday" id="tab-birthday">🎂 Birthday</button>
+    </div>
+
+    <!-- BASIC -->
+    <div class="panel on" id="basic" role="tabpanel" aria-labelledby="tab-basic">
+      <div class="panel-inner">
+        <h2>Basic Calculator</h2>
+        <div class="calc-screen">
+          <div class="calc-expr" id="b-expr" aria-live="polite"></div>
+          <input class="calc-disp" id="b-disp" value="0" readonly aria-label="Calculator display">
+        </div>
+        <div class="calc-grid">
+          <button class="cb cl" onclick="bClear()">C</button>
+          <button class="cb bk" onclick="bBack()">⌫</button>
+          <button class="cb op" onclick="bApp('%')">%</button>
+          <button class="cb op" onclick="bApp('÷')">÷</button>
+          <button class="cb" onclick="bApp('7')">7</button>
+          <button class="cb" onclick="bApp('8')">8</button>
+          <button class="cb" onclick="bApp('9')">9</button>
+          <button class="cb op" onclick="bApp('×')">×</button>
+          <button class="cb" onclick="bApp('4')">4</button>
+          <button class="cb" onclick="bApp('5')">5</button>
+          <button class="cb" onclick="bApp('6')">6</button>
+          <button class="cb op" onclick="bApp('−')">−</button>
+          <button class="cb" onclick="bApp('1')">1</button>
+          <button class="cb" onclick="bApp('2')">2</button>
+          <button class="cb" onclick="bApp('3')">3</button>
+          <button class="cb op" onclick="bApp('+')">+</button>
+          <button class="cb" onclick="bApp('0')">0</button>
+          <button class="cb" onclick="bApp('.')">.</button>
+          <button class="cb eq" onclick="bCalc()">=</button>
+        </div>
+        <div id="b-res" class="result" style="display:none" aria-live="polite"></div>
+      </div>
+      <div class="calc-info">
+        <h3>🔢 Basic Calculator — How to Use</h3>
+        <p>This basic calculator handles all standard arithmetic operations with full keyboard support. You can type numbers and operators directly on your keyboard, press <strong>Enter</strong> to get the result, <strong>Escape</strong> to clear, and <strong>Backspace</strong> to delete the last character.</p>
+        <ul>
+          <li><strong>%</strong> — Calculates percentage of a number (e.g. 200 % gives 2)</li>
+          <li><strong>÷ × − +</strong> — Division, multiplication, subtraction, addition</li>
+          <li>Results are shown instantly in the display above the buttons</li>
+          <li>Works completely offline once the page is loaded</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SCIENTIFIC -->
+    <div class="panel" id="scientific" role="tabpanel" aria-labelledby="tab-scientific">
+      <div class="panel-inner">
+        <h2>Scientific Calculator</h2>
+        <div class="calc-screen">
+          <div class="calc-expr" id="s-expr" aria-live="polite"></div>
+          <input class="calc-disp" id="s-disp" value="0" readonly aria-label="Scientific calculator display">
+        </div>
+        <div class="calc-grid" style="grid-template-columns:repeat(5,1fr)">
+          <button class="cb fn" onclick="sApp('sin(')">sin</button>
+          <button class="cb fn" onclick="sApp('cos(')">cos</button>
+          <button class="cb fn" onclick="sApp('tan(')">tan</button>
+          <button class="cb fn" onclick="sApp('log(')">log</button>
+          <button class="cb fn" onclick="sApp('ln(')">ln</button>
+          <button class="cb fn" onclick="sApp('sqrt(')">√x</button>
+          <button class="cb fn" onclick="sApp('^2')">x²</button>
+          <button class="cb fn" onclick="sApp('^3')">x³</button>
+          <button class="cb fn" onclick="sApp('^(')">xʸ</button>
+          <button class="cb fn" onclick="sApp('!')">n!</button>
+          <button class="cb fn" onclick="sApp('pi')">π</button>
+          <button class="cb fn" onclick="sApp('e')">e</button>
+          <button class="cb fn" onclick="sApp('(')">(</button>
+          <button class="cb fn" onclick="sApp(')')">)</button>
+          <button class="cb bk" onclick="sBack()">⌫</button>
+          <button class="cb cl" onclick="sClear()">C</button>
+          <button class="cb" onclick="sApp('7')">7</button>
+          <button class="cb" onclick="sApp('8')">8</button>
+          <button class="cb" onclick="sApp('9')">9</button>
+          <button class="cb op" onclick="sApp('÷')">÷</button>
+          <button class="cb op" onclick="sApp('+/-')" style="font-size:.85rem">+/−</button>
+          <button class="cb" onclick="sApp('4')">4</button>
+          <button class="cb" onclick="sApp('5')">5</button>
+          <button class="cb" onclick="sApp('6')">6</button>
+          <button class="cb op" onclick="sApp('×')">×</button>
+          <button class="cb op" onclick="sApp('%')">%</button>
+          <button class="cb" onclick="sApp('1')">1</button>
+          <button class="cb" onclick="sApp('2')">2</button>
+          <button class="cb" onclick="sApp('3')">3</button>
+          <button class="cb op" onclick="sApp('−')">−</button>
+          <button class="cb" onclick="sApp('0')">0</button>
+          <button class="cb" onclick="sApp('.')">.</button>
+          <button class="cb" onclick="sApp('+')" style="grid-column:span 2">+</button>
+          <button class="cb eq" onclick="sCalc()">=</button>
+        </div>
+        <div id="s-res" class="result" style="display:none" aria-live="polite"></div>
+      </div>
+      <div class="calc-info">
+        <h3>🔬 Scientific Calculator — How to Use</h3>
+        <p>This scientific calculator supports advanced mathematical functions used in physics, engineering, statistics and higher mathematics. All trigonometric functions use <strong>degrees</strong> by default.</p>
+        <ul>
+          <li><strong>sin, cos, tan</strong> — Trigonometric functions (input degrees)</li>
+          <li><strong>log</strong> — Base-10 logarithm &nbsp;|&nbsp; <strong>ln</strong> — Natural logarithm (base e)</li>
+          <li><strong>√x</strong> — Square root &nbsp;|&nbsp; <strong>x²</strong> — Square &nbsp;|&nbsp; <strong>x³</strong> — Cube &nbsp;|&nbsp; <strong>xʸ</strong> — Power</li>
+          <li><strong>n!</strong> — Factorial &nbsp;|&nbsp; <strong>π</strong> ≈ 3.14159 &nbsp;|&nbsp; <strong>e</strong> ≈ 2.71828</li>
+          <li>Parentheses are supported for complex grouped expressions</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EMI -->
+    <div class="panel" id="emi" role="tabpanel" aria-labelledby="tab-emi">
+      <div class="panel-inner">
+        <h2>EMI / Loan Calculator</h2>
+        <div class="field">
+          <label for="lamt">Loan Amount (₹)</label>
+          <input type="number" id="lamt" min="1" step="1000" value="1000000" placeholder="e.g. 500000">
+          <div class="ferr" id="e-lamt">Enter a valid positive loan amount.</div>
+        </div>
+        <div class="field">
+          <label for="lrate">Annual Interest Rate (%)</label>
+          <input type="number" id="lrate" min="0.01" max="100" step="0.1" value="9.5" placeholder="e.g. 9.5">
+          <div class="ferr" id="e-lrate">Enter a rate between 0.01% and 100%.</div>
+        </div>
+        <div class="field">
+          <label for="ltenure">Loan Tenure (Years)</label>
+          <input type="number" id="ltenure" min="1" max="30" step="1" value="5" placeholder="e.g. 5">
+          <div class="ferr" id="e-ltenure">Enter tenure between 1 and 30 years.</div>
+        </div>
+        <button type="button" class="calc-submit" onclick="calcEMI()">Calculate EMI →</button>
+        <div id="emi-res" class="result" style="display:none" aria-live="polite"></div>
+      </div>
+      <div class="calc-info">
+        <h3>💰 How EMI Is Calculated</h3>
+        <p><strong>Formula: EMI = P × r × (1+r)ⁿ ÷ ((1+r)ⁿ − 1)</strong></p>
+        <ul>
+          <li><strong>P</strong> = Principal loan amount</li>
+          <li><strong>r</strong> = Monthly interest rate (Annual rate ÷ 12 ÷ 100)</li>
+          <li><strong>n</strong> = Total number of monthly installments (Years × 12)</li>
+          <li>Results are indicative estimates — actual bank EMI may include processing fees</li>
+          <li>Use this tool to compare different loan amounts, tenures and interest rates before approaching a bank</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BMI -->
+    <div class="panel" id="bmi" role="tabpanel" aria-labelledby="tab-bmi">
+      <div class="panel-inner">
+        <h2>BMI Calculator</h2>
+        <div class="field">
+          <label for="ht">Height (cm)</label>
+          <input type="number" id="ht" min="50" max="300" step="1" value="170" placeholder="e.g. 170">
+          <div class="ferr" id="e-ht">Enter height between 50 and 300 cm.</div>
+        </div>
+        <div class="field">
+          <label for="wt">Weight (kg)</label>
+          <input type="number" id="wt" min="2" max="600" step="0.5" value="70" placeholder="e.g. 70">
+          <div class="ferr" id="e-wt">Enter weight between 2 and 600 kg.</div>
+        </div>
+        <button type="button" class="calc-submit" onclick="calcBMI()">Calculate BMI →</button>
+        <div id="bmi-res" class="result" style="display:none" aria-live="polite"></div>
+      </div>
+      <div class="calc-info">
+        <h3>💪 Understanding Your BMI</h3>
+        <p>BMI (Body Mass Index) is calculated using the formula: <strong>BMI = Weight (kg) ÷ Height² (m²)</strong>. It is a widely used screening tool, though not a diagnostic measure.</p>
+        <ul>
+          <li><strong>Below 18.5</strong> — Underweight: May indicate nutritional deficiency</li>
+          <li><strong>18.5 – 24.9</strong> — Normal weight: Healthy range per WHO guidelines</li>
+          <li><strong>25.0 – 29.9</strong> — Overweight: Consider dietary and lifestyle changes</li>
+          <li><strong>30.0 and above</strong> — Obese: Consult a healthcare professional</li>
+          <li>BMI does not account for muscle mass, bone density or body composition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BIRTHDAY -->
+    <div class="panel" id="birthday" role="tabpanel" aria-labelledby="tab-birthday">
+      <div class="panel-inner">
+        <h2>Birthday / Age Calculator</h2>
+        <div class="field">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" aria-label="Enter your date of birth">
+          <div class="ferr" id="e-dob">Please enter a valid date of birth.</div>
+        </div>
+        <div class="field">
+          <label for="calc-date">Calculate Age As Of</label>
+          <input type="date" id="calc-date" aria-label="Calculate age as of this date">
+        </div>
+        <button class="calc-submit" onclick="calcBirthday()">Calculate Age →</button>
+        <div id="bday-res" class="result" style="display:none" aria-live="polite"></div>
+      </div>
+      <div class="calc-info">
+        <h3>🎂 What This Calculator Tells You</h3>
+        <p>Enter your date of birth to get a comprehensive breakdown of your age and birthday details. You can also set a custom "calculate as of" date to find someone's age on any past or future date.</p>
+        <ul>
+          <li><strong>Exact Age</strong> — Years, months and days to the exact day</li>
+          <li><strong>Total Days Lived</strong> — Your life in total days, weeks and months</li>
+          <li><strong>Day of Week</strong> — The exact weekday you were born on</li>
+          <li><strong>Zodiac Sign</strong> — Your Western astrological star sign</li>
+          <li><strong>Next Birthday</strong> — Days until your upcoming birthday</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY SECTION -->
+<section id="why" class="why-wrap" aria-labelledby="why-heading">
+  <div class="reveal">
+    <div class="section-chip" aria-hidden="true">✦ Why CalcHub Pro</div>
+    <h2 class="sec-h" id="why-heading">Built for<br><em>real people</em></h2>
+    <p class="sec-p">No bloat. No paywalls. No data collection. Just fast, accurate calculators that work anywhere.</p>
+    <div class="why-feats">
+      <div class="wf">
+        <div class="wf-ico" style="background:rgba(224,41,62,.12)" aria-hidden="true">⚡</div>
+        <div class="wf-text"><h4>Instant, No-Signup</h4><p>All five calculators work immediately, no account or registration needed.</p></div>
+      </div>
+      <div class="wf">
+        <div class="wf-ico" style="background:rgba(56,189,248,.1)" aria-hidden="true">📵</div>
+        <div class="wf-text"><h4>100% Offline-Ready</h4><p>Once loaded, every calculator works completely without an internet connection.</p></div>
+      </div>
+      <div class="wf">
+        <div class="wf-ico" style="background:rgba(6,214,160,.1)" aria-hidden="true">🔒</div>
+        <div class="wf-text"><h4>Zero Data Stored</h4><p>We never store, share or sell any of your input data. Your calculations stay on your device.</p></div>
+      </div>
+      <div class="wf">
+        <div class="wf-ico" style="background:rgba(167,139,250,.1)" aria-hidden="true">📱</div>
+        <div class="wf-text"><h4>Works on All Devices</h4><p>Fully responsive design works beautifully on mobile, tablet and desktop browsers.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="reveal" style="position:relative">
+    <div class="preview">
+      <div class="p-bar">
+        <div class="p-dot p-r"></div><div class="p-dot p-y"></div><div class="p-dot p-g"></div>
+        <div class="p-lbl">CALC HUB PRO</div>
+      </div>
+      <div class="p-screen">
+        <div class="p-expr">1,000,000 × 9.5% ÷ 12</div>
+        <div class="p-val">₹20,758</div>
+      </div>
+      <div class="p-btns">
+        <div class="pb">C</div><div class="pb">⌫</div><div class="pb po">%</div><div class="pb po">÷</div>
+        <div class="pb">7</div><div class="pb">8</div><div class="pb">9</div><div class="pb po">×</div>
+        <div class="pb">4</div><div class="pb">5</div><div class="pb">6</div><div class="pb po">−</div>
+        <div class="pb">1</div><div class="pb">2</div><div class="pe">= EMI</div>
+      </div>
+    </div>
+    <div class="ft1" aria-hidden="true">✓ Offline Ready</div>
+    <div class="ft2" aria-hidden="true">🔒 Zero Data Stored</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-wrap" aria-labelledby="how-heading">
+  <div class="how-inner">
+    <div class="section-chip reveal" aria-hidden="true">✦ How It Works</div>
+    <h2 class="sec-h reveal" id="how-heading">Three steps to <em>your answer</em></h2>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n" aria-hidden="true">1</div>
+        <h3>Choose Your Calculator</h3>
+        <p>Pick from Basic, Scientific, EMI, BMI or Birthday — or click any tool card above to jump directly to the right calculator.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-n" aria-hidden="true">2</div>
+        <h3>Enter Your Numbers</h3>
+        <p>Type or tap your values. Use the on-screen buttons or your keyboard. All inputs are validated with helpful error messages.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-n" aria-hidden="true">3</div>
+        <h3>Get Instant Results</h3>
+        <p>Results appear immediately below the inputs — no waiting, no loading screens. Copy them or calculate again instantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTENT / SEO SECTION -->
+<section class="content-section" aria-labelledby="content-heading">
+  <div class="content-inner">
+    <div class="section-chip reveal" aria-hidden="true">✦ Calculator Guides</div>
+    <h2 id="content-heading" class="reveal">Everything You Need to Know About Our Free Calculators</h2>
+    <p>CalcHub Pro brings together five of the most commonly needed calculators in a single, fast-loading web page. Whether you are a student solving equations, a professional estimating a home loan EMI, a fitness enthusiast tracking your BMI, or simply curious about how old you are in days — you will find a reliable, accurate tool here, completely free of charge.</p>
+
+    <div class="content-grid reveal">
+      <div class="cg-card">
+        <h4>🔢 Basic & Scientific Calculators</h4>
+        <p>Our basic calculator handles all everyday arithmetic operations including addition, subtraction, multiplication, division, and percentage. The scientific calculator extends this with trigonometric functions, logarithms, factorials, square roots, and mathematical constants like π and e — everything a student or engineer needs for coursework and professional work.</p>
+      </div>
+      <div class="cg-card">
+        <h4>💰 EMI / Loan Calculator</h4>
+        <p>Understanding your loan repayments before signing a bank agreement is critical. Our EMI calculator uses the standard reducing balance formula to show your monthly EMI, total interest payable, and total payment. This helps you compare loan offers from different banks and plan your finances more effectively — whether it is a home loan, car loan, or personal loan.</p>
+      </div>
+      <div class="cg-card">
+        <h4>💪 BMI Calculator</h4>
+        <p>The Body Mass Index calculator gives you an instant health screening based on WHO guidelines. Enter your height in centimeters and weight in kilograms to receive your BMI score and its corresponding health category. While BMI is a widely used tool, remember it is a screening indicator and does not account for muscle mass, bone density, or body fat distribution.</p>
+      </div>
+      <div class="cg-card">
+        <h4>🎂 Birthday / Age Calculator</h4>
+        <p>More than just an age calculator, this tool tells you exactly how many days, weeks and months you have lived, the day of the week you were born on, your Western zodiac sign, and the number of days until your next birthday. It also supports custom date inputs — useful for finding someone's age on a specific historical or future date.</p>
+      </div>
+    </div>
+
+    <h3>Why Use CalcHub Pro Instead of a Physical Calculator?</h3>
+    <p>A traditional calculator requires you to carry a physical device, replace batteries, and remember which button does what. CalcHub Pro lives in your browser and is accessible on any device the moment you type the URL. The scientific calculator alone replaces an expensive graphing calculator for most student and professional use cases.</p>
+    <p>Beyond convenience, our calculators are <strong>free forever</strong>. No subscription, no premium tier, no signup. The EMI and BMI tools are especially valuable because they turn complex financial and health formulas into simple, guided inputs that anyone can use — even without a math background.</p>
+
+    <h3>Privacy and Data Security</h3>
+    <p>All calculations on CalcHub Pro are performed <strong>entirely in your browser</strong>. We do not send your inputs to any server, we do not store calculation history, and we do not share data with third parties. Our <a href="privacy-policy.html" style="color:var(--sky);text-decoration:underline">Privacy Policy</a> explains our data practices in full. Your numbers are your business.</p>
+
+    <h3>Who Uses CalcHub Pro?</h3>
+    <p>CalcHub Pro is designed for everyone — from a Class 10 student preparing for board exams to a senior financial analyst planning loan portfolios. Here is how different groups use our tools:</p>
+    <ul>
+      <li><strong>Students &amp; Teachers:</strong> The scientific calculator is ideal for solving trigonometry, logarithm, and algebra problems without needing an expensive physical calculator. Teachers often use it to demonstrate live calculations during online classes.</li>
+      <li><strong>Home Buyers &amp; Borrowers:</strong> Anyone planning to take a home loan, car loan, or personal loan can use our EMI calculator to compare different banks' interest rates and tenure options side by side before making a commitment.</li>
+      <li><strong>Health-Conscious Individuals:</strong> Fitness enthusiasts, gym trainers, and dietitians use the BMI calculator as a quick first check before proceeding to more detailed body composition analysis.</li>
+      <li><strong>HR Professionals &amp; Event Planners:</strong> The Birthday / Age Calculator helps HR teams quickly verify employee ages for retirement planning, and event planners use it to determine milestone birthday celebrations.</li>
+      <li><strong>Freelancers &amp; Small Business Owners:</strong> The basic calculator's keyboard support and large display make it faster than using a physical calculator for invoicing, billing, and quick arithmetic throughout the workday.</li>
+    </ul>
+
+    <h3>How We Ensure Calculation Accuracy</h3>
+    <p>Every formula used in CalcHub Pro follows globally accepted mathematical and financial standards. The EMI formula adheres to the <strong>reducing balance method</strong> used by RBI-regulated banks in India. The BMI formula is the standard <strong>Quetelet Index</strong> recommended by the World Health Organization. Scientific calculations are powered by the open-source <strong>math.js</strong> library, which provides precision up to 64-bit floating point arithmetic — the same standard used in professional engineering software.</p>
+    <p>We regularly test each calculator against known reference values from financial institutions, health organizations, and academic textbooks to ensure our results match real-world expectations. If you ever find a discrepancy, we welcome your feedback through our <a href="contact.html" style="color:var(--sky);text-decoration:underline">Contact page</a>.</p>
+
+    <h3>Accessibility and Device Compatibility</h3>
+    <p>CalcHub Pro is built with accessibility in mind. All interactive elements include proper ARIA labels, keyboard navigation support, and sufficient color contrast ratios that meet WCAG 2.1 AA standards. The layout is fully responsive and has been tested across Chrome, Firefox, Safari, Edge, and Opera on both desktop and mobile devices. Users with screen readers will find all calculator inputs and outputs properly announced.</p>
+    <p>The entire page is a single HTML file with no external framework dependencies (except the math.js library for scientific calculations), which means it loads in under 2 seconds even on slower mobile connections and continues to work after the initial load without any internet connection.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section" aria-labelledby="faq-heading">
+  <div class="section-chip reveal" aria-hidden="true">✦ FAQ</div>
+  <h2 class="sec-h reveal" id="faq-heading">Frequently Asked <em>Questions</em></h2>
+  <br>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is CalcHub Pro completely free? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Yes, CalcHub Pro is 100% free forever. All five calculators — Basic, Scientific, EMI, BMI, and Birthday Age — are available without any signup, subscription, or hidden charges. We are funded by non-intrusive advertising, not by charging users.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How accurate is the EMI calculator? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Our EMI calculator uses the standard reducing-balance formula: EMI = P × r × (1+r)ⁿ ÷ ((1+r)ⁿ − 1). The results closely match what most Indian banks compute. However, actual bank EMIs may differ slightly due to processing fees, rounding rules, or different interest computation methods. Always confirm with your bank before signing any loan agreement.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Does the calculator work offline? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Yes. Once the CalcHub Pro page has fully loaded in your browser, all five calculators work completely offline without any internet connection. This makes it ideal for use in areas with poor connectivity, in classrooms without Wi-Fi, or on flights.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is a healthy BMI range? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>According to World Health Organization (WHO) guidelines, a BMI between 18.5 and 24.9 is considered the normal, healthy range for most adults. BMI below 18.5 indicates underweight, 25–29.9 is overweight, and 30 or above is classified as obese. BMI is a useful screening tool but should not be used as a sole diagnostic measure — always consult a healthcare professional for personalized advice.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can I use the scientific calculator for engineering exams? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Yes, our scientific calculator supports all functions required in most engineering and science curricula: trigonometric functions (sin, cos, tan in degrees), logarithms (log base 10, natural log), square roots, powers, factorials, and the mathematical constants π and e. It is suitable for homework, coursework, and self-study — though most formal exam venues prohibit internet-connected devices.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Is my data stored anywhere? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>No. All calculations are performed entirely in your browser using JavaScript. We do not send any of your inputs to our servers, we do not log your calculations, and we do not use cookies for tracking. Please read our full <a href="privacy-policy.html" style="color:var(--sky)">Privacy Policy</a> for more details.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I calculate age on a specific date? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Open the Birthday / Age Calculator tab, enter the person's date of birth in the first field, then change the "Calculate Age As Of" date to the specific date you want. Click "Calculate Age" and you will see the exact age in years, months and days as of that date.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is the difference between flat rate and reducing balance EMI? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>In a <strong>flat rate</strong> loan, interest is calculated on the full original principal for the entire loan period — so even as you repay the loan, interest does not decrease. In a <strong>reducing balance</strong> loan (which most Indian banks use and which our EMI calculator uses), interest is charged only on the outstanding principal. This means every EMI you pay reduces the principal, and the interest component of each subsequent EMI decreases over time. The reducing balance method results in significantly lower total interest, which is why it is more borrower-friendly.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How can I reduce my home loan EMI? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>There are four main ways to reduce your EMI: (1) <strong>Increase your down payment</strong> — a larger down payment means a smaller principal, which directly reduces your EMI. (2) <strong>Negotiate a lower interest rate</strong> — even a 0.5% reduction can save lakhs over a 20-year tenure. (3) <strong>Extend the loan tenure</strong> — a longer tenure reduces the monthly payment, though you will pay more total interest over time. (4) <strong>Make part-prepayments</strong> — paying extra lump sums towards your principal reduces the outstanding balance and future interest. Use our EMI calculator to model each scenario before deciding.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is a healthy BMI for Indian adults? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>While the WHO's global standard considers 18.5–24.9 as normal BMI, research published by the Indian Council of Medical Research (ICMR) and endorsed by several Indian health bodies suggests that <strong>Asian Indians may have higher metabolic risk at lower BMI values</strong>. Many Indian health practitioners use a slightly adjusted threshold of 18.5–22.9 as the ideal BMI range for Indians, with 23–24.9 considered at-risk, and 25 or above as overweight for South Asians. Our calculator displays the standard WHO categories, and we recommend consulting your doctor for personalized health assessment.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">How do I use the scientific calculator for trigonometry? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Our scientific calculator uses degrees for trigonometric functions. To find sin(30°), simply click the <strong>sin</strong> button, type <strong>30</strong>, close the bracket by pressing <strong>)</strong>, and hit <strong>=</strong>. For compound expressions like sin(45) + cos(60), enter the full expression step by step. The calculator supports parentheses, so you can nest functions — for example sin(45)^2 + cos(45)^2 should always equal 1. This is a great way to verify your trigonometric identities.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is factorial (n!) and what is it used for? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Factorial of a number n (written as n!) is the product of all positive integers from 1 to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120. Factorials are used extensively in <strong>permutations and combinations</strong> (counting how many ways objects can be arranged or selected), <strong>probability theory</strong>, <strong>binomial expansions</strong>, and <strong>calculus</strong> (Taylor series). On our scientific calculator, type the number first and then press the <strong>n!</strong> button to compute its factorial. Note that factorials grow very rapidly, so large inputs (above 170) may produce an overflow result.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can I calculate compound interest using CalcHub Pro? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>Yes, you can calculate compound interest using the scientific calculator. The compound interest formula is: <strong>A = P × (1 + r/n)^(nt)</strong>, where P is the principal, r is the annual interest rate (as a decimal), n is the number of times interest is compounded per year, and t is the number of years. For example, to find the amount on ₹1,00,000 at 8% annual interest compounded quarterly for 5 years, you would calculate: 100000 × (1 + 0.08/4)^(4×5) using the xʸ power function. The EMI calculator covers loan repayment scenarios specifically, while the scientific calculator handles general compound interest and growth calculations.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What is the zodiac sign calculation based on? <span class="faq-icon" aria-hidden="true">+</span></button>
+    <div class="faq-a" role="region"><p>The zodiac sign shown in our Birthday Calculator is based on the <strong>Western (tropical) zodiac system</strong>, which assigns signs based on the position of the sun at the time of birth, divided into 12 equal segments of 30 days each starting from the vernal equinox. The 12 signs are: Aries (Mar 21 – Apr 19), Taurus (Apr 20 – May 20), Gemini (May 21 – Jun 20), Cancer (Jun 21 – Jul 22), Leo (Jul 23 – Aug 22), Virgo (Aug 23 – Sep 22), Libra (Sep 23 – Oct 22), Scorpio (Oct 23 – Nov 21), Sagittarius (Nov 22 – Dec 21), Capricorn (Dec 22 – Jan 19), Aquarius (Jan 20 – Feb 18), and Pisces (Feb 19 – Mar 20). Note that this is different from the Vedic (sidereal) zodiac system used in Indian astrology.</p></div>
+  </div>
+</section>
+
+<!-- ═══ EMI & LOAN PLANNING GUIDE ═══ -->
+<section class="guide-section" id="emi-guide" aria-labelledby="emi-guide-heading">
+  <div class="guide-inner">
+    <div class="guide-chip reveal">💰 Financial Guide</div>
+    <h2 class="reveal" id="emi-guide-heading">Complete <em>EMI &amp; Loan Planning</em> Guide for India</h2>
+    <p class="guide-lead reveal">Before you sign any loan agreement, understanding how EMI works can save you lakhs of rupees in interest. This guide explains everything you need to know about loan EMIs, types of loans, and smart borrowing strategies.</p>
+
+    <h3>What Is EMI and How Does It Work?</h3>
+    <p>EMI stands for <strong>Equated Monthly Instalment</strong> — it is a fixed amount you pay your lender every month on a specific date until your loan is fully repaid. Each EMI payment has two components: a <strong>principal component</strong> (which reduces your outstanding loan balance) and an <strong>interest component</strong> (which is the cost of borrowing). In the early months of a loan, a larger portion of your EMI goes towards interest. As the loan matures, the ratio shifts and more of each payment goes towards reducing the principal.</p>
+    <p>This is called the <strong>reducing balance method</strong> and it is the standard used by all scheduled commercial banks in India as per RBI guidelines. Our EMI calculator uses this same method to give you accurate, bank-comparable estimates.</p>
+
+    <div class="formula-box">EMI = P × r × (1 + r)ⁿ ÷ [(1 + r)ⁿ − 1]<span>P = Principal Loan Amount &nbsp;|&nbsp; r = Monthly Interest Rate (Annual Rate ÷ 12 ÷ 100) &nbsp;|&nbsp; n = Total Months (Years × 12)</span></div>
+
+    <h3>Types of Loans and Their Typical Interest Rates</h3>
+    <p>Different loan products in India carry different interest rates depending on their purpose, risk profile, and tenure. Understanding these differences helps you borrow at the lowest possible cost:</p>
+
+    <div class="comp-table-wrap">
+      <table class="comp-table" aria-label="Loan types comparison">
+        <thead>
+          <tr><th>Loan Type</th><th>Typical Rate (2024)</th><th>Max Tenure</th><th>Tax Benefit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Home Loan</strong></td><td class="good">8.5% – 10.5%</td><td>30 years</td><td class="good">Yes (Sec 24, 80C)</td></tr>
+          <tr><td><strong>Car Loan</strong></td><td class="mid">9.0% – 12.5%</td><td>7 years</td><td class="bad">No</td></tr>
+          <tr><td><strong>Personal Loan</strong></td><td class="bad">11% – 24%</td><td>5 years</td><td class="bad">No</td></tr>
+          <tr><td><strong>Education Loan</strong></td><td class="mid">9.5% – 13%</td><td>15 years</td><td class="good">Yes (Sec 80E)</td></tr>
+          <tr><td><strong>Gold Loan</strong></td><td class="good">8% – 14%</td><td>3 years</td><td class="bad">No</td></tr>
+          <tr><td><strong>Loan Against Property</strong></td><td class="mid">9% – 13%</td><td>20 years</td><td class="mid">Partial</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="highlight-box warn">
+      <p><strong>Important:</strong> Always compare the <em>Annual Percentage Rate (APR)</em>, not just the stated interest rate. APR includes processing fees, insurance premiums, and other charges that can significantly affect your true borrowing cost.</p>
+    </div>
+
+    <h3>5 Smart Strategies to Reduce Your Total Loan Cost</h3>
+    <div class="guide-grid2">
+      <div class="guide-card">
+        <h4>📊 Strategy 1: Make a Larger Down Payment</h4>
+        <p>Every rupee you pay upfront reduces your principal. On a ₹60 lakh home loan at 9% for 20 years, increasing your down payment by just ₹5 lakh reduces your EMI by approximately ₹4,500 per month and saves over ₹10 lakh in interest over the loan lifetime.</p>
+      </div>
+      <div class="guide-card">
+        <h4>🔄 Strategy 2: Part-Prepay Whenever Possible</h4>
+        <p>Most floating-rate home loans allow part-prepayments without penalty (RBI rule). Paying even one extra EMI per year can cut your 20-year loan down to 17–18 years and save significant interest. Use any bonus, incentive, or windfall to prepay the principal.</p>
+      </div>
+      <div class="guide-card">
+        <h4>📉 Strategy 3: Negotiate Your Interest Rate</h4>
+        <p>If you have a good credit score (750+), salary history, and stable employment, you can negotiate with banks for a lower rate. Many borrowers successfully get 0.25% to 0.5% reductions just by asking. On a large loan, this translates to lakhs over the tenure.</p>
+      </div>
+      <div class="guide-card">
+        <h4>🔃 Strategy 4: Consider Balance Transfer</h4>
+        <p>If your current bank's rate is significantly higher than what other banks are offering, you can transfer your outstanding loan balance to a new lender at a lower rate. Factor in the processing fee (typically 0.5–1% of outstanding balance) when calculating savings.</p>
+      </div>
+    </div>
+
+    <h3>Understanding Your EMI Calculation: A Worked Example</h3>
+    <p>Let us say you are taking a home loan of <strong>₹40,00,000</strong> at an annual interest rate of <strong>9%</strong> for a tenure of <strong>20 years</strong> (240 months).</p>
+    <ul>
+      <li>Monthly interest rate (r) = 9 ÷ 12 ÷ 100 = <strong>0.0075</strong></li>
+      <li>Number of months (n) = 20 × 12 = <strong>240</strong></li>
+      <li>EMI = 40,00,000 × 0.0075 × (1.0075)²⁴⁰ ÷ [(1.0075)²⁴⁰ − 1]</li>
+      <li>Monthly EMI ≈ <strong>₹35,989</strong></li>
+      <li>Total payment over 20 years = ₹35,989 × 240 = <strong>₹86,37,360</strong></li>
+      <li>Total interest paid = ₹86,37,360 − ₹40,00,000 = <strong>₹46,37,360</strong></li>
+    </ul>
+    <p>This means you will pay almost 116% of your original loan amount as interest alone over 20 years. Try this yourself in our <a href="#calc-zone" onclick="goCalc('emi')" style="color:var(--sky);text-decoration:underline">EMI Calculator</a> and experiment with different rates and tenures to see the impact instantly.</p>
+
+    <div class="highlight-box ok">
+      <p><strong>Pro tip:</strong> Reducing the tenure from 20 years to 15 years on the above example would increase the EMI by about ₹6,000 per month but save you over ₹15 lakh in interest. Use our calculator to find the ideal balance between affordable EMI and minimum total cost.</p>
+    </div>
+
+    <h3>What Affects Your Loan Eligibility?</h3>
+    <p>Banks determine your loan eligibility based on several factors beyond just your income. Understanding these helps you improve your chances of approval and get the best rates:</p>
+    <ul>
+      <li><strong>CIBIL / Credit Score:</strong> A score of 750 or above is considered excellent and qualifies you for the lowest interest rates. Scores below 650 may result in rejection or higher rates.</li>
+      <li><strong>Debt-to-Income Ratio:</strong> Most banks prefer that your total EMI obligations (including the new loan) do not exceed 40–50% of your monthly take-home income.</li>
+      <li><strong>Employment Stability:</strong> Salaried employees with 2+ years at the same organisation are preferred. Self-employed individuals need at least 2–3 years of stable income tax returns.</li>
+      <li><strong>Age at Loan Maturity:</strong> Lenders prefer that the loan is repaid before you turn 60–65. This limits the maximum tenure available to older borrowers.</li>
+      <li><strong>Property Value &amp; Type:</strong> For home loans, banks typically fund 75–90% of the property's market value (Loan-to-Value ratio), with the rest as your down payment.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══ BMI & HEALTH GUIDE ═══ -->
+<section class="guide-section alt" id="bmi-guide" aria-labelledby="bmi-guide-heading">
+  <div class="guide-inner">
+    <div class="guide-chip reveal">💪 Health &amp; Wellness Guide</div>
+    <h2 class="reveal" id="bmi-guide-heading">Understanding Your <em>BMI &amp; Body Health</em></h2>
+    <p class="guide-lead reveal">Your BMI is one of the most widely used health screening tools in the world. This guide explains what your BMI means, its limitations, and the practical steps you can take to reach and maintain a healthy weight.</p>
+
+    <h3>What Is Body Mass Index (BMI)?</h3>
+    <p>Body Mass Index is a numerical value derived from a person's weight and height. It was originally developed by Belgian mathematician Adolphe Quetelet in the 1830s and has since been adopted by the World Health Organization as a standard population-level health screening tool. The formula is deceptively simple: <strong>BMI = Weight in kg ÷ (Height in metres)²</strong>.</p>
+    <p>For example, if you weigh 70 kg and are 1.70 m tall, your BMI = 70 ÷ (1.70 × 1.70) = 70 ÷ 2.89 = <strong>24.2</strong>, which falls in the Normal Weight range.</p>
+
+    <div class="bmi-scale">
+      <h4>📊 BMI Classification Chart (WHO Standard)</h4>
+      <div class="bmi-bar"><div class="bmi-seg"></div><div class="bmi-seg"></div><div class="bmi-seg"></div><div class="bmi-seg"></div></div>
+      <div class="bmi-rows">
+        <div class="bmi-row"><div class="bmi-dot" style="background:rgba(56,189,248,.8)"></div><span class="bmi-range">Below 18.5</span><span class="bmi-cat">Underweight — may indicate malnutrition or health issues</span></div>
+        <div class="bmi-row"><div class="bmi-dot" style="background:rgba(6,214,160,.8)"></div><span class="bmi-range">18.5 – 24.9</span><span class="bmi-cat">Normal Weight — healthy range for most adults</span></div>
+        <div class="bmi-row"><div class="bmi-dot" style="background:rgba(245,158,11,.8)"></div><span class="bmi-range">25.0 – 29.9</span><span class="bmi-cat">Overweight — increased risk of cardiovascular disease</span></div>
+        <div class="bmi-row"><div class="bmi-dot" style="background:rgba(239,68,68,.8)"></div><span class="bmi-range">30.0 and above</span><span class="bmi-cat">Obese — significantly elevated health risks</span></div>
+      </div>
+    </div>
+
+    <h3>Health Risks Associated with BMI</h3>
+    <p>While BMI alone cannot diagnose any medical condition, research consistently shows that people at the extremes of the BMI spectrum face elevated health risks:</p>
+    <div class="guide-grid2">
+      <div class="guide-card">
+        <h4>⚠️ Risks of Being Underweight (BMI &lt; 18.5)</h4>
+        <ul>
+          <li>Nutritional deficiencies and anaemia</li>
+          <li>Weakened immune system and frequent infections</li>
+          <li>Osteoporosis and reduced bone density</li>
+          <li>Fertility issues and hormonal imbalances</li>
+          <li>Increased risk of complications during surgery</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h4>⚠️ Risks of Being Overweight / Obese (BMI ≥ 25)</h4>
+        <ul>
+          <li>Type 2 diabetes and insulin resistance</li>
+          <li>High blood pressure and cardiovascular disease</li>
+          <li>Sleep apnea and breathing difficulties</li>
+          <li>Certain cancers (breast, colon, kidney)</li>
+          <li>Joint pain and osteoarthritis</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Limitations of BMI: What It Does Not Measure</h3>
+    <p>BMI is a useful screening tool but it is not a complete picture of your health. Here are important limitations you should be aware of:</p>
+    <ul>
+      <li><strong>Does not distinguish muscle from fat:</strong> A professional bodybuilder with low body fat percentage might have a BMI in the "overweight" range simply because muscle is denser than fat. Conversely, someone with a normal BMI could have unhealthy levels of visceral fat.</li>
+      <li><strong>Does not account for fat distribution:</strong> Where you carry fat matters. Abdominal (belly) fat is more metabolically dangerous than fat stored in the hips and thighs. Waist circumference measurements are often used alongside BMI for a more complete picture.</li>
+      <li><strong>Does not consider age and gender differences:</strong> Older adults naturally have more body fat than younger adults at the same BMI. Women typically have more body fat than men at the same BMI, which the formula does not account for.</li>
+      <li><strong>Ethnic variations:</strong> As discussed, South Asians and some East Asian populations have higher metabolic risk at lower BMI values compared to Western populations.</li>
+    </ul>
+
+    <div class="highlight-box info">
+      <p><strong>Better health indicators to use alongside BMI:</strong> Waist-to-Hip Ratio (WHR), Waist Circumference (below 90 cm for men and 80 cm for women is ideal for Indians), Body Fat Percentage, and fasting blood glucose, cholesterol, and blood pressure readings paint a more complete health picture than BMI alone.</p>
+    </div>
+
+    <h3>Practical Steps to Reach a Healthy BMI</h3>
+    <p>Whether you are looking to lose weight, gain weight, or maintain your current healthy weight, these evidence-based strategies are recommended by health professionals:</p>
+    <div class="guide-grid3">
+      <div class="guide-card">
+        <h4>🥗 Balanced Nutrition</h4>
+        <p>Focus on whole foods — vegetables, fruits, whole grains, lean proteins, and healthy fats. Reduce ultra-processed foods, sugary beverages, and excessive refined carbohydrates. Portion control matters as much as food quality.</p>
+      </div>
+      <div class="guide-card">
+        <h4>🏃 Regular Physical Activity</h4>
+        <p>The WHO recommends at least 150 minutes of moderate-intensity aerobic activity per week (like brisk walking or cycling) plus muscle-strengthening activities 2 days per week. Consistency over intensity is key for sustainable results.</p>
+      </div>
+      <div class="guide-card">
+        <h4>😴 Quality Sleep</h4>
+        <p>Adults need 7–9 hours of sleep per night. Chronic sleep deprivation disrupts hunger hormones (ghrelin and leptin), increases appetite, promotes fat storage, and increases risk of obesity by up to 55% in some studies.</p>
+      </div>
+    </div>
+    <p>Remember that BMI is just a starting point. If your BMI falls outside the normal range, we strongly recommend consulting a qualified healthcare professional — a doctor, registered dietitian, or certified fitness professional — before starting any diet or exercise programme.</p>
+  </div>
+</section>
+
+<!-- ═══ MATH & SCIENCE GUIDE ═══ -->
+<section class="guide-section" id="math-guide" aria-labelledby="math-guide-heading">
+  <div class="guide-inner">
+    <div class="guide-chip reveal">🔬 Math &amp; Science Guide</div>
+    <h2 class="reveal" id="math-guide-heading">Scientific Calculator: <em>A Complete Guide</em> for Students</h2>
+    <p class="guide-lead reveal">Whether you are preparing for JEE, NEET, Class 12 board exams, or professional engineering work, understanding how to use a scientific calculator effectively can save time and reduce errors. This guide covers every function available on CalcHub Pro's scientific calculator.</p>
+
+    <h3>Trigonometric Functions: sin, cos, tan</h3>
+    <p>Trigonometry is the study of relationships between angles and sides of triangles. The three primary trigonometric functions are fundamental to physics, engineering, architecture, and computer graphics. Our calculator works in <strong>degrees</strong> by default.</p>
+    <div class="guide-grid3">
+      <div class="guide-card">
+        <h4>sin (Sine)</h4>
+        <p>Ratio of the opposite side to the hypotenuse. Common values: sin(0°)=0, sin(30°)=0.5, sin(45°)≈0.707, sin(60°)≈0.866, sin(90°)=1.</p>
+      </div>
+      <div class="guide-card">
+        <h4>cos (Cosine)</h4>
+        <p>Ratio of the adjacent side to the hypotenuse. Common values: cos(0°)=1, cos(30°)≈0.866, cos(60°)=0.5, cos(90°)=0.</p>
+      </div>
+      <div class="guide-card">
+        <h4>tan (Tangent)</h4>
+        <p>Ratio of the opposite side to the adjacent. tan(45°)=1, tan(60°)≈1.732. Note: tan(90°) is undefined (infinity).</p>
+      </div>
+    </div>
+
+    <h3>Logarithms: log and ln</h3>
+    <p>Logarithms are the inverse of exponentiation. They are used extensively in science, engineering, finance, and computing.</p>
+    <ul>
+      <li><strong>log (Base-10 Logarithm):</strong> log(100) = 2 because 10² = 100. Used in pH calculations, Richter scale (earthquakes), decibel scale (sound intensity), and signal processing.</li>
+      <li><strong>ln (Natural Logarithm):</strong> Uses base e (≈ 2.71828). ln(e) = 1. Used in exponential growth and decay models, compound interest calculations, and differential equations.</li>
+    </ul>
+
+    <div class="highlight-box info">
+      <p><strong>Key logarithm rules to remember:</strong> log(a × b) = log(a) + log(b) &nbsp;|&nbsp; log(a ÷ b) = log(a) − log(b) &nbsp;|&nbsp; log(aⁿ) = n × log(a). These rules let you simplify complex calculations using basic addition and subtraction.</p>
+    </div>
+
+    <h3>Powers, Roots, and Mathematical Constants</h3>
+    <p>The scientific calculator provides several ways to work with powers and roots:</p>
+    <ul>
+      <li><strong>x² (Square):</strong> Multiply a number by itself. Used in area calculations, distance formulas (Pythagorean theorem), statistics (variance), and physics (kinetic energy = ½mv²).</li>
+      <li><strong>x³ (Cube):</strong> Raise a number to the power of 3. Used in volume calculations (volume of a cube = side³) and polynomial equations.</li>
+      <li><strong>xʸ (Power):</strong> Raise any number to any power. For example, to compute 2¹⁰, press 2, then xʸ, then 10, then =.</li>
+      <li><strong>√x (Square Root):</strong> The number which, when squared, gives the original. √144 = 12 because 12² = 144.</li>
+      <li><strong>π (Pi ≈ 3.14159):</strong> The ratio of a circle's circumference to its diameter. Essential in all circular and spherical geometry.</li>
+      <li><strong>e (Euler's Number ≈ 2.71828):</strong> The base of natural logarithms. It appears naturally in compound interest, population growth, and radioactive decay formulas.</li>
+    </ul>
+
+    <h3>Common Calculator Mistakes and How to Avoid Them</h3>
+    <p>Even experienced students make these errors when using scientific calculators:</p>
+    <ul>
+      <li><strong>Forgetting to close brackets:</strong> When entering sin(45 without the closing ), the calculator may give a wrong result or error. Always match every opening bracket with a closing bracket.</li>
+      <li><strong>Order of operations (BODMAS/PEMDAS):</strong> The expression 2 + 3 × 4 equals 14, not 20. Our calculator follows standard mathematical order of operations. Use brackets to override the default order when needed.</li>
+      <li><strong>Degree vs. Radian confusion:</strong> Our calculator uses degrees. If your problem gives angles in radians, convert first: radians × (180 ÷ π) = degrees. For example, π/2 radians = 90 degrees.</li>
+      <li><strong>Floating point rounding:</strong> Very long decimal results are rounded to 6 significant figures for display. For intermediate calculations requiring higher precision, note down intermediate values manually.</li>
+    </ul>
+
+    <div class="guide-stats">
+      <div class="gs-item"><span class="gs-n">15+</span><span class="gs-l">Scientific Functions</span></div>
+      <div class="gs-item"><span class="gs-n">64-bit</span><span class="gs-l">Precision Arithmetic</span></div>
+      <div class="gs-item"><span class="gs-n">0ms</span><span class="gs-l">Result Delay</span></div>
+      <div class="gs-item"><span class="gs-n">100%</span><span class="gs-l">Browser-based</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta-wrap" aria-label="Call to action">
+  <div class="cta-box reveal">
+    <h2>Ready to calculate?</h2>
+    <p>Jump straight into any of our five free calculators — no signup, no download, no wait.</p>
+    <div class="cta-chips">
+      <span class="cta-chip">✓ Free Forever</span>
+      <span class="cta-chip">✓ No Signup</span>
+      <span class="cta-chip">✓ Works Offline</span>
+      <span class="cta-chip">✓ Zero Data Stored</span>
+      <span class="cta-chip">✓ Mobile Friendly</span>
+    </div>
+    <button class="hero-cta" onclick="goCalc('basic')" style="margin:0 auto">🧮 Open Calculator Free</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="nav-logo" style="font-size:1.1rem" onclick="topScroll(event)">
+          <div class="logo-mark" style="width:30px;height:30px;font-size:.9rem"><img src="logo.png" alt="CalcHub Pro Logo"></div>
+          <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+        </a>
+        <p class="foot-brand-desc">A free all-in-one calculator suite for students, professionals and everyone in between. No ads interrupting your work, no data stored, no cost — ever.</p>
+        <div class="foot-soc">
+          <a href="#" class="soc-btn" aria-label="Twitter">𝕏</a>
+          <a href="#" class="soc-btn" aria-label="Facebook">f</a>
+          <a href="#" class="soc-btn" aria-label="Instagram">▣</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Calculators</h4>
+        <ul>
+          <li><a href="#" onclick="goCalc('basic')">Basic Calculator</a></li>
+          <li><a href="#" onclick="goCalc('scientific')">Scientific Calculator</a></li>
+          <li><a href="#" onclick="goCalc('emi')">EMI / Loan Calculator</a></li>
+          <li><a href="#" onclick="goCalc('bmi')">BMI Calculator</a></li>
+          <li><a href="#" onclick="goCalc('birthday')">Birthday / Age Calculator</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#why">About CalcHub Pro</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in" style="color:inherit">calchubpro.in</a></span>
+      <div class="foot-status">
+        <div class="status-dot" aria-hidden="true"></div>
+        All systems operational
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── NAV ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('stuck',window.scrollY>20);
+});
+function topScroll(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}
+function toggleDrawer(){
+  const d=document.getElementById('drawer'),h=document.getElementById('hbg');
+  d.classList.toggle('open');h.classList.toggle('open');
+  document.body.style.overflow=d.classList.contains('open')?'hidden':'';
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('hbg').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+
+/* ── TYPED ANIMATION ── */
+const words=['for Everything','for Students','for Loans','for Fitness','for Birthdays','for Engineers'];
+let wi=0,ci=0,del=false;
+function typeIt(){
+  const el=document.getElementById('tword');
+  if(!el)return;
+  const w=words[wi];
+  if(!del){
+    ci++;el.textContent=w.slice(0,ci);
+    if(ci===w.length){del=true;setTimeout(typeIt,1400);return;}
+    setTimeout(typeIt,60);
+  }else{
+    ci--;el.textContent=w.slice(0,ci);
+    if(ci===0){del=false;wi=(wi+1)%words.length;setTimeout(typeIt,300);return;}
+    setTimeout(typeIt,30);
+  }
+}
+setTimeout(typeIt,900);
+
+/* ── REVEAL ANIMATIONS ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:.12});
+document.querySelectorAll('.reveal,.tc').forEach(el=>io.observe(el));
+
+/* ── PILL HOVER ── */
+document.querySelectorAll('.pill').forEach(p=>{
+  p.addEventListener('mouseenter',()=>p.classList.add('ap'));
+  p.addEventListener('mouseleave',()=>p.classList.remove('ap'));
+});
+
+/* ── SCROLL HELPERS ── */
+function scrollToPanel(el){
+  if(!el)return;
+  setTimeout(()=>{
+    const rect=el.getBoundingClientRect();
+    const navH=64;
+    const target=window.scrollY+rect.top-navH-12;
+    window.scrollTo({top:target,behavior:'smooth'});
+  },80);
+}
+function scrollToResult(el){
+  if(!el)return;
+  setTimeout(()=>{
+    const rect=el.getBoundingClientRect();
+    const navH=64;
+    const target=window.scrollY+rect.top-navH-20;
+    window.scrollTo({top:target,behavior:'smooth'});
+  },80);
+}
+function switchTab(e,id){
+  document.querySelectorAll('.tab').forEach(t=>{t.classList.remove('on');t.setAttribute('aria-selected','false');});
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  e.currentTarget.classList.add('on');
+  e.currentTarget.setAttribute('aria-selected','true');
+  const panel=document.getElementById(id);
+  panel.classList.add('on');
+  scrollToPanel(panel);
+}
+function goCalc(id){
+  const cz=document.getElementById('calc-zone');
+  cz.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>{
+    document.querySelectorAll('.tab').forEach(t=>{
+      t.classList.remove('on');t.setAttribute('aria-selected','false');
+    });
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+    const tab=document.querySelector(`[aria-controls="${id}"]`)||document.querySelector(`[id="tab-${id}"]`);
+    if(tab){tab.classList.add('on');tab.setAttribute('aria-selected','true');}
+    const panel=document.getElementById(id);
+    if(panel)panel.classList.add('on');
+  },400);
+}
+
+/* ── KEYBOARD for calc zone ── */
+document.addEventListener('keydown',e=>{
+  const act=document.querySelector('.panel.on');if(!act)return;
+  const isBasic=act.id==='basic',isSci=act.id==='scientific';
+  if(!isBasic&&!isSci)return;
+  if(e.target.tagName==='INPUT'&&e.target.type==='text')return;
+  const k=e.key;
+  if('0123456789'.includes(k)){isBasic?bApp(k):sApp(k);}
+  else if(k==='+'){isBasic?bApp('+'):sApp('+');}
+  else if(k==='-'){isBasic?bApp('−'):sApp('−');}
+  else if(k==='*'){isBasic?bApp('×'):sApp('×');}
+  else if(k==='/'){e.preventDefault();isBasic?bApp('÷'):sApp('÷');}
+  else if(k==='.'){isBasic?bApp('.'):sApp('.');}
+  else if(k==='%'){isBasic?bApp('%'):sApp('%');}
+  else if(k==='Enter'||k==='='){isBasic?bCalc():sCalc();}
+  else if(k==='Backspace'){isBasic?bBack():sBack();}
+  else if(k==='Escape'){isBasic?bClear():sClear();}
+});
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{
+    i.classList.remove('open');
+    i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+  });
+  if(!isOpen){
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+
+/* ── BASIC CALC ── */
+let bExpr='',bNew=true;
+const bD=()=>document.getElementById('b-disp');
+const bE=()=>document.getElementById('b-expr');
+function bApp(v){
+  const d=bD();
+  if(bNew&&!'÷×−+'.includes(v)){d.value='0';bNew=false;}
+  if(d.value==='0'&&'0123456789'.includes(v))d.value=v;
+  else d.value+=v;
+  bE().textContent=d.value;
+}
+function bClear(){bD().value='0';bE().textContent='';bNew=true;document.getElementById('b-res').style.display='none';}
+function bBack(){
+  const d=bD();
+  d.value=d.value.length>1?d.value.slice(0,-1):'0';
+  bE().textContent=d.value;
+}
+function bCalc(){
+  const raw=bD().value;
+  const expr=raw.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-');
+  try{
+    const r=math.evaluate(expr);
+    const res=document.getElementById('b-res');
+    res.innerHTML=`<div class="rrow"><span class="rl">Result</span><span class="rv">${fmt(r)}</span></div>`;
+    res.style.display='block';
+    bE().textContent=raw+' =';bD().value=String(r);bNew=true;
+  }catch{bD().value='Error';bNew=true;}
+}
+
+/* ── SCIENTIFIC CALC ── */
+let sExpr='',sNew=true;
+const sD=()=>document.getElementById('s-disp');
+const sE=()=>document.getElementById('s-expr');
+function sApp(v){
+  const d=sD();
+  if(sNew&&!'÷×−+^!'.includes(v)){d.value='';sNew=false;}
+  if(v==='+/-'){const x=d.value;d.value=x.startsWith('-')?x.slice(1):('-'+x);}
+  else d.value+=v;
+  sE().textContent=d.value;
+}
+function sClear(){sD().value='0';sE().textContent='';sNew=true;document.getElementById('s-res').style.display='none';}
+function sBack(){const d=sD();d.value=d.value.length>1?d.value.slice(0,-1):'0';sE().textContent=d.value;}
+function sCalc(){
+  let raw=sD().value;
+  let expr=raw.replace(/×/g,'*').replace(/÷/g,'/').replace(/−/g,'-')
+    .replace(/sin\(/g,'sin(').replace(/cos\(/g,'cos(').replace(/tan\(/g,'tan(')
+    .replace(/sqrt\(/g,'sqrt(').replace(/ln\(/g,'log(').replace(/log\(/g,'log10(');
+  // convert degrees to radians for trig
+  expr=expr.replace(/sin\(([^)]+)\)/g,'(sin(($1)*pi/180))')
+           .replace(/cos\(([^)]+)\)/g,'(cos(($1)*pi/180))')
+           .replace(/tan\(([^)]+)\)/g,'(tan(($1)*pi/180))');
+  try{
+    const r=math.evaluate(expr);
+    const res=document.getElementById('s-res');
+    res.innerHTML=`<div class="rrow"><span class="rl">Result</span><span class="rv">${fmt(r)}</span></div>`;
+    res.style.display='block';
+    sE().textContent=raw+' =';sD().value=String(r);sNew=true;
+  }catch{sD().value='Error';sNew=true;}
+}
+
+/* ── HELPERS ── */
+function fmt(n){
+  if(typeof n==='number'&&!isNaN(n)){
+    const s=parseFloat(n.toFixed(10));
+    return s.toLocaleString('en-IN',{maximumFractionDigits:6});
+  }return String(n);
+}
+
+/* ── EMI ── */
+function calcEMI(){
+  let ok=true;
+  const P=parseFloat(document.getElementById('lamt').value);
+  const ann=parseFloat(document.getElementById('lrate').value);
+  const yr=parseFloat(document.getElementById('ltenure').value);
+  const chk=(fid,eid,bad)=>{
+    const inp=document.getElementById(fid),err=document.getElementById(eid);
+    if(bad){inp.classList.add('bad');err.classList.add('show');ok=false;}
+    else{inp.classList.remove('bad');err.classList.remove('show');}
+  };
+  chk('lamt','e-lamt',!P||P<=0);
+  chk('lrate','e-lrate',!ann||ann<=0||ann>100);
+  chk('ltenure','e-ltenure',!yr||yr<1||yr>30);
+  if(!ok)return;
+  const r=ann/12/100,n=yr*12;
+  const emi=(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+  const tot=emi*n,interest=tot-P;
+  const res=document.getElementById('emi-res');
+  res.innerHTML=
+    `<div class="rrow"><span class="rl">Monthly EMI</span><span class="rv">₹${fmt(emi)}</span></div>
+     <div class="rrow"><span class="rl">Total Interest</span><span class="rv">₹${fmt(interest)}</span></div>
+     <div class="rrow"><span class="rl">Total Payment</span><span class="rv">₹${fmt(tot)}</span></div>`;
+  res.style.display='block';
+  scrollToResult(res);
+}
+
+/* ── BMI ── */
+function calcBMI(){
+  let ok=true;
+  const h=parseFloat(document.getElementById('ht').value);
+  const w=parseFloat(document.getElementById('wt').value);
+  const chk=(fid,eid,bad)=>{
+    const inp=document.getElementById(fid),err=document.getElementById(eid);
+    if(bad){inp.classList.add('bad');err.classList.add('show');ok=false;}
+    else{inp.classList.remove('bad');err.classList.remove('show');}
+  };
+  chk('ht','e-ht',!h||h<50||h>300);
+  chk('wt','e-wt',!w||w<2||w>600);
+  if(!ok)return;
+  const hm=h/100;
+  const bmiVal=w/(hm*hm);
+  const bmi=bmiVal.toFixed(1);
+  let cat,col;
+  if(bmiVal<18.5){cat='Underweight';col='var(--info)';}
+  else if(bmiVal<25){cat='Normal weight';col='var(--ok)';}
+  else if(bmiVal<30){cat='Overweight';col='var(--warn)';}
+  else{cat='Obese';col='var(--danger)';}
+  const res=document.getElementById('bmi-res');
+  res.innerHTML=
+    `<div class="rrow"><span class="rl">Your BMI</span><span class="rv" style="color:${col}">${bmi}</span></div>
+     <div class="rrow"><span class="rl">Category</span><span class="rv" style="color:${col};font-size:1rem">${cat}</span></div>`;
+  res.style.display='block';
+  scrollToResult(res);
+}
+
+/* ── BIRTHDAY ── */
+function calcBirthday(){
+  const dobVal=document.getElementById('dob').value;
+  const calcVal=document.getElementById('calc-date').value;
+  const errEl=document.getElementById('e-dob');
+  const inp=document.getElementById('dob');
+  if(!dobVal){inp.classList.add('bad');errEl.classList.add('show');return;}
+  inp.classList.remove('bad');errEl.classList.remove('show');
+  const dob=new Date(dobVal);
+  const today=calcVal?new Date(calcVal):new Date();
+  today.setHours(0,0,0,0);
+  if(dob>today){
+    inp.classList.add('bad');errEl.textContent='Date of birth cannot be in the future.';errEl.classList.add('show');return;
+  }
+  errEl.classList.remove('show');
+  let years=today.getFullYear()-dob.getFullYear();
+  let months=today.getMonth()-dob.getMonth();
+  let days=today.getDate()-dob.getDate();
+  if(days<0){months--;const pm=new Date(today.getFullYear(),today.getMonth(),0);days+=pm.getDate();}
+  if(months<0){years--;months+=12;}
+  const totalDays=Math.floor((today-dob)/86400000);
+  const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const bornDay=DAYS[dob.getDay()];
+  let nextBday=new Date(today.getFullYear(),dob.getMonth(),dob.getDate());
+  if(nextBday<=today)nextBday.setFullYear(today.getFullYear()+1);
+  const daysToNext=Math.ceil((nextBday-today)/86400000);
+  const m=dob.getMonth()+1,d2=dob.getDate();
+  let zodiac='';
+  if((m==3&&d2>=21)||(m==4&&d2<=19))zodiac='♈ Aries';
+  else if((m==4&&d2>=20)||(m==5&&d2<=20))zodiac='♉ Taurus';
+  else if((m==5&&d2>=21)||(m==6&&d2<=20))zodiac='♊ Gemini';
+  else if((m==6&&d2>=21)||(m==7&&d2<=22))zodiac='♋ Cancer';
+  else if((m==7&&d2>=23)||(m==8&&d2<=22))zodiac='♌ Leo';
+  else if((m==8&&d2>=23)||(m==9&&d2<=22))zodiac='♍ Virgo';
+  else if((m==9&&d2>=23)||(m==10&&d2<=22))zodiac='♎ Libra';
+  else if((m==10&&d2>=23)||(m==11&&d2<=21))zodiac='♏ Scorpio';
+  else if((m==11&&d2>=22)||(m==12&&d2<=21))zodiac='♐ Sagittarius';
+  else if((m==12&&d2>=22)||(m==1&&d2<=19))zodiac='♑ Capricorn';
+  else if((m==1&&d2>=20)||(m==2&&d2<=18))zodiac='♒ Aquarius';
+  else zodiac='♓ Pisces';
+  const totalMonths=years*12+months;
+  const totalWeeks=Math.floor(totalDays/7);
+  const isBday=(today.getMonth()===dob.getMonth()&&today.getDate()===dob.getDate());
+  const res=document.getElementById('bday-res');
+  res.innerHTML=
+    `${isBday?'<div style="text-align:center;font-size:1.4rem;padding:8px 0 4px">🎉 Happy Birthday! 🎂</div>':''}
+     <div class="rrow"><span class="rl">Exact Age</span><span class="rv">${years}y ${months}m ${days}d</span></div>
+     <div class="rrow"><span class="rl">Total Days Lived</span><span class="rv">${totalDays.toLocaleString()}</span></div>
+     <div class="rrow"><span class="rl">Total Weeks</span><span class="rv">${totalWeeks.toLocaleString()}</span></div>
+     <div class="rrow"><span class="rl">Total Months</span><span class="rv">${totalMonths.toLocaleString()}</span></div>
+     <div class="rrow"><span class="rl">Born on</span><span class="rv" style="font-size:.95rem">${bornDay}</span></div>
+     <div class="rrow"><span class="rl">Zodiac Sign</span><span class="rv" style="font-size:.95rem">${zodiac}</span></div>
+     <div class="rrow"><span class="rl">Next Birthday In</span><span class="rv">${daysToNext===0?'🎉 Today!':daysToNext+' days'}</span></div>`;
+  res.style.display='block';
+  scrollToResult(res);
+}
+
+/* ── INIT ── */
+window.addEventListener('load',()=>{
+  const today=new Date().toISOString().split('T')[0];
+  const dobInput=document.getElementById('dob');
+  const calcInput=document.getElementById('calc-date');
+  if(dobInput)dobInput.max=today;
+  if(calcInput){calcInput.max=today;calcInput.value=today;}
+  // Cookie banner
+  if(!localStorage.getItem('ck_consent')){
+    setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'),800);
+  }
+});
+function setCookie(val){
+  localStorage.setItem('ck_consent',val);
+  const b=document.getElementById('cookie-banner');
+  b.style.transition='transform .35s ease';
+  b.style.transform='translateY(100%)';
+  setTimeout(()=>b.style.display='none',400);
+}
+</script>
+</body>
+</html>

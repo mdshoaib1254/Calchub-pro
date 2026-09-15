@@ -1,0 +1,45 @@
+# robots.txt for CalcHub Pro
+# https://calchubpro.in/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://calchubpro.in/sitemap.xml
+
+# Specific rules for search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# SEO bots
+User-agent: AhrefsBot
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Crawl-delay: 2
+
+User-agent: MJ12bot
+Crawl-delay: 2
+
+User-agent: dotbot
+Crawl-delay: 2
+
+Host: https://calchubpro.in

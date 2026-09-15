@@ -1,0 +1,76 @@
+# robots.txt for CalcHub Pro
+# https://calchubpro.in/robots.txt
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow any admin or private directories (if you add them in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://calchubpro.in/sitemap.xml
+Sitemap: https://calchubpro.in/sitemap.html
+
+# Crawl-delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0.5
+
+# Allow Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow all common search engine bots
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block AI scrapers (optional - if you want to prevent AI training on your content)
+# User-agent: GPTBot
+# Disallow: /
+
+# User-agent: ChatGPT-User
+# Disallow: /
+
+# User-agent: CCBot
+# Disallow: /
+
+# User-agent: anthropic-ai
+# Disallow: /
+
+# User-agent: Claude-Web
+# Disallow: /
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Crawl-delay: 2
+
+User-agent: MJ12bot
+Crawl-delay: 2
+
+User-agent: dotbot
+Crawl-delay: 2
+
+# Host (for Yandex)
+Host: https://calchubpro.in
