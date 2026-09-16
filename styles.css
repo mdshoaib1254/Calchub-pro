@@ -79,76 +79,76 @@ button, input, select, textarea {
    blue/violet accent gradient reserved for primary CTAs only.
    ═══════════════════════════════════════════════════════════════ */
 :root {
-  /* Brand (unchanged — CalcHub Pro red) */
-  --red: #e0293e;
-  --red2: #ff5068;
-  --red-dim: rgba(224, 41, 62, 0.12);
-  --red-glow: rgba(224, 41, 62, 0.28);
+  /* Brand — CalcHub Pro red (unchanged across every redesign) */
+  --red: #d81f35;
+  --red2: #b81729;
+  --red-dim: rgba(216, 31, 53, 0.08);
+  --red-glow: rgba(216, 31, 53, 0.18);
 
-  /* Category + status hues */
-  --sky: #38bdf8;
-  --teal: #06d6a0;
-  --amber: #f59e0b;
-  --purple: #a78bfa;
-  --indigo: #6366f1;
+  /* A single restrained blue, used sparingly for links + one category */
+  --sky: #2563a8;
+  --teal: #157a6e;
+  --amber: #b7791f;
+  --purple: #6d4fa3;
+  --indigo: #3a4a6b;
 
-  /* Surfaces — deep navy / near-black */
-  --bg: #070a14;
-  --bg2: #0b0f1d;
-  --bg3: #111729;
-  --card-bg: rgba(17, 23, 41, 0.62);
-  --card-hover: rgba(24, 32, 56, 0.78);
+  /* Surfaces — warm off-white, clean white cards */
+  --bg: #f7f5f1;
+  --bg2: #efece6;
+  --bg3: #e7e3db;
+  --card-bg: #ffffff;
+  --card-hover: #ffffff;
 
-  /* Glass + borders */
-  --glass: rgba(255, 255, 255, 0.032);
-  --glass2: rgba(255, 255, 255, 0.062);
-  --border: rgba(255, 255, 255, 0.075);
-  --border2: rgba(255, 255, 255, 0.145);
+  /* "Glass" is now a soft neutral tint on white/off-white, not a dark blur */
+  --glass: rgba(20, 18, 15, 0.035);
+  --glass2: rgba(20, 18, 15, 0.06);
+  --border: rgba(20, 18, 15, 0.10);
+  --border2: rgba(20, 18, 15, 0.16);
 
-  /* Text */
-  --text: #f2f4fa;
-  --muted: rgba(242, 244, 250, 0.66);
-  --dim: rgba(242, 244, 250, 0.38);
+  /* Text — deep charcoal, not pure black */
+  --text: #1c1a17;
+  --muted: #5c574e;
+  --dim: #8a8478;
 
   /* Feedback */
-  --danger: #ef4444;
-  --warn: #f59e0b;
-  --ok: #22c55e;
-  --info: #38bdf8;
+  --danger: #c0392b;
+  --warn: #a8681a;
+  --ok: #1f7a4d;
+  --info: #2563a8;
 
-  /* Light surfaces (quick-calculator widget + contact form) */
-  --lbg: #eef1f7;
-  --llight: #f7f9fc;
-  --lprimary: #0d1120;
-  --lmuted: #5a6377;
-  --lborder: #d8dee9;
-  --lacce: #e0293e;
+  /* Light surfaces used by the Quick Calculate device screen */
+  --lbg: #efece6;
+  --llight: #ffffff;
+  --lprimary: #1c1a17;
+  --lmuted: #5c574e;
+  --lborder: #e3ded4;
+  --lacce: #d81f35;
 
-  /* Accent gradients — used sparingly */
-  --grad-brand: linear-gradient(135deg, #e0293e 0%, #ff5068 100%);
-  --grad-electric: linear-gradient(120deg, #ff5068 0%, #a78bfa 55%, #38bdf8 100%);
-  --glow-blue: rgba(99, 102, 241, 0.20);
-  --glow-violet: rgba(167, 139, 250, 0.18);
+  /* Single restrained brand gradient (two close reds — a sheen, not neon) */
+  --grad-brand: linear-gradient(135deg, #d81f35 0%, #b81729 100%);
+  --grad-electric: var(--grad-brand);
+  --glow-blue: rgba(37, 99, 168, 0.06);
+  --glow-violet: rgba(37, 99, 168, 0.05);
 
-  /* Elevation */
-  --sh-sm: 0 2px 10px rgba(0, 0, 0, 0.30);
-  --sh-md: 0 10px 30px rgba(0, 0, 0, 0.38);
-  --sh-lg: 0 22px 64px rgba(0, 0, 0, 0.52);
+  /* Elevation — soft, close, no colored glow */
+  --sh-sm: 0 1px 2px rgba(20, 18, 15, 0.05), 0 1px 3px rgba(20, 18, 15, 0.06);
+  --sh-md: 0 4px 14px rgba(20, 18, 15, 0.08);
+  --sh-lg: 0 12px 32px rgba(20, 18, 15, 0.12);
 
-  /* Radii */
-  --r: 20px;
+  /* Radii — 14–18px per brief */
+  --r: 16px;
   --rs: 12px;
   --rx: 8px;
 
   /* Rhythm */
   --gut: max(20px, 5vw);
-  --sec-y: clamp(56px, 8vw, 96px);
+  --sec-y: clamp(48px, 6vw, 76px);
   --maxw: 1180px;
 
   /* Motion */
   --ease: cubic-bezier(.22, .68, .36, 1);
-  --t-fast: 0.18s;
-  --t: 0.26s;
+  --t-fast: 0.16s;
+  --t: 0.2s;
 
   /* Type */
   --ff-head: 'Bricolage Grotesque', sans-serif;
@@ -3125,4 +3125,436 @@ textarea:focus-visible,
   .hi-orbit, .hi-chip1, .hi-chip2, .hi-chip3, .hi-chip4 {
     animation: none !important;
   }
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   PREMIUM UTILITY THEME — LIGHT REDESIGN
+   Replaces the dark neon/glassmorphism direction. This layer wins on
+   cascade order over every rule above it. Structure/markup unchanged;
+   only appearance is touched. Tokens above already carry most pages
+   (calc-box, res-card, forms, etc.) to the light palette automatically.
+   ═════════════════════════════════════════════════════════════════════ */
+
+body {
+  color: var(--text);
+}
+
+/* ── Header: clean, light, minimal blur ── */
+.nav {
+  background: rgba(247, 245, 241, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav.stuck {
+  background: rgba(247, 245, 241, 0.96);
+  box-shadow: 0 1px 0 var(--border), 0 4px 16px rgba(20, 18, 15, 0.06);
+}
+.logo-text { color: var(--text); }
+.logo-text .hi { color: var(--red); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover,
+.nav-links a.active { color: var(--text); }
+.nav-btn {
+  padding: 10px 22px;
+  box-shadow: none;
+}
+.nav-btn:hover {
+  box-shadow: 0 4px 12px var(--red-glow);
+}
+.hbg span {
+  background: var(--text);
+}
+
+/* Mobile drawer: full-screen light sheet instead of a dark blurred panel */
+.nav-drawer {
+  background: rgba(247, 245, 241, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.nav-drawer a {
+  color: var(--text);
+  border-bottom: 1px solid transparent;
+}
+.nav-drawer a:hover {
+  color: var(--red);
+}
+
+/* ── Kill the neon/decorative layer ──────────────────────────────
+   Large glow orbs, the animated grid overlay, and floating dots read
+   as "AI startup" rather than "premium calculator." Removed, not just
+   dimmed, per the brief. ─────────────────────────────────────────── */
+.hg1, .hg2, .hg3, .orb, .hero-grid, .hero-illo {
+  display: none !important;
+}
+
+/* ── Hero: substantially shorter, no decorative weight ── */
+.hero {
+  min-height: 0;
+  padding: clamp(28px, 5vw, 44px) var(--gut) clamp(24px, 4vw, 36px);
+  display: block;
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .hero {
+    display: block;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+}
+.hero-badge {
+  background: var(--glass2);
+  border-color: var(--border);
+  color: var(--muted);
+}
+.live-dot { background: var(--ok); }
+.hero-h1 {
+  font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+  letter-spacing: -1px;
+  line-height: 1.12;
+  max-width: 20ch;
+  margin: 0 auto 14px;
+  color: var(--text);
+}
+.hero-h1 .acc {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--red);
+}
+.hero-p {
+  color: var(--muted);
+  max-width: 52ch;
+  margin: 0 auto 24px;
+  font-size: 1rem;
+}
+
+/* ── Search: solid white field, no blur, obvious focus ── */
+.hero .tool-search {
+  margin: 0 auto 20px;
+}
+.tool-search-input {
+  background: #fff;
+  border: 1.5px solid var(--border2);
+  color: var(--text);
+  box-shadow: var(--sh-sm);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.tool-search-input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px var(--red-dim);
+}
+.ts-icon { opacity: 0.4; }
+.ts-clear {
+  background: var(--glass2);
+  color: var(--muted);
+}
+.ts-submit {
+  background: var(--red);
+  box-shadow: none;
+}
+.ts-submit:hover {
+  background: var(--red2);
+}
+
+/* ── Category pills: light, properly contained, red = active ── */
+.pill {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--sh-sm);
+}
+.pill:hover {
+  border-color: var(--border2);
+  background: var(--bg2);
+  color: var(--text);
+}
+.pill.ap {
+  background: var(--red);
+  color: #fff;
+  box-shadow: none;
+}
+.pill-count {
+  background: rgba(20, 18, 15, 0.07);
+  color: var(--muted);
+}
+.pill.ap .pill-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+/* Prevent any clipping: pills row and its scroll-container never hide
+   overflow in a way that would crop a pill; only the row itself scrolls. */
+.hero-pills {
+  overflow: visible;
+}
+@media (max-width: 480px) {
+  .hero-pills {
+    margin: 0 calc(var(--gut) * -1);
+    padding-left: var(--gut);
+    padding-right: var(--gut);
+    overflow-x: auto;
+  }
+}
+
+/* ── Trust strip: neutral icon chips, not colored glass ── */
+.trust-strip {
+  background: var(--bg2);
+  border-top-color: var(--border);
+  border-bottom-color: var(--border);
+}
+.ts-item .ts-ico {
+  background: #fff;
+  border-color: var(--border);
+}
+.ts-txt { color: var(--muted); }
+.ts-txt strong { color: var(--text); }
+
+/* ── Calculator cards: clean white, subtle border, red on interaction ──
+   The rainbow per-category accent system is dropped. Every card looks
+   the same until you touch it — then it goes red. That IS the brand. */
+.tc, .tc-pop {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--sh-sm);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.tc::before, .tc-pop::before {
+  background: var(--red) !important;
+}
+.tc:hover, .tc-pop:hover,
+.tc:focus-visible, .tc-pop:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(216, 31, 53, 0.35) !important;
+  box-shadow: var(--sh-md);
+}
+.tc:active { transform: translateY(-1px) scale(0.994); }
+
+.tc-ico, .tc-pop .tc-ico {
+  background: var(--bg2) !important;
+  border-color: var(--border) !important;
+}
+.tc:hover .tc-ico, .tc-pop:hover .tc-ico {
+  background: var(--red-dim) !important;
+  border-color: rgba(216, 31, 53, 0.3) !important;
+}
+.tc-name { color: var(--text); }
+.tc-desc { color: var(--muted); }
+.tc-tag {
+  background: var(--bg2);
+  border-color: var(--border);
+  color: var(--dim);
+}
+.tc-arr { color: var(--dim); opacity: 0; }
+.tc:hover .tc-arr, .tc-pop:hover .tc-arr {
+  opacity: 1;
+  color: var(--red) !important;
+}
+.tc-cat, .tc-pop .tc-cat {
+  color: var(--muted) !important;
+  background: var(--bg2) !important;
+  border-color: var(--border) !important;
+}
+.tc-go { color: var(--muted); }
+.tc:hover .tc-go, .tc-pop:hover .tc-go { color: var(--red); }
+
+/* ── "Popular Calculators" header ── */
+.ph-spark { color: var(--red); }
+.popular-viewall { color: var(--red); }
+.popular-viewall:hover { color: var(--red2); }
+
+/* ── Section chips / headings ── */
+.section-chip {
+  background: var(--red-dim);
+  border-color: rgba(216, 31, 53, 0.2);
+  color: var(--red2);
+}
+.sec-h { color: var(--text); }
+.sec-h em { color: var(--red); }
+.sec-p { color: var(--muted); }
+.badge-chip { color: var(--red2); }
+.res-banner-value.highlight { color: var(--red2); }
+
+/* ── Quick Calculate: the signature widget ──────────────────────
+   A crisp white "device" card with a deep charcoal screen, sitting on
+   the page's off-white background — reads as a real calculator, not
+   a UI panel. This is the section the brief asks to make distinctive. */
+#calc-zone {
+  background: var(--bg2);
+}
+#calc-zone::before {
+  display: none; /* drop the blue glow */
+}
+.calc-head h2 { color: var(--text); }
+.calc-head p { color: var(--muted); }
+.calc-wrap {
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: var(--sh-lg);
+}
+.calc-wrap::before {
+  background: var(--red);
+  opacity: 1;
+  height: 3px;
+}
+.tabs { background: var(--bg2); border-bottom-color: var(--border); }
+.tab { color: var(--lmuted); }
+.tab:hover { background: rgba(20,18,15,0.05); color: var(--text); }
+.tab.on { background: var(--red); box-shadow: none; }
+.panel-inner { background: #fff; }
+.calc-screen { background: var(--lprimary); }
+.cb {
+  background: #fff;
+  border-color: var(--lborder);
+  color: var(--lprimary);
+  box-shadow: none;
+}
+.cb:hover { background: var(--lbg); }
+.cb.op { background: var(--lbg); color: var(--red); }
+.cb.eq { background: var(--red); box-shadow: none; }
+.cb.eq:hover { background: var(--red2); }
+.result { background: var(--lbg); border-color: var(--lborder); border-left-color: var(--red); }
+.result strong { color: var(--red2); }
+
+/* ── Why / Preview mockup: kept as a deliberate dark "device screen"
+   for contrast — a real screenshot-style mockup, not stray decoration. */
+.why-wrap { }
+.wf-ico { background: var(--bg2); border-color: var(--border); }
+.wf-text h4 { color: var(--text); }
+.wf-text p { color: var(--muted); }
+.preview {
+  background: var(--text);
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: var(--sh-lg);
+}
+.p-lbl { color: rgba(255,255,255,0.35); }
+.p-expr { color: rgba(255,255,255,0.4); }
+.pb {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+}
+.pb.po { background: var(--red-dim); border-color: rgba(216,31,53,0.3); color: #ff8fa0; }
+.pb.pe { background: var(--red); }
+
+/* ── FAQ ── */
+.faq-item { background: var(--card-bg); border-color: var(--border); }
+.faq-item.open { border-color: rgba(216,31,53,0.3); }
+.faq-q { color: var(--text); }
+.faq-a { color: var(--muted); }
+
+/* ── Closing CTA ── */
+.cta-box {
+  background: #fff;
+  border-color: var(--border);
+}
+.cta-box::before { background: var(--red); opacity: 1; height: 3px; }
+.cta-box h2 { color: var(--text); }
+.cta-box p { color: var(--muted); }
+.cta-chip { background: var(--bg2); border-color: var(--border); color: var(--muted); }
+
+/* ── Footer ── */
+footer { background: var(--bg2); border-top: 1px solid var(--border); }
+.foot-brand-desc { color: var(--muted); }
+.foot-status { color: var(--muted); }
+.status-dot { background: var(--ok); }
+.foot-copy { color: var(--dim); }
+
+/* ── Cookie banner: light card, not a dark floating panel ── */
+#cookie-banner {
+  background: #fff;
+  border: 1px solid var(--border2);
+  box-shadow: var(--sh-lg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.ck-text p { color: var(--muted); }
+.ck-text strong { color: var(--text); }
+.ck-decline {
+  background: var(--bg2);
+  border-color: var(--border);
+  color: var(--muted);
+}
+.ck-decline:hover { color: var(--text); border-color: var(--border2); }
+.ck-accept { background: var(--red); box-shadow: none; }
+.ck-accept:hover { background: var(--red2); }
+
+/* ── 404 related-card directory ── */
+.rel-card { background: var(--card-bg); border-color: var(--border); }
+.rel-card:hover {
+  background: var(--bg2);
+  border-color: rgba(216,31,53,0.3);
+  box-shadow: var(--sh-md);
+}
+.rel-name { color: var(--text); }
+.rel-desc { color: var(--muted); }
+
+/* ── Founder card / about page ── */
+.founder-card { background: var(--card-bg); border-color: var(--border); box-shadow: var(--sh-lg); }
+.founder-card::before { background: var(--red); }
+.founder-name { color: var(--text); }
+.founder-role { background: var(--bg2); border-color: var(--border); color: var(--muted); }
+.founder-bio { color: var(--muted); }
+.fstat { background: var(--bg2); border-color: var(--border); }
+.fstat-n { color: var(--red); }
+.fstat-l { color: var(--dim); }
+.mg-card { background: var(--card-bg); border-color: var(--border); }
+.mg-card h3 { color: var(--text); }
+.mg-card p { color: var(--muted); }
+
+/* ── Contact page ── */
+.contact-wrap { background: #fff; box-shadow: var(--sh-lg); }
+.contact-wrap h2 { color: var(--text); }
+.contact-wrap p.sub { color: var(--muted); }
+.info-card { background: var(--card-bg); border-color: var(--border); }
+.info-card:hover { background: var(--bg2); border-color: var(--border2); }
+.info-card h3 { color: var(--text); }
+.info-card p { color: var(--muted); }
+
+/* ── Legal pages: readable on light, no leftover dark-theme text colors ── */
+.legal-wrap h2 { color: var(--text); }
+.legal-wrap p, .legal-wrap li { color: var(--muted); }
+.legal-wrap strong { color: var(--text); }
+.alert-card {
+  background: rgba(216, 31, 53, 0.05);
+  border-color: rgba(216, 31, 53, 0.2);
+}
+.alert-card h3 { color: var(--red2); }
+.privacy-highlight {
+  background: rgba(37, 99, 168, 0.05);
+  border-color: rgba(37, 99, 168, 0.2);
+}
+
+/* ── Simplify glassmorphism sitewide: no heavy blur outside the header
+   and mobile drawer, which need it for legibility over scrolling content. */
+.wf-ico, .tc-ico, .ts-clear, .pill-count {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ── Mobile fixes called out explicitly in the brief ── */
+@media (max-width: 430px) {
+  .hero { padding: 24px var(--gut) 20px; }
+  .hero-h1 { font-size: clamp(1.7rem, 8vw, 2.1rem); }
+  .hero-p { font-size: 0.92rem; }
+  .tool-search-input {
+    font-size: 16px;      /* stop iOS zoom-on-focus, never let it clip */
+    padding-left: 42px;
+    padding-right: 42px;
+  }
+  .ts-icon { left: 14px; }
+  .ts-clear { right: 10px; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .tc:hover, .tc-pop:hover { transform: none; }
+  .tc:active, .tc-pop:active { background: var(--bg2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tc:hover, .tc-pop:hover, .nav-btn:hover { transform: none; }
 }
