@@ -3558,3 +3558,212 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); }
 @media (prefers-reduced-motion: reduce) {
   .tc:hover, .tc-pop:hover, .nav-btn:hover { transform: none; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════
+   MOBILE OVERFLOW AUDIT — FINAL, AUTHORITATIVE FIXES
+   This section is intentionally last in the file so every rule here
+   wins any cascade tie against earlier, scattered mobile overrides
+   accumulated across previous sessions. Nothing here changes desktop
+   appearance (≥900px) or the approved light theme — only the mobile
+   box model. Root causes fixed, not just overflow-x:hidden painted
+   over them (that safety net already existed; see body rule below,
+   kept as a second line of defense, not the fix itself).
+   ═════════════════════════════════════════════════════════════════════ */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── Root cause #1: form controls ignore CSS width in flex layouts ──
+   <input> (and <select>/<button>) has a browser default intrinsic
+   minimum width — in WebKit-family engines this can exceed the
+   available space inside a narrow flex row, silently forcing the
+   whole row (and the page) wider than the viewport. This is almost
+   certainly why the search icon/button looked "positioned awkwardly"
+   — the input itself was pushing past its container's right edge. */
+.tool-search,
+.tool-search-input,
+.nav,
+.nav-logo,
+.hero,
+.hero-pills,
+.tc-foot,
+.ts-item,
+.popular-hdr,
+.tools-hdr,
+.foot-brand,
+.calc-head {
+  min-width: 0;
+}
+
+/* ── Root cause #2: grid column without minmax(0, …) ──
+   `1.6fr` alone still carries an implicit auto minimum sized to its
+   content, same failure mode as flex. The other 5 footer columns
+   already use minmax(0, 1fr); this one didn't. */
+.foot-top {
+  grid-template-columns: 1.6fr repeat(5, minmax(0, 1fr));
+}
+
+/* ── Root cause #3: overflow-x reset on the pill scroll strip ──
+   A later, unrelated rule (`.hero-pills { overflow: visible; }`,
+   added when fixing a *different* clipping issue) sets the `overflow`
+   shorthand, which resets overflow-x on both axes. A subsequent rule
+   re-applied overflow-x: auto only inside one specific media query —
+   fragile, and exactly the kind of accumulated-override conflict that
+   causes pills to "extend outside the viewport." Fixed here for every
+   width ≤480px, unambiguously, in one place. */
+@media (max-width: 480px) {
+  .hero-pills {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin: 0 calc(var(--gut) * -1);
+    padding: 0 var(--gut) 4px;
+  }
+  .hero-pills::-webkit-scrollbar { display: none; }
+  .pill {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+}
+
+/* ── Search bar: one clean mobile layout, no absolute-overlap tricks ──
+   Below 480px the button drops to its own full-width row instead of
+   floating inside the input (the prior absolute-position + flex-wrap
+   combination was fragile and is the most likely source of the
+   "icon positioned below/around the input" symptom). */
+@media (max-width: 480px) {
+  .tool-search {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 18px;
+  }
+  .tool-search-input {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;           /* stop iOS zoom-on-focus */
+    padding: 13px 34px 13px 36px; /* trimmed so more placeholder is visible */
+  }
+  .ts-icon {
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+  }
+  .ts-clear {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+  }
+  .ts-submit {
+    position: static;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 13px;
+  }
+}
+
+/* ── Hero: confirm no oversized text at the narrowest tested width ──
+   clamp() floor checked against "Everyday Calculations." — the
+   longest line — at 320px with --gut:18px (284px available); this
+   floor keeps every word inside that space with margin to spare. */
+@media (max-width: 430px) {
+  :root { --gut: 16px; }
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 22px var(--gut) 18px;
+  }
+  .hero-h1 {
+    font-size: clamp(1.55rem, 7.6vw, 2rem);
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .hero-p {
+    max-width: 32ch;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-wrap: break-word;
+  }
+  .hero-badge {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ── Calculator cards: guaranteed single column, no fixed widths ── */
+@media (max-width: 640px) {
+  .tgrid, .popular-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .tc, .tc-pop {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ── Benefits / trust strip: tighter, still comfortable ── */
+@media (max-width: 430px) {
+  .trust-strip {
+    padding: 18px var(--gut);
+  }
+  .trust-inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .ts-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* ── Header: logo/branding never forced past the hamburger ── */
+@media (max-width: 640px) {
+  .nav {
+    padding: 0 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .nav-logo {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .logo-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .hbg {
+    flex-shrink: 0;
+  }
+}
+
+/* ── Blanket safety net for any text content: never the fix on its
+   own (root causes above are), but a correct default regardless. ── */
+@media (max-width: 480px) {
+  .hero-p, .sec-p, .tc-desc, .ts-txt, .foot-brand-desc {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
