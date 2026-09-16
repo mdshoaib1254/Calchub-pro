@@ -184,55 +184,25 @@
 <!-- HERO SECTION -->
 <main>
 <section class="hero" aria-labelledby="hero-heading">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="hg1"></div><div class="hg2"></div><div class="hg3"></div>
-    <div class="hero-grid"></div>
-    <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
-  </div>
-
   <div class="hero-badge" role="status">
     <span class="live-dot" aria-hidden="true"></span>
     Free Online Calculators for Everyday Life
   </div>
 
-  <div class="hero-illo" aria-hidden="true">
-    <svg viewBox="0 0 300 260" class="hero-illo-svg">
-      <ellipse cx="150" cy="205" rx="108" ry="14" class="hi-shadow"/>
-      <g class="hi-orbit">
-        <rect x="98" y="38" width="104" height="150" rx="20" class="hi-body"/>
-        <rect x="112" y="54" width="76" height="38" rx="8" class="hi-screen"/>
-        <text x="178" y="80" text-anchor="end" class="hi-digits">0</text>
-        <g class="hi-keys">
-          <rect x="112" y="102" width="16" height="16" rx="4"/><rect x="136" y="102" width="16" height="16" rx="4"/>
-          <rect x="160" y="102" width="16" height="16" rx="4"/><rect x="184" y="102" width="16" height="16" rx="4"/>
-          <rect x="112" y="124" width="16" height="16" rx="4"/><rect x="136" y="124" width="16" height="16" rx="4"/>
-          <rect x="160" y="124" width="16" height="16" rx="4"/><rect x="184" y="124" width="16" height="16" rx="4"/>
-          <rect x="112" y="146" width="16" height="16" rx="4"/><rect x="136" y="146" width="16" height="16" rx="4"/>
-          <rect x="160" y="146" width="16" height="16" rx="4"/><rect x="184" y="146" width="16" height="16" rx="4"/>
-        </g>
-      </g>
-      <g class="hi-chip hi-chip1"><rect width="40" height="40" rx="12"/><text x="20" y="26">₹</text></g>
-      <g class="hi-chip hi-chip2"><rect width="40" height="40" rx="12"/><text x="20" y="26">%</text></g>
-      <g class="hi-chip hi-chip3"><rect width="40" height="40" rx="12"/><text x="20" y="26">♥</text></g>
-      <g class="hi-chip hi-chip4"><rect width="40" height="40" rx="12"/><text x="20" y="27">▤</text></g>
-    </svg>
-    <span class="hi-note">Calculate. Plan. Achieve.</span>
-  </div>
-
   <h1 class="hero-h1" id="hero-heading">
-    Smart Calculators.<br>
-    <span class="acc">Simple Answers.</span>
+    Smart Tools for<br>
+    Everyday <span class="acc">Calculations.</span>
   </h1>
 
   <p class="hero-p">
-    17+ free calculators for money, math, health and everyday decisions.
+    17+ free calculators for money, math, health and everyday life.
   </p>
 
   <div class="tool-search">
     <label for="calc-search" class="sr-only">Search calculators</label>
     <span class="ts-icon" aria-hidden="true">🔍</span>
     <input type="search" id="calc-search" class="tool-search-input"
-           placeholder="Search calculators… (e.g. EMI, BMI, GST, Age, Loan…)"
+           placeholder="What do you want to calculate?"
            autocomplete="off" oninput="applyFilters()" onsearch="applyFilters()"
            onkeydown="if(event.key==='Enter'){event.preventDefault();goToSearchResults();}">
     <button type="button" class="ts-clear" id="ts-clear" onclick="clearSearch()" aria-label="Clear search" hidden>&times;</button>
