@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profit &amp; Loss Calculator – Calculate Profit Margin &amp; Markup | CalcHub Pro</title>
+  <meta name="description" content="Calculate profit or loss, profit percentage, profit margin, and markup percentage from cost price and selling price with our free online calculator.">
+  <link rel="canonical" href="https://calchubpro.in/profit-and-loss-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Profit & Loss Calculator | CalcHub Pro">
+  <meta property="og:description" content="Calculate profit or loss, profit percentage, profit margin, and markup percentage from cost price and selling price.">
+  <meta property="og:url" content="https://calchubpro.in/profit-and-loss-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/profit-and-loss-calculator/#app",
+        "name": "Profit and Loss Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/profit-and-loss-calculator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Calculate commercial profits, losses, net profit margins, and retail markups."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/profit-and-loss-calculator/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calchubpro.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance Calculators",
+            "item": "https://calchubpro.in/#directory"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Profit & Loss Calculator",
+            "item": "https://calchubpro.in/profit-and-loss-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/profit-and-loss-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the formula for profit and loss percentage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Profit = Selling Price - Cost Price. Profit Percentage = (Profit / Cost Price) x 100. Loss = Cost Price - Selling Price. Loss Percentage = (Loss / Cost Price) x 100."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between profit margin and markup?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Markup is the percentage added to the cost price to arrive at the selling price: (Profit / Cost Price) x 100. Margin is the percentage of the selling price that is profit: (Profit / Selling Price) x 100. Margin can never exceed 100%, whereas markup can be greater than 100%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can profit margin be negative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if an item is sold for less than its total acquisition and operating cost, the business incurs a loss, resulting in a negative profit margin."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#directory">Finance</a></li>
+      <li><a href="../index.html#directory">Math</a></li>
+      <li><a href="../index.html#directory">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Math Calculators</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="../index.html" class="dcta" onclick="closeDrawer()">All 17 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#directory">Finance</a>
+    <span class="sep">/</span>
+    <span class="current">Profit &amp; Loss Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">📊 Business Metric Tool</div>
+    <h1>Profit &amp; Loss <em>Calculator</em></h1>
+    <p>Determine your net financial gain or loss, profit percentage on cost, gross profit margin on sales, and markup ratios for retail and trade.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main class="calc-main-wrap">
+    <!-- Interactive Card -->
+    <section class="calc-box" aria-labelledby="pl-box-title">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="pl-box-title">📊 Enter Cost &amp; Revenue</h2>
+        <button type="button" class="calc-box-reset" onclick="resetPLoss()">Reset</button>
+      </div>
+
+      <div class="field">
+        <label for="pnl-cp">
+          Cost Price (CP)
+          <span class="field-hint">Initial Acquisition / Manufacturing Cost</span>
+        </label>
+        <div class="input-wrap">
+          <span class="input-affix input-prefix">₹</span>
+          <input type="number" id="pnl-cp" class="has-prefix" value="800" min="0" step="10" placeholder="e.g. 800">
+        </div>
+        <div class="ferr" id="err-pnl-cp">Please enter a valid cost price.</div>
+      </div>
+
+      <div class="field">
+        <label for="pnl-sp">
+          Selling Price (SP)
+          <span class="field-hint">Sale Revenue Received</span>
+        </label>
+        <div class="input-wrap">
+          <span class="input-affix input-prefix">₹</span>
+          <input type="number" id="pnl-sp" class="has-prefix" value="1200" min="0" step="10" placeholder="e.g. 1200">
+        </div>
+        <div class="ferr" id="err-pnl-sp">Please enter a valid selling price.</div>
+      </div>
+
+      <div class="field">
+        <label for="pnl-exp">
+          Additional Expenses (Optional)
+          <span class="field-hint">Shipping, packaging, commission, etc.</span>
+        </label>
+        <div class="input-wrap">
+          <span class="input-affix input-prefix">₹</span>
+          <input type="number" id="pnl-exp" class="has-prefix" value="50" min="0" step="5" placeholder="e.g. 50">
+        </div>
+      </div>
+
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcPLoss()">Calculate Margin →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetPLoss()">Clear</button>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <section class="res-card" aria-label="Profit Loss Results" aria-live="polite">
+      <div class="res-banner">
+        <div class="res-banner-label" id="pnl-status-label">Net Profit Earned</div>
+        <div class="res-banner-value highlight" style="color: var(--teal);" id="out-pnl-amount">+₹350.00</div>
+      </div>
+
+      <div class="res-grid">
+        <div class="rrow">
+          <span class="rl">Total Cost (CP + Expenses)</span>
+          <span class="rv" id="out-pnl-total-cost">₹850.00</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Profit / Loss Percentage</span>
+          <span class="rv" style="color: var(--teal);" id="out-pnl-pct">+41.18%</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Profit Margin (% of Revenue)</span>
+          <span class="rv" style="color: var(--sky);" id="out-pnl-margin">29.17%</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Retail Markup (% on CP)</span>
+          <span class="rv" id="out-pnl-markup">41.18%</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>Margin vs. Markup: Understanding the Crucial Difference</h2>
+    <p>Many business owners confuse <strong>margin</strong> and <strong>markup</strong>, which can lead to mispriced inventory and unintended losses.</p>
+    <ul>
+      <li><strong>Markup</strong> is the percentage added to the total cost to set the selling price. (e.g. A ₹100 product marked up 50% sells for ₹150).</li>
+      <li><strong>Margin</strong> is the percentage of the selling price that turns into profit. (e.g. On that same ₹150 sale with ₹50 profit, the profit margin is ₹50 ÷ ₹150 = 33.33%).</li>
+    </ul>
+
+    <!-- Formula Box -->
+    <div class="formula-box">
+      Net Profit = Selling Price − (Cost Price + Expenses)<br>
+      Net Loss = (Cost Price + Expenses) − Selling Price<br><br>
+      • Profit % = [Profit ÷ Total Cost] × 100<br>
+      • Profit Margin % = [Profit ÷ Selling Price] × 100<br>
+      • Markup % = [(Selling Price − Total Cost) ÷ Total Cost] × 100
+    </div>
+
+    <h2>Worked Example: E-Commerce Product Sale</h2>
+    <div class="example-card">
+      <h4>Scenario Figures</h4>
+      <ul class="example-steps">
+        <li>Cost Price (CP) = ₹800.00</li>
+        <li>Shipping &amp; Packaging Expenses = ₹50.00</li>
+        <li>Total Outflow = ₹800 + ₹50 = <strong>₹850.00</strong></li>
+        <li>Final Selling Price (SP) = <strong>₹1,200.00</strong></li>
+      </ul>
+      <h4 style="margin-top: 14px;">Calculations</h4>
+      <ol class="example-steps">
+        <li>Net Profit = ₹1,200 - ₹850 = <strong>₹350.00</strong></li>
+        <li>Profit % on Cost = $(350 \div 850) \times 100 =$ <strong>41.18%</strong></li>
+        <li>Profit Margin = $(350 \div 1200) \times 100 =$ <strong>29.17%</strong></li>
+      </ol>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the formula for profit and loss percentage?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Profit = Selling Price - Cost Price. Profit Percentage = (Profit / Cost Price) x 100. Loss = Cost Price - Selling Price. Loss Percentage = (Loss / Cost Price) x 100.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the difference between profit margin and markup?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Markup is the percentage added to the cost price to arrive at the selling price: (Profit / Cost Price) x 100. Margin is the percentage of the selling price that is profit: (Profit / Selling Price) x 100. Margin can never exceed 100%, whereas markup can be greater than 100%.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Can profit margin be negative?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes, if an item is sold for less than its total acquisition and operating cost, the business incurs a loss, resulting in a negative profit margin.</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Commerce &amp; Financial Calculators</h2>
+        <p>Explore tools for calculating discounts, taxes, and percentages.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../discount-calculator/" class="rel-card">
+          <div class="rel-ico">🏷️</div>
+          <div class="rel-name">Discount Calculator</div>
+          <div class="rel-desc">Find final sale prices and savings from promotional discounts.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../gst-calculator/" class="rel-card">
+          <div class="rel-ico">🧾</div>
+          <div class="rel-name">GST Calculator</div>
+          <div class="rel-desc">Add or remove GST with Indian tax slabs and CGST/SGST breakdowns.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../percentage-calculator/" class="rel-card">
+          <div class="rel-ico">🔢</div>
+          <div class="rel-name">Percentage Calculator</div>
+          <div class="rel-desc">Calculate percentages, percentage increases, and portions with ease.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../simple-interest-calculator/" class="rel-card">
+          <div class="rel-ico">💰</div>
+          <div class="rel-name">Simple Interest</div>
+          <div class="rel-desc">Compute basic interest growth without compounding over customized timeframes.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans & Finance</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math & Health</h4>
+          <ul>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational & client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+    function calcPLoss() {
+      const cpInp = document.getElementById('pnl-cp');
+      const spInp = document.getElementById('pnl-sp');
+      const expInp = document.getElementById('pnl-exp');
+
+      const cp = parseFloat(cpInp.value) || 0;
+      const sp = parseFloat(spInp.value) || 0;
+      const exp = parseFloat(expInp.value) || 0;
+
+      let valid = true;
+
+      if (cp < 0) {
+        cpInp.classList.add('bad');
+        document.getElementById('err-pnl-cp').classList.add('show');
+        valid = false;
+      } else {
+        cpInp.classList.remove('bad');
+        document.getElementById('err-pnl-cp').classList.remove('show');
+      }
+
+      if (sp < 0) {
+        spInp.classList.add('bad');
+        document.getElementById('err-pnl-sp').classList.add('show');
+        valid = false;
+      } else {
+        spInp.classList.remove('bad');
+        document.getElementById('err-pnl-sp').classList.remove('show');
+      }
+
+      if (!valid) return;
+
+      const totalCost = cp + exp;
+      const diff = sp - totalCost;
+      const outAmount = document.getElementById('out-pnl-amount');
+      const statusLabel = document.getElementById('pnl-status-label');
+
+      const pct = totalCost > 0 ? (diff / totalCost) * 100 : 0;
+      const margin = sp > 0 ? (diff / sp) * 100 : 0;
+      const markup = totalCost > 0 ? (diff / totalCost) * 100 : 0;
+
+      if (diff > 0) {
+        statusLabel.textContent = 'Net Profit Earned';
+        outAmount.textContent = '+₹' + formatNum(diff, 2);
+        outAmount.style.color = 'var(--teal)';
+      } else if (diff < 0) {
+        statusLabel.textContent = 'Net Loss Incurred';
+        outAmount.textContent = '-₹' + formatNum(Math.abs(diff), 2);
+        outAmount.style.color = 'var(--danger)';
+      } else {
+        statusLabel.textContent = 'Break-Even (Zero Profit/Loss)';
+        outAmount.textContent = '₹0.00';
+        outAmount.style.color = 'var(--muted)';
+      }
+
+      document.getElementById('out-pnl-total-cost').textContent = '₹' + formatNum(totalCost, 2);
+      document.getElementById('out-pnl-pct').textContent = `${diff >= 0 ? '+' : ''}${formatNum(pct, 2)}%`;
+      document.getElementById('out-pnl-margin').textContent = `${formatNum(margin, 2)}%`;
+      document.getElementById('out-pnl-markup').textContent = `${formatNum(markup, 2)}%`;
+    }
+
+    function resetPLoss() {
+      document.getElementById('pnl-cp').value = '800';
+      document.getElementById('pnl-sp').value = '1200';
+      document.getElementById('pnl-exp').value = '50';
+
+      ['pnl-cp', 'pnl-sp'].forEach(id => {
+        document.getElementById(id).classList.remove('bad');
+      });
+      ['err-pnl-cp', 'err-pnl-sp'].forEach(id => {
+        document.getElementById(id).classList.remove('show');
+      });
+
+      calcPLoss();
+    }
+
+    document.getElementById('pnl-cp').addEventListener('input', calcPLoss);
+    document.getElementById('pnl-sp').addEventListener('input', calcPLoss);
+    document.getElementById('pnl-exp').addEventListener('input', calcPLoss);
+
+    calcPLoss();
+  </script>
+</body>
+</html>
