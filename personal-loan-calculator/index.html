@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Loan EMI Calculator – Monthly Payment & Interest | CalcHub Pro</title>
+  <meta name="description" content="Calculate personal loan monthly EMI, total interest, and repayment schedules for unsecured personal credit across 1 to 5 years with our free calculator.">
+  <link rel="canonical" href="https://calchubpro.in/personal-loan-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Personal Loan EMI Calculator | CalcHub Pro">
+  <meta property="og:description" content="Calculate personal loan monthly EMI, total interest, and repayment schedules for unsecured personal credit across 1 to 5 years.">
+  <meta property="og:url" content="https://calchubpro.in/personal-loan-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <!-- Structured Data: WebApplication, BreadcrumbList, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/personal-loan-calculator/#app",
+        "name": "Personal Loan EMI Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/personal-loan-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "Accurate personal loan EMI and interest calculator for unsecured personal loans, medical emergencies, and debt consolidation."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/personal-loan-calculator/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calchubpro.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance Calculators",
+            "item": "https://calchubpro.in/#directory"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Personal Loan Calculator",
+            "item": "https://calchubpro.in/personal-loan-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/personal-loan-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the typical interest rate on personal loans in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Personal loan interest rates in India typically range from 10.5% to 24% per annum depending on your credit score, employer category, and monthly income."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What credit score is needed for a low-interest personal loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A CIBIL or credit score of 750 or higher is generally considered excellent and qualifies borrowers for the lowest interest rates and faster loan approvals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I prepay or foreclose a personal loan early?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, but unlike floating-rate home loans, banks and NBFCs often levy prepayment charges between 2% and 5% plus GST on the outstanding principal for early foreclosure of personal loans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the maximum tenure for a personal loan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most lenders offer personal loan tenures from 12 months (1 year) up to a maximum of 60 months (5 years)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#directory">Finance</a></li>
+      <li><a href="../index.html#directory">Math</a></li>
+      <li><a href="../index.html#directory">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Math Calculators</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="../index.html" class="dcta" onclick="closeDrawer()">All 17 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#directory">Finance</a>
+    <span class="sep">/</span>
+    <span class="current">Personal Loan Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">💳 Unsecured Credit Tool</div>
+    <h1>Personal Loan EMI <em>Calculator</em></h1>
+    <p>Estimate monthly repayments, total interest costs, and repayment schedules for personal loans, debt consolidation, and medical expenses.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main class="calc-main-wrap">
+    <!-- Interactive Card -->
+    <section class="calc-box" aria-labelledby="pl-title">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="pl-title">💳 Personal Credit Details</h2>
+        <button type="button" class="calc-box-reset" onclick="resetPL()">Reset</button>
+      </div>
+
+      <div class="field">
+        <label for="pl-amount">
+          Loan Amount Needed
+          <span class="field-hint">Borrowing Amount</span>
+        </label>
+        <div class="input-wrap">
+          <span class="input-affix input-prefix">₹</span>
+          <input type="number" id="pl-amount" class="has-prefix" value="300000" min="10000" max="5000000" step="10000" placeholder="e.g. 300000">
+        </div>
+        <div class="ferr" id="err-pl-amount">Please enter an amount between ₹10,000 and ₹50,00,000.</div>
+      </div>
+
+      <div class="field">
+        <label for="pl-rate">
+          Annual Interest Rate
+          <span class="field-hint">Typical rates 11% – 18%</span>
+        </label>
+        <div class="input-wrap">
+          <input type="number" id="pl-rate" class="has-suffix" value="12.5" min="5" max="36" step="0.25" placeholder="e.g. 12.5">
+          <span class="input-affix input-suffix">%</span>
+        </div>
+        <div class="ferr" id="err-pl-rate">Enter a valid rate between 5% and 36%.</div>
+      </div>
+
+      <div class="field">
+        <label for="pl-tenure">
+          Loan Tenure (Years)
+          <span class="field-hint">1 to 5 Years</span>
+        </label>
+        <div class="input-wrap">
+          <input type="number" id="pl-tenure" class="has-suffix" value="3" min="1" max="5" step="1" placeholder="e.g. 3">
+          <span class="input-affix input-suffix">Years</span>
+        </div>
+        <div class="ferr" id="err-pl-tenure">Enter tenure between 1 and 5 years.</div>
+      </div>
+
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcPersonalLoan()">Calculate EMI →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetPL()">Clear</button>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <section class="res-card" aria-label="Personal Loan Calculation Results" aria-live="polite">
+      <div class="res-banner">
+        <div class="res-banner-label">Monthly Personal Loan EMI</div>
+        <div class="res-banner-value highlight" id="out-pl-emi">₹10,037</div>
+      </div>
+
+      <div class="res-grid">
+        <div class="rrow">
+          <span class="rl">Principal Amount</span>
+          <span class="rv" id="out-pl-principal">₹3,00,000</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Interest Payable</span>
+          <span class="rv" style="color: var(--amber);" id="out-pl-interest">₹61,332</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Amount Repaid (P + I)</span>
+          <span class="rv" style="color: var(--sky);" id="out-pl-total">₹3,61,332</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Number of Monthly Payments</span>
+          <span class="rv" id="out-pl-months">36 months</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total Interest Ratio</span>
+          <span class="rv" id="out-pl-ratio">20.4%</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>Understanding Personal Loan EMIs</h2>
+    <p>A personal loan is an <strong>unsecured borrowing facility</strong>, meaning you are not required to pledge collateral (such as property, gold, or shares) to obtain the funds. Because lenders assume higher credit risk without collateral, personal loan interest rates are noticeably higher than home or gold loans.</p>
+    <p>Using our personal loan calculator lets you simulate different loan amounts and repayment periods before submitting loan applications, preventing unwanted hard credit inquiries on your CIBIL profile.</p>
+
+    <!-- Formula Box -->
+    <div class="formula-box">
+      EMI = [P × r × (1 + r)ⁿ] ÷ [(1 + r)ⁿ − 1]
+      <span>
+        Where:<br>
+        • <strong>P</strong> = Principal Personal Loan Amount<br>
+        • <strong>r</strong> = Monthly Interest Rate (Annual Rate ÷ 12 ÷ 100)<br>
+        • <strong>n</strong> = Tenure in Months (Years × 12)
+      </span>
+    </div>
+
+    <h2>Worked Example: ₹3 Lakh Loan over 3 Years</h2>
+    <div class="example-card">
+      <h4>Scenario Details</h4>
+      <ul class="example-steps">
+        <li><strong>Principal Borrowed:</strong> ₹3,00,000</li>
+        <li><strong>Interest Rate:</strong> 12.5% per annum</li>
+        <li><strong>Tenure:</strong> 3 Years (36 Months)</li>
+      </ul>
+      <h4 style="margin-top: 14px;">Computation Breakdown</h4>
+      <ol class="example-steps">
+        <li>Monthly rate: $r = \frac{12.5}{1200} \approx 0.0104167$</li>
+        <li>Compounding factor: $(1 + 0.0104167)^{36} \approx 1.451613$</li>
+        <li>Monthly Installment: <strong>₹10,037</strong></li>
+        <li>Total Repaid: $10,037 \times 36 =$ <strong>₹3,61,332</strong></li>
+        <li>Net Interest Paid: ₹3,61,332 - ₹3,00,000 = <strong>₹61,332</strong></li>
+      </ol>
+    </div>
+
+    <h2>Key Factors Affecting Your Personal Loan Interest Rate</h2>
+    <div class="use-case-grid">
+      <div class="uc-card">
+        <div class="uc-icon">⭐</div>
+        <h3 class="uc-title">CIBIL / Credit Score (750+)</h3>
+        <p class="uc-desc">Borrowers with scores above 750 are categorized as low risk, commanding the most competitive rates (10.5% - 13%).</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">🏢</div>
+        <h3 class="uc-title">Employer Category</h3>
+        <p class="uc-desc">Working with government organizations, Fortune 500 companies, or Tier-1 corporates often unlocks discounted rate brackets.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">⚖️</div>
+        <h3 class="uc-title">Debt-to-Income (FOIR)</h3>
+        <p class="uc-desc">Lenders insist your existing debt commitments plus the new personal loan EMI do not exceed 40% to 50% of take-home pay.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">⏳</div>
+        <h3 class="uc-title">Tenure Impact</h3>
+        <p class="uc-desc">Opting for 2-3 years instead of 5 years increases monthly EMI slightly, but cuts your total interest bill by up to 50%.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the typical interest rate on personal loans in India?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Personal loan interest rates in India typically range from 10.5% to 24% per annum depending on your credit score, employer category, and monthly income.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What credit score is needed for a low-interest personal loan?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A CIBIL or credit score of 750 or higher is generally considered excellent and qualifies borrowers for the lowest interest rates and faster loan approvals.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Can I prepay or foreclose a personal loan early?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes, but unlike floating-rate home loans, banks and NBFCs often levy prepayment charges between 2% and 5% plus GST on the outstanding principal for early foreclosure of personal loans.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the maximum tenure for a personal loan?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Most lenders offer personal loan tenures from 12 months (1 year) up to a maximum of 60 months (5 years).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <div class="legal-disc">
+      <h4>⚠️ Financial Disclaimer</h4>
+      <p>Calculations provided are for planning and estimation. Interest rates, processing fees, insurance charges, and loan approvals are solely at the discretion of the lending institution.</p>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Financial Calculators</h2>
+        <p>Plan your borrowings and interest growth with precision.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../emi-calculator/" class="rel-card">
+          <div class="rel-ico">💰</div>
+          <div class="rel-name">General EMI Calculator</div>
+          <div class="rel-desc">Universal monthly installment calculator for any loan or credit product.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../home-loan-calculator/" class="rel-card">
+          <div class="rel-ico">🏠</div>
+          <div class="rel-name">Home Loan Calculator</div>
+          <div class="rel-desc">Calculate home loan repayments up to 30 years and estimate tax deductions.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../car-loan-calculator/" class="rel-card">
+          <div class="rel-ico">🚗</div>
+          <div class="rel-name">Car Loan Calculator</div>
+          <div class="rel-desc">Plan automobile financing with tailored vehicle tenures and down payments.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../simple-interest-calculator/" class="rel-card">
+          <div class="rel-ico">📊</div>
+          <div class="rel-name">Simple Interest</div>
+          <div class="rel-desc">Compute basic interest growth without compounding over customized timeframes.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans & Finance</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math & Health</h4>
+          <ul>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational & client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+    function calcPersonalLoan() {
+      const pInp = document.getElementById('pl-amount');
+      const rInp = document.getElementById('pl-rate');
+      const tInp = document.getElementById('pl-tenure');
+
+      const p = parseFloat(pInp.value) || 0;
+      const annRate = parseFloat(rInp.value) || 0;
+      const tenureYrs = parseFloat(tInp.value) || 0;
+
+      let valid = true;
+
+      if (p < 10000 || p > 5000000) {
+        pInp.classList.add('bad');
+        document.getElementById('err-pl-amount').classList.add('show');
+        valid = false;
+      } else {
+        pInp.classList.remove('bad');
+        document.getElementById('err-pl-amount').classList.remove('show');
+      }
+
+      if (annRate < 5 || annRate > 36) {
+        rInp.classList.add('bad');
+        document.getElementById('err-pl-rate').classList.add('show');
+        valid = false;
+      } else {
+        rInp.classList.remove('bad');
+        document.getElementById('err-pl-rate').classList.remove('show');
+      }
+
+      if (tenureYrs < 1 || tenureYrs > 5) {
+        tInp.classList.add('bad');
+        document.getElementById('err-pl-tenure').classList.add('show');
+        valid = false;
+      } else {
+        tInp.classList.remove('bad');
+        document.getElementById('err-pl-tenure').classList.remove('show');
+      }
+
+      if (!valid) return;
+
+      const n = tenureYrs * 12;
+      const r = annRate / 12 / 100;
+      const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      const totalPayment = emi * n;
+      const totalInterest = totalPayment - p;
+      const ratio = (totalInterest / p) * 100;
+
+      document.getElementById('out-pl-emi').textContent = '₹' + formatINR(Math.round(emi));
+      document.getElementById('out-pl-principal').textContent = '₹' + formatINR(p);
+      document.getElementById('out-pl-interest').textContent = '₹' + formatINR(Math.round(totalInterest));
+      document.getElementById('out-pl-total').textContent = '₹' + formatINR(Math.round(totalPayment));
+      document.getElementById('out-pl-months').textContent = `${n} months (${tenureYrs} yrs)`;
+      document.getElementById('out-pl-ratio').textContent = `${ratio.toFixed(1)}%`;
+    }
+
+    function resetPL() {
+      document.getElementById('pl-amount').value = '300000';
+      document.getElementById('pl-rate').value = '12.5';
+      document.getElementById('pl-tenure').value = '3';
+
+      ['pl-amount', 'pl-rate', 'pl-tenure'].forEach(id => {
+        document.getElementById(id).classList.remove('bad');
+      });
+      ['err-pl-amount', 'err-pl-rate', 'err-pl-tenure'].forEach(id => {
+        document.getElementById(id).classList.remove('show');
+      });
+
+      calcPersonalLoan();
+    }
+
+    document.getElementById('pl-amount').addEventListener('input', calcPersonalLoan);
+    document.getElementById('pl-rate').addEventListener('input', calcPersonalLoan);
+    document.getElementById('pl-tenure').addEventListener('input', calcPersonalLoan);
+
+    calcPersonalLoan();
+  </script>
+</body>
+</html>
