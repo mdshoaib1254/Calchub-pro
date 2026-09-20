@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found (404) – CalcHub Pro</title>
+  <meta name="description" content="The page you are looking for does not exist or has moved. Browse all 17 free calculators on CalcHub Pro.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Page Not Found (404) – CalcHub Pro">
+  <meta property="og:description" content="The page you are looking for does not exist or has moved. Browse all 17 free calculators on CalcHub Pro.">
+  <meta property="og:url" content="https://calchubpro.in/404.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark"><img src="logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><span class="nl-ico" aria-hidden="true">⌂</span>Home</a></li>
+      <li><a href="index.html#directory">All 17 Calculators</a></li>
+      <li><a href="index.html#calc-zone">Quick Tool</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="index.html#directory" class="nav-btn">Explore Calculators <span aria-hidden="true">→</span></a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="index.html#directory" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="index.html#directory" onclick="closeDrawer()">Math Calculators</a>
+    <a href="index.html#directory" onclick="closeDrawer()">Health Calculators</a>
+    <a href="about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="index.html" class="dcta" onclick="closeDrawer()">All 17 Calculators</a>
+  </div>
+
+  <main style="max-width: 960px; margin: 60px auto 80px; padding: 0 max(20px, 5vw); text-align: center;">
+    <div class="badge-chip" style="background: rgba(239, 68, 68, 0.12); color: #fca5a5; border-color: rgba(239, 68, 68, 0.25);">
+      ⚠️ Error 404
+    </div>
+    <h1 style="font-family: var(--ff-head); font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -1.5px; margin: 12px 0;">
+      Page <em>Not Found</em>
+    </h1>
+    <p style="color: var(--muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto 36px; line-height: 1.7;">
+      The link you followed may be broken, outdated, or the address may have been mistyped. Choose any of our 17 dedicated calculators below:
+    </p>
+
+    <div style="display: flex; justify-content: center; gap: 14px; margin-bottom: 50px;">
+      <a href="index.html" class="nav-btn" style="padding: 12px 30px; font-size: 1rem;">← Return to Home</a>
+      <a href="contact.html" class="calc-reset-btn" style="padding: 12px 24px;">Report Issue</a>
+    </div>
+
+    <!-- Quick Directory Grid -->
+    <div class="related-grid" style="grid-template-columns: repeat(3, 1fr); text-align: left;">
+      <a href="emi-calculator/" class="rel-card">
+        <div class="rel-ico">💰</div>
+        <div class="rel-name">EMI Calculator</div>
+        <div class="rel-desc">Monthly loan repayments for home, car, and personal loans.</div>
+      </a>
+      <a href="home-loan-calculator/" class="rel-card">
+        <div class="rel-ico">🏠</div>
+        <div class="rel-name">Home Loan Calculator</div>
+        <div class="rel-desc">Mortgage repayment schedules up to 30 years and tax savings.</div>
+      </a>
+      <a href="car-loan-calculator/" class="rel-card">
+        <div class="rel-ico">🚗</div>
+        <div class="rel-name">Car Loan Calculator</div>
+        <div class="rel-desc">Vehicle financing, down payments, and interest charges.</div>
+      </a>
+      <a href="gst-calculator/" class="rel-card">
+        <div class="rel-ico">🧾</div>
+        <div class="rel-name">GST Calculator</div>
+        <div class="rel-desc">Add or remove GST with standard slabs and CGST/SGST split.</div>
+      </a>
+      <a href="percentage-calculator/" class="rel-card">
+        <div class="rel-ico">🔢</div>
+        <div class="rel-name">Percentage Calculator</div>
+        <div class="rel-desc">Find percentage portions, shares, and relative increases.</div>
+      </a>
+      <a href="bmi-calculator/" class="rel-card">
+        <div class="rel-ico">💪</div>
+        <div class="rel-name">BMI Calculator</div>
+        <div class="rel-desc">Check your Body Mass Index against WHO and Indian standards.</div>
+      </a>
+      <a href="age-calculator/" class="rel-card">
+        <div class="rel-ico">🎂</div>
+        <div class="rel-name">Age Calculator</div>
+        <div class="rel-desc">Exact chronological age in years, months, and total days lived.</div>
+      </a>
+      <a href="scientific-calculator/" class="rel-card">
+        <div class="rel-ico">🔬</div>
+        <div class="rel-name">Scientific Calculator</div>
+        <div class="rel-desc">Trigonometry, logarithms, roots, and advanced mathematical equations.</div>
+      </a>
+      <a href="compound-interest-calculator/" class="rel-card">
+        <div class="rel-ico">📈</div>
+        <div class="rel-name">Compound Interest</div>
+        <div class="rel-desc">Exponential investment growth across multiple compounding periods.</div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-mark"><img src="logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans & Finance</h4>
+          <ul>
+            <li><a href="emi-calculator/">EMI Calculator</a></li>
+            <li><a href="home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math & Health</h4>
+          <ul>
+            <li><a href="basic-calculator/">Basic Calculator</a></li>
+            <li><a href="scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="about.html">About CalcHub Pro</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational & client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="calc-core.js"></script>
+</body>
+</html>
