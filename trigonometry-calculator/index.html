@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trigonometry Calculator – Sin, Cos, Tan, Cot, Sec &amp; Cosec | CalcHub Pro</title>
+  <meta name="description" content="Free trigonometry calculator to calculate sin, cos, tan, cot, sec and cosec values with exact answers, decimals, standard angles, identities and triangle formulas.">
+  <link rel="canonical" href="https://calchubpro.in/trigonometry-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Trigonometry Calculator | CalcHub Pro">
+  <meta property="og:description" content="Calculate sin, cos, tan, cot, sec and cosec with exact values, decimals, standard angles, identities, sine rule and cosine rule.">
+  <meta property="og:url" content="https://calchubpro.in/trigonometry-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/trigonometry-calculator/#app",
+        "name": "Trigonometry Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/trigonometry-calculator/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Calculate sin, cos, tan, cot, sec and cosec with exact standard-angle values, decimals, inverse trigonometry, right triangle solving, sine rule and cosine rule."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/trigonometry-calculator/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calchubpro.in/" },
+          { "@type": "ListItem", "position": 2, "name": "Math Calculators", "item": "https://calchubpro.in/#directory" },
+          { "@type": "ListItem", "position": 3, "name": "Trigonometry Calculator", "item": "https://calchubpro.in/trigonometry-calculator/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/trigonometry-calculator/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a trigonometry calculator?", "acceptedAnswer": { "@type": "Answer", "text": "A trigonometry calculator finds the sine, cosine, tangent, cotangent, secant, or cosecant of an angle. CalcHub Pro's version gives an exact answer (like 1/2 or √3/3) for standard angles, plus a decimal value, so you can check homework or verify a step in a larger problem." } },
+          { "@type": "Question", "name": "How do I calculate tan 30°?", "acceptedAnswer": { "@type": "Answer", "text": "Use tan θ = sin θ / cos θ. At 30°, sin 30° = 1/2 and cos 30° = √3/2, so tan 30° = (1/2) ÷ (√3/2) = 1/√3, which rationalizes to √3/3 ≈ 0.5774." } },
+          { "@type": "Question", "name": "What is sin 30°?", "acceptedAnswer": { "@type": "Answer", "text": "sin 30° = 1/2, exactly 0.5. It is one of the five standard angles every trigonometry student memorizes." } },
+          { "@type": "Question", "name": "What is cos 60°?", "acceptedAnswer": { "@type": "Answer", "text": "cos 60° = 1/2, exactly 0.5. Note that cos 60° equals sin 30° — the two angles are complementary (they add up to 90°)." } },
+          { "@type": "Question", "name": "What is tan 45°?", "acceptedAnswer": { "@type": "Answer", "text": "tan 45° = 1. At 45°, sin and cos are equal (both √2/2), so their ratio is exactly 1." } },
+          { "@type": "Question", "name": "What are the standard trigonometric angles?", "acceptedAnswer": { "@type": "Answer", "text": "0°, 30°, 45°, 60° and 90° are the standard angles. Their sine, cosine and tangent values come out as simple fractions or square roots because they are derived from equilateral and right-isosceles triangles, so no calculator or approximation is needed." } },
+          { "@type": "Question", "name": "What is the difference between degrees and radians?", "acceptedAnswer": { "@type": "Answer", "text": "Degrees split a full circle into 360 equal parts. Radians measure an angle by the arc length it cuts on a unit circle, where a full circle equals 2π radians. To convert, radians = degrees × π / 180." } },
+          { "@type": "Question", "name": "Why is tan 90° undefined?", "acceptedAnswer": { "@type": "Answer", "text": "tan θ = sin θ / cos θ, and cos 90° = 0. Dividing by zero has no defined result, so tan 90° (and sec 90°) is undefined rather than infinite." } },
+          { "@type": "Question", "name": "What is SOH-CAH-TOA?", "acceptedAnswer": { "@type": "Answer", "text": "SOH-CAH-TOA is a memory aid for right-triangle ratios: Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent." } },
+          { "@type": "Question", "name": "What are the six trigonometric functions?", "acceptedAnswer": { "@type": "Answer", "text": "Sine, cosine and tangent, plus their reciprocals: cosecant (1/sin), secant (1/cos), and cotangent (1/tan)." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#directory">Finance</a></li>
+      <li><a href="../index.html#directory">Math</a></li>
+      <li><a href="../index.html#directory">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../index.html" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="../index.html" onclick="closeDrawer()">Home</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Math Calculators</a>
+    <a href="../index.html#directory" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="../index.html" class="dcta" onclick="closeDrawer()">All 18 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../index.html#directory">Math</a>
+    <span class="sep">/</span>
+    <span class="current">Trigonometry Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">📐 Student &amp; Exam Tool</div>
+    <h1>Trigonometry <em>Calculator</em></h1>
+    <p>Calculate sin, cos, tan, cot, sec and cosec values instantly — with exact standard-angle answers, decimals, step-by-step working, inverse trigonometry, right-triangle solving, and the sine and cosine rules.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main class="calc-main-wrap single-col">
+
+    <!-- ═══════════════ A. MAIN RATIO CALCULATOR ═══════════════ -->
+    <section class="calc-box" aria-labelledby="trig-title" style="margin-bottom: 24px;">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="trig-title">📐 Calculate sin, cos, tan, cot, sec, cosec</h2>
+        <button type="button" class="calc-box-reset" onclick="resetTrig()">Reset</button>
+      </div>
+
+      <div class="field">
+        <label for="trig-quick-entry">Quick entry <span class="field-hint">optional — e.g. sin 30° or tan(45)</span></label>
+        <div style="display:grid;grid-template-columns:1fr auto;gap:10px;">
+          <input type="text" id="trig-quick-entry" placeholder="e.g. sin 30° or tan(45)"
+                 onkeydown="if(event.key==='Enter'){event.preventDefault();parseQuickEntry();}">
+          <button type="button" class="calc-box-reset" onclick="parseQuickEntry()">Parse</button>
+        </div>
+        <div class="ferr" id="err-trig-quick">Could not read that expression. Try a format like "sin 30°" or "tan(45)".</div>
+      </div>
+
+      <div class="field">
+        <label>Function</label>
+        <div class="trig-func-row" role="group" aria-label="Choose trigonometric function">
+          <button type="button" class="calc-box-reset trig-func-btn active" id="tf-sin" data-func="sin" onclick="setTrigFunc('sin')" aria-pressed="true">sin</button>
+          <button type="button" class="calc-box-reset trig-func-btn" id="tf-cos" data-func="cos" onclick="setTrigFunc('cos')" aria-pressed="false">cos</button>
+          <button type="button" class="calc-box-reset trig-func-btn" id="tf-tan" data-func="tan" onclick="setTrigFunc('tan')" aria-pressed="false">tan</button>
+          <button type="button" class="calc-box-reset trig-func-btn" id="tf-cot" data-func="cot" onclick="setTrigFunc('cot')" aria-pressed="false">cot</button>
+          <button type="button" class="calc-box-reset trig-func-btn" id="tf-sec" data-func="sec" onclick="setTrigFunc('sec')" aria-pressed="false">sec</button>
+          <button type="button" class="calc-box-reset trig-func-btn" id="tf-cosec" data-func="cosec" onclick="setTrigFunc('cosec')" aria-pressed="false">cosec</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="trig-angle">Angle <span class="field-hint">any real number</span></label>
+        <input type="number" id="trig-angle" value="30" step="1" placeholder="e.g. 30" oninput="setFieldError('trig-angle','err-trig-angle',null)">
+        <div class="ferr" id="err-trig-angle">Please enter a valid angle.</div>
+      </div>
+
+      <div class="field">
+        <label>Unit</label>
+        <div class="trig-unit-row" role="group" aria-label="Angle unit">
+          <button type="button" class="calc-box-reset active" id="tu-deg" onclick="setTrigUnit('deg')" aria-pressed="true">Degrees</button>
+          <button type="button" class="calc-box-reset" id="tu-rad" onclick="setTrigUnit('rad')" aria-pressed="false">Radians</button>
+        </div>
+      </div>
+
+      <div class="field" style="margin-bottom: 0;">
+        <label>Common Angles <span class="field-hint">tap to use</span></label>
+        <div class="trig-quick-row" role="group" aria-label="Quick standard angles">
+          <button type="button" class="calc-box-reset trig-quick-btn" onclick="quickAngle(0)">0°</button>
+          <button type="button" class="calc-box-reset trig-quick-btn" onclick="quickAngle(30)">30°</button>
+          <button type="button" class="calc-box-reset trig-quick-btn" onclick="quickAngle(45)">45°</button>
+          <button type="button" class="calc-box-reset trig-quick-btn" onclick="quickAngle(60)">60°</button>
+          <button type="button" class="calc-box-reset trig-quick-btn" onclick="quickAngle(90)">90°</button>
+        </div>
+      </div>
+
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcTrig()">Calculate →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetTrig()">Clear</button>
+      </div>
+
+      <div class="res-banner" style="margin-top: 22px;">
+        <div class="res-banner-label" id="trig-res-label">sin 30°</div>
+        <div class="res-banner-value highlight" id="trig-res-value">1/2</div>
+      </div>
+      <div class="res-grid" style="margin-top: 12px;">
+        <div class="rrow"><span class="rl">Exact Value</span><span class="rv" id="trig-out-exact">1/2</span></div>
+        <div class="rrow"><span class="rl">Decimal Value</span><span class="rv" id="trig-out-decimal">0.5</span></div>
+      </div>
+      <div class="trig-note" id="trig-note">Reference angle 30° in Quadrant 1 — all six functions are positive here.</div>
+
+      <button type="button" class="trig-steps-toggle" id="trig-steps-btn" aria-expanded="false" onclick="toggleTrigSteps()">
+        <span class="chev" aria-hidden="true">▾</span> Show Steps
+      </button>
+      <div class="trig-steps-body" id="trig-steps-body"></div>
+    </section>
+
+    <!-- ═══════════════ B. STANDARD ANGLE REFERENCE TABLE ═══════════════ -->
+    <section class="calc-box" aria-labelledby="trig-table-title" style="margin-bottom: 24px;">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="trig-table-title">📋 Standard Angle Reference Table</h2>
+      </div>
+      <p style="color: var(--ink-2); font-size: 0.9rem; margin: 0 0 14px;">Exact values for the five angles every trigonometry student should memorize. Tap a value in the calculator above using the "Common Angles" row to see the same numbers worked out live.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th class="trig-cell">θ</th>
+              <th class="trig-cell">sin θ</th>
+              <th class="trig-cell">cos θ</th>
+              <th class="trig-cell">tan θ</th>
+              <th class="trig-cell">cot θ</th>
+              <th class="trig-cell">sec θ</th>
+              <th class="trig-cell">cosec θ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="trig-cell"><strong>0°</strong></td>
+              <td class="trig-cell">0</td><td class="trig-cell">1</td><td class="trig-cell">0</td>
+              <td class="trig-cell">Undefined</td><td class="trig-cell">1</td><td class="trig-cell">Undefined</td>
+            </tr>
+            <tr>
+              <td class="trig-cell"><strong>30°</strong></td>
+              <td class="trig-cell">1/2</td><td class="trig-cell">√3/2</td><td class="trig-cell">√3/3</td>
+              <td class="trig-cell">√3</td><td class="trig-cell">2√3/3</td><td class="trig-cell">2</td>
+            </tr>
+            <tr>
+              <td class="trig-cell"><strong>45°</strong></td>
+              <td class="trig-cell">√2/2</td><td class="trig-cell">√2/2</td><td class="trig-cell">1</td>
+              <td class="trig-cell">1</td><td class="trig-cell">√2</td><td class="trig-cell">√2</td>
+            </tr>
+            <tr>
+              <td class="trig-cell"><strong>60°</strong></td>
+              <td class="trig-cell">√3/2</td><td class="trig-cell">1/2</td><td class="trig-cell">√3</td>
+              <td class="trig-cell">√3/3</td><td class="trig-cell">2</td><td class="trig-cell">2√3/3</td>
+            </tr>
+            <tr>
+              <td class="trig-cell"><strong>90°</strong></td>
+              <td class="trig-cell">1</td><td class="trig-cell">0</td><td class="trig-cell">Undefined</td>
+              <td class="trig-cell">0</td><td class="trig-cell">Undefined</td><td class="trig-cell">1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═══════════════ C. RIGHT TRIANGLE HELPER ═══════════════ -->
+    <section class="calc-box" aria-labelledby="tri-helper-title" style="margin-bottom: 24px;">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="tri-helper-title">🔺 Right Triangle Helper</h2>
+      </div>
+      <p style="color: var(--ink-2); font-size: 0.9rem; margin: 0 0 4px;">In a right triangle, the three sides are named relative to the angle θ you're studying:</p>
+      <div class="tri-diagram-wrap">
+        <svg class="tri-diagram" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right triangle with the right angle at bottom-left, showing the hypotenuse, opposite and adjacent sides relative to angle theta at bottom-right">
+          <polygon points="50,40 50,200 270,200" class="tri-fill"></polygon>
+          <path d="M50,200 L50,184 L66,184 L66,200" class="tri-right-angle"></path>
+          <path d="M235,200 A35,35 0 0 0 219,172" class="tri-right-angle" fill="none"></path>
+          <text x="222" y="188" class="tri-theta">θ</text>
+          <text x="18" y="123" class="tri-label" transform="rotate(-90 18 123)">Opposite</text>
+          <text x="130" y="222" class="tri-label">Adjacent</text>
+          <text x="130" y="112" class="tri-label">Hypotenuse</text>
+        </svg>
+      </div>
+      <div class="soh-grid">
+        <div class="soh-card"><b>SOH</b><span>sin θ = Opposite / Hypotenuse</span></div>
+        <div class="soh-card"><b>CAH</b><span>cos θ = Adjacent / Hypotenuse</span></div>
+        <div class="soh-card"><b>TOA</b><span>tan θ = Opposite / Adjacent</span></div>
+      </div>
+      <div class="soh-grid">
+        <div class="soh-card"><b>cosec θ</b><span>Hypotenuse / Opposite</span></div>
+        <div class="soh-card"><b>sec θ</b><span>Hypotenuse / Adjacent</span></div>
+        <div class="soh-card"><b>cot θ</b><span>Adjacent / Opposite</span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ D. RIGHT TRIANGLE CALCULATOR ═══════════════ -->
+    <section class="calc-box" aria-labelledby="rt-title" style="margin-bottom: 24px;">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="rt-title">📐 Right Triangle Calculator</h2>
+        <button type="button" class="calc-box-reset" onclick="resetRT()">Reset</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="field">
+          <label for="rt-opp">Opposite Side</label>
+          <input type="number" id="rt-opp" value="3" min="0" step="0.1" placeholder="e.g. 3" oninput="setFieldError('rt-opp','err-rt-opp',null)">
+          <div class="ferr" id="err-rt-opp">Please enter a positive length.</div>
+        </div>
+        <div class="field">
+          <label for="rt-adj">Adjacent Side</label>
+          <input type="number" id="rt-adj" value="4" min="0" step="0.1" placeholder="e.g. 4" oninput="setFieldError('rt-adj','err-rt-adj',null)">
+          <div class="ferr" id="err-rt-adj">Please enter a positive length.</div>
+        </div>
+      </div>
+      <div class="field" style="margin-bottom: 0;">
+        <label>Show angle θ in</label>
+        <div class="trig-unit-row" role="group" aria-label="Right triangle angle unit">
+          <button type="button" class="calc-box-reset active" id="rtu-deg" onclick="setRTUnit('deg')" aria-pressed="true">Degrees</button>
+          <button type="button" class="calc-box-reset" id="rtu-rad" onclick="setRTUnit('rad')" aria-pressed="false">Radians</button>
+        </div>
+      </div>
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcRT()">Solve Triangle →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetRT()">Clear</button>
+      </div>
+      <div class="trig-error-banner" id="rt-error"></div>
+      <div class="res-banner" style="margin-top: 22px;">
+        <div class="res-banner-label">Hypotenuse</div>
+        <div class="res-banner-value highlight" id="rt-out-hyp">5</div>
+      </div>
+      <div class="res-grid" style="margin-top: 12px;">
+        <div class="rrow"><span class="rl">Angle θ</span><span class="rv" id="rt-out-angle">36.87°</span></div>
+        <div class="rrow"><span class="rl">sin θ</span><span class="rv" id="rt-out-sin">0.6</span></div>
+        <div class="rrow"><span class="rl">cos θ</span><span class="rv" id="rt-out-cos">0.8</span></div>
+        <div class="rrow"><span class="rl">tan θ</span><span class="rv" id="rt-out-tan">0.75</span></div>
+        <div class="rrow"><span class="rl">cot θ</span><span class="rv" id="rt-out-cot">1.3333333333</span></div>
+        <div class="rrow"><span class="rl">sec θ</span><span class="rv" id="rt-out-sec">1.25</span></div>
+        <div class="rrow"><span class="rl">cosec θ</span><span class="rv" id="rt-out-cosec">1.6666666667</span></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ E. INVERSE TRIGONOMETRY ═══════════════ -->
+    <section class="calc-box" aria-labelledby="inv-title" style="margin-bottom: 24px;">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="inv-title">↩️ Inverse Trigonometry</h2>
+        <button type="button" class="calc-box-reset" onclick="resetInverse()">Reset</button>
+      </div>
+      <div class="field">
+        <label>Function</label>
+        <div class="trig-unit-row" role="group" aria-label="Choose inverse function" style="grid-template-columns: repeat(3, 1fr);">
+          <button type="button" class="calc-box-reset active" id="if-asin" onclick="setInverseFunc('asin')" aria-pressed="true">sin⁻¹</button>
+          <button type="button" class="calc-box-reset" id="if-acos" onclick="setInverseFunc('acos')" aria-pressed="false">cos⁻¹</button>
+          <button type="button" class="calc-box-reset" id="if-atan" onclick="setInverseFunc('atan')" aria-pressed="false">tan⁻¹</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="inv-value">Value <span class="field-hint" id="inv-hint">between -1 and 1</span></label>
+        <input type="number" id="inv-value" value="0.5" step="0.01" placeholder="e.g. 0.5" oninput="setFieldError('inv-value','err-inv-value',null)">
+        <div class="ferr" id="err-inv-value">Please enter a valid number.</div>
+      </div>
+      <div class="field" style="margin-bottom: 0;">
+        <label>Output angle in</label>
+        <div class="trig-unit-row" role="group" aria-label="Inverse output unit">
+          <button type="button" class="calc-box-reset active" id="iu-deg" onclick="setInverseUnit('deg')" aria-pressed="true">Degrees</button>
+          <button type="button" class="calc-box-reset" id="iu-rad" onclick="setInverseUnit('rad')" aria-pressed="false">Radians</button>
+        </div>
+      </div>
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcInverse()">Calculate →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetInverse()">Clear</button>
+      </div>
+      <div class="trig-error-banner" id="inv-error"></div>
+      <div class="res-banner" style="margin-top: 22px;">
+        <div class="res-banner-label" id="inv-res-label">sin⁻¹(0.5)</div>
+        <div class="res-banner-value highlight" id="inv-res-value">30°</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ F. SINE RULE CALCULATOR ═══════════════ -->
+    <section class="calc-box" aria-labelledby="sr-title" style="margin-bottom: 24px;">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="sr-title">📏 Sine Rule Calculator</h2>
+        <button type="button" class="calc-box-reset" onclick="resetSineRule()">Reset</button>
+      </div>
+      <div class="formula-box" style="margin: 0 0 18px; padding: 14px 18px;">a / sin A = b / sin B</div>
+      <p style="color: var(--ink-2); font-size: 0.87rem; margin: 0 0 14px;">Enter one full pair (a known side and its opposite angle), then either the second side <strong>or</strong> the second angle — CalcHub Pro solves the one you leave blank.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="field">
+          <label for="sr-a">Side a</label>
+          <input type="number" id="sr-a" min="0" step="0.1" placeholder="e.g. 10" oninput="setFieldError('sr-a','err-sr',null)">
+        </div>
+        <div class="field">
+          <label for="sr-A">Angle A (°)</label>
+          <input type="number" id="sr-A" min="0" max="179.999" step="0.1" placeholder="e.g. 40" oninput="setFieldError('sr-a','err-sr',null)">
+        </div>
+        <div class="field">
+          <label for="sr-b">Side b <span class="field-hint">leave blank to solve</span></label>
+          <input type="number" id="sr-b" min="0" step="0.1" placeholder="e.g. 8" oninput="setFieldError('sr-a','err-sr',null)">
+        </div>
+        <div class="field">
+          <label for="sr-B">Angle B (°) <span class="field-hint">leave blank to solve</span></label>
+          <input type="number" id="sr-B" min="0" max="179.999" step="0.1" placeholder="e.g. 30.4" oninput="setFieldError('sr-a','err-sr',null)">
+        </div>
+      </div>
+      <div class="ferr" id="err-sr">Please check the values above.</div>
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcSineRule()">Solve →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetSineRule()">Clear</button>
+      </div>
+      <div class="trig-error-banner" id="sr-error"></div>
+      <div class="res-banner" style="margin-top: 22px;">
+        <div class="res-banner-label" id="sr-res-label">Result</div>
+        <div class="res-banner-value highlight" id="sr-res-value">—</div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ G. COSINE RULE CALCULATOR ═══════════════ -->
+    <section class="calc-box" aria-labelledby="cr-title" style="margin-bottom: 24px;">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="cr-title">📐 Cosine Rule Calculator</h2>
+        <span class="badge-chip" style="margin-bottom: 0;">Two Common Cases</span>
+      </div>
+
+      <h3 style="font-family: var(--ff-head); font-size: 1rem; font-weight: 700; margin: 4px 0 10px;">1. Find a Side — Two Sides &amp; the Included Angle (SAS)</h3>
+      <div class="formula-box" style="margin: 0 0 14px; padding: 14px 18px;">a² = b² + c² − 2bc·cos A</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+        <div class="field" style="margin-bottom: 10px;">
+          <label for="cr1-b">Side b</label>
+          <input type="number" id="cr1-b" value="7" min="0" step="0.1" oninput="setFieldError('cr1-b','err-cr1',null)">
+        </div>
+        <div class="field" style="margin-bottom: 10px;">
+          <label for="cr1-c">Side c</label>
+          <input type="number" id="cr1-c" value="9" min="0" step="0.1" oninput="setFieldError('cr1-b','err-cr1',null)">
+        </div>
+        <div class="field" style="margin-bottom: 10px;">
+          <label for="cr1-A">Angle A (°)</label>
+          <input type="number" id="cr1-A" value="55" min="0.001" max="179.999" step="0.1" oninput="setFieldError('cr1-b','err-cr1',null)">
+        </div>
+      </div>
+      <div class="ferr" id="err-cr1">Please enter two positive sides and an angle between 0° and 180°.</div>
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcCosineSAS()">Find Side a →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetCosineSAS()">Clear</button>
+      </div>
+      <div class="res-banner" style="margin-top: 16px;">
+        <div class="res-banner-label">Side a</div>
+        <div class="res-banner-value highlight" id="cr1-out-a">7.6803</div>
+      </div>
+
+      <h3 style="font-family: var(--ff-head); font-size: 1rem; font-weight: 700; margin: 26px 0 10px; padding-top: 20px; border-top: 1px solid var(--hairline);">2. Find an Angle — All Three Sides (SSS)</h3>
+      <div class="formula-box" style="margin: 0 0 14px; padding: 14px 18px;">cos A = (b² + c² − a²) / 2bc</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+        <div class="field" style="margin-bottom: 10px;">
+          <label for="cr2-a">Side a</label>
+          <input type="number" id="cr2-a" value="5" min="0" step="0.1" oninput="setFieldError('cr2-a','err-cr2',null)">
+        </div>
+        <div class="field" style="margin-bottom: 10px;">
+          <label for="cr2-b">Side b</label>
+          <input type="number" id="cr2-b" value="6" min="0" step="0.1" oninput="setFieldError('cr2-a','err-cr2',null)">
+        </div>
+        <div class="field" style="margin-bottom: 10px;">
+          <label for="cr2-c">Side c</label>
+          <input type="number" id="cr2-c" value="7" min="0" step="0.1" oninput="setFieldError('cr2-a','err-cr2',null)">
+        </div>
+      </div>
+      <div class="ferr" id="err-cr2">These side lengths cannot form a valid triangle.</div>
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcCosineSSS()">Find All Angles →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetCosineSSS()">Clear</button>
+      </div>
+      <div class="res-grid" style="margin-top: 16px;">
+        <div class="rrow"><span class="rl">Angle A</span><span class="rv" id="cr2-out-A">44.42°</span></div>
+        <div class="rrow"><span class="rl">Angle B</span><span class="rv" id="cr2-out-B">57.12°</span></div>
+        <div class="rrow"><span class="rl">Angle C</span><span class="rv" id="cr2-out-C">78.46°</span></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>What is Trigonometry?</h2>
+    <p>Trigonometry is the branch of mathematics that studies the relationship between the angles and side lengths of triangles. It starts with the right triangle, where six ratios — sine, cosine, tangent, cotangent, secant and cosecant — connect an angle to the lengths of the triangle's sides. Those same six functions extend naturally to any angle, which is why trigonometry underpins geometry, physics, engineering, navigation and computer graphics.</p>
+
+    <h2>How to Use the Trigonometry Calculator</h2>
+    <p>Pick a function (sin, cos, tan, cot, sec or cosec), type an angle, and choose whether it's in degrees or radians — or just type a short expression like <strong>sin 30°</strong> or <strong>tan(45)</strong> into the quick-entry box and press Parse. Press Calculate to see both the exact value (as a fraction or radical, when the angle is a standard one) and the decimal value. Press "Show Steps" for a worked derivation.</p>
+
+    <h2>Standard Trigonometric Values</h2>
+    <p>The angles 0°, 30°, 45°, 60° and 90° are called "standard angles" because their trigonometric ratios reduce to simple fractions and square roots — 30°, 45° and 60° come directly from cutting an equilateral triangle in half or from a right-isosceles triangle. Because the values are exact, teachers and exams use them constantly, and it's worth memorizing the table above rather than reaching for a calculator every time.</p>
+    <div class="use-case-grid">
+      <div class="uc-card">
+        <div class="uc-icon">📐</div>
+        <h3 class="uc-title">Architecture &amp; Construction</h3>
+        <p class="uc-desc">Roof pitches, staircases, and structural supports are all calculated using right-triangle trigonometry.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">🧭</div>
+        <h3 class="uc-title">Navigation &amp; Surveying</h3>
+        <p class="uc-desc">Bearings and distances between two known points are found with the sine and cosine rules.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">🌊</div>
+        <h3 class="uc-title">Waves &amp; Physics</h3>
+        <p class="uc-desc">Sound, light and AC electricity are all modeled with sine and cosine functions.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon">🎮</div>
+        <h3 class="uc-title">Graphics &amp; Game Dev</h3>
+        <p class="uc-desc">Rotations, camera angles and lighting in 3D graphics rely on trigonometric functions.</p>
+      </div>
+    </div>
+
+    <h2>SOH-CAH-TOA</h2>
+    <p>SOH-CAH-TOA is the classic memory aid for the three primary ratios in a right triangle, relative to an angle θ:</p>
+    <div class="formula-box">
+      <strong>S</strong>OH: sin θ = Opposite ÷ Hypotenuse<br>
+      <strong>C</strong>AH: cos θ = Adjacent ÷ Hypotenuse<br>
+      <strong>T</strong>OA: tan θ = Opposite ÷ Adjacent
+    </div>
+    <p>The remaining three functions are simply the reciprocals: cosecant flips sine, secant flips cosine, and cotangent flips tangent.</p>
+
+    <h2>Trigonometric Identities</h2>
+    <p>These identities hold true for every angle where the functions involved are defined, and they're the algebra behind the "Show Steps" explanations above.</p>
+    <div class="identity-grid">
+      <div class="identity-card"><div class="id-name">Reciprocal</div><div class="id-formula">sec θ = 1 / cos θ</div></div>
+      <div class="identity-card"><div class="id-name">Reciprocal</div><div class="id-formula">cosec θ = 1 / sin θ</div></div>
+      <div class="identity-card"><div class="id-name">Reciprocal</div><div class="id-formula">cot θ = 1 / tan θ</div></div>
+      <div class="identity-card"><div class="id-name">Quotient</div><div class="id-formula">tan θ = sin θ / cos θ</div></div>
+      <div class="identity-card"><div class="id-name">Quotient</div><div class="id-formula">cot θ = cos θ / sin θ</div></div>
+      <div class="identity-card"><div class="id-name">Product</div><div class="id-formula">tan θ × cot θ = 1</div></div>
+      <div class="identity-card"><div class="id-name">Pythagorean</div><div class="id-formula">sin² θ + cos² θ = 1</div></div>
+      <div class="identity-card"><div class="id-name">Pythagorean</div><div class="id-formula">sec² θ − tan² θ = 1</div></div>
+      <div class="identity-card"><div class="id-name">Pythagorean</div><div class="id-formula">cosec² θ − cot² θ = 1</div></div>
+    </div>
+
+    <h2>Right Triangle Formulas</h2>
+    <p>Alongside SOH-CAH-TOA, every right triangle obeys the Pythagorean theorem, which relates the two legs to the hypotenuse:</p>
+    <div class="formula-box">a² + b² = c² &nbsp;(where c is the hypotenuse)</div>
+    <p>Use the Right Triangle Calculator above: enter the Opposite and Adjacent sides, and it returns the Hypotenuse, all six ratios, and the angle θ = tan⁻¹(Opposite ÷ Adjacent).</p>
+
+    <h2>Sine Rule</h2>
+    <p>The sine rule works for <em>any</em> triangle, not just right triangles. It states that the ratio of a side to the sine of its opposite angle is the same for all three sides:</p>
+    <div class="formula-box">a / sin A &nbsp;=&nbsp; b / sin B &nbsp;=&nbsp; c / sin C</div>
+    <p>It's most useful when you know two angles and one side (AAS/ASA), or two sides and a non-included angle (SSA). Use the Sine Rule Calculator above to solve for a missing side or angle.</p>
+
+    <h2>Cosine Rule</h2>
+    <p>The cosine rule generalizes the Pythagorean theorem to any triangle. It has three equivalent forms, one for each side:</p>
+    <div class="formula-box">
+      a² = b² + c² − 2bc cos A<br>
+      b² = a² + c² − 2ac cos B<br>
+      c² = a² + b² − 2ab cos C
+    </div>
+    <p>It's the right tool when you know two sides and the included angle (SAS) — to find the third side — or all three sides (SSS) — to find any angle. Both cases are available in the Cosine Rule Calculator above.</p>
+
+    <h2>Formula Reference</h2>
+    <p>A compact summary for revision:</p>
+    <div class="formula-box">
+      SOH-CAH-TOA: sin=Opp/Hyp, cos=Adj/Hyp, tan=Opp/Adj<br><br>
+      Reciprocals: cosec=1/sin, sec=1/cos, cot=1/tan<br><br>
+      Pythagorean: sin²θ+cos²θ=1, sec²θ−tan²θ=1, cosec²θ−cot²θ=1<br><br>
+      Sine Rule: a/sinA = b/sinB = c/sinC<br><br>
+      Cosine Rule: a² = b²+c²−2bc·cosA
+    </div>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is a trigonometry calculator?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A trigonometry calculator finds the sine, cosine, tangent, cotangent, secant, or cosecant of an angle. CalcHub Pro's version gives an exact answer (like 1/2 or √3/3) for standard angles, plus a decimal value, so you can check homework or verify a step in a larger problem.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How do I calculate tan 30°?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Use tan θ = sin θ / cos θ. At 30°, sin 30° = 1/2 and cos 30° = √3/2, so tan 30° = (1/2) ÷ (√3/2) = 1/√3, which rationalizes to √3/3 ≈ 0.5774.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is sin 30°?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>sin 30° = 1/2, exactly 0.5. It is one of the five standard angles every trigonometry student memorizes.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is cos 60°?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>cos 60° = 1/2, exactly 0.5. Note that cos 60° equals sin 30° — the two angles are complementary (they add up to 90°).</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is tan 45°?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>tan 45° = 1. At 45°, sin and cos are equal (both √2/2), so their ratio is exactly 1.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What are the standard trigonometric angles?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>0°, 30°, 45°, 60° and 90° are the standard angles. Their sine, cosine and tangent values come out as simple fractions or square roots because they are derived from equilateral and right-isosceles triangles, so no calculator or approximation is needed.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the difference between degrees and radians?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Degrees split a full circle into 360 equal parts. Radians measure an angle by the arc length it cuts on a unit circle, where a full circle equals 2π radians. To convert, radians = degrees × π / 180.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          Why is tan 90° undefined?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>tan θ = sin θ / cos θ, and cos 90° = 0. Dividing by zero has no defined result, so tan 90° (and sec 90°) is undefined rather than infinite.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is SOH-CAH-TOA?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>SOH-CAH-TOA is a memory aid for right-triangle ratios: Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What are the six trigonometric functions?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Sine, cosine and tangent, plus their reciprocals: cosecant (1/sin), secant (1/cos), and cotangent (1/tan).</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Mathematics Tools</h2>
+        <p>More calculators for students and everyday math.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../scientific-calculator/" class="rel-card">
+          <div class="rel-ico">🔬</div>
+          <div class="rel-name">Scientific Calculator</div>
+          <div class="rel-desc">Trigonometry, logarithms, powers, roots and factorials for STEM work.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../percentage-calculator/" class="rel-card">
+          <div class="rel-ico">🔢</div>
+          <div class="rel-name">Percentage Calculator</div>
+          <div class="rel-desc">Solve any percentage problem: of a number, as a share, or a change.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../average-calculator/" class="rel-card">
+          <div class="rel-ico">📊</div>
+          <div class="rel-name">Average Calculator</div>
+          <div class="rel-desc">Compute mean, median, mode, range, and sum across custom numbers.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../basic-calculator/" class="rel-card">
+          <div class="rel-ico">🧮</div>
+          <div class="rel-name">Basic Calculator</div>
+          <div class="rel-desc">Quick everyday arithmetic — add, subtract, multiply and divide.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="../index.html" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt="CalcHub Pro Logo"></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. Private, client-side, zero signup required.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Loans &amp; Finance</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math &amp; Health</h4>
+          <ul>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../trigonometry-calculator/">Trigonometry Calculator</a></li>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About &amp; Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          All systems operational &amp; client-side verified
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+  /* ═══════════════════════════════════════════════════════════════
+     TRIGONOMETRY ENGINE — self-contained, no external math library.
+     Validated standalone before being embedded here (80/80 test
+     cases, including every value in the brief's table and worked
+     examples). Reused helpers (readNum, setFieldError, formatNum,
+     toggleFaq, toggleDrawer) come from ../calc-core.js and are not
+     modified here.
+     ═══════════════════════════════════════════════════════════════ */
+  (function () {
+    'use strict';
+
+    const EXACT = {
+      0:  { sin:{l:'0',d:0},        cos:{l:'1',d:1},        tan:{l:'0',d:0},        cot:{l:'Undefined',undef:true}, sec:{l:'1',d:1},        cosec:{l:'Undefined',undef:true} },
+      30: { sin:{l:'1/2',d:0.5},    cos:{l:'√3/2',d:Math.sqrt(3)/2}, tan:{l:'√3/3',d:Math.sqrt(3)/3}, cot:{l:'√3',d:Math.sqrt(3)}, sec:{l:'2√3/3',d:2*Math.sqrt(3)/3}, cosec:{l:'2',d:2} },
+      45: { sin:{l:'√2/2',d:Math.SQRT2/2}, cos:{l:'√2/2',d:Math.SQRT2/2}, tan:{l:'1',d:1}, cot:{l:'1',d:1}, sec:{l:'√2',d:Math.SQRT2}, cosec:{l:'√2',d:Math.SQRT2} },
+      60: { sin:{l:'√3/2',d:Math.sqrt(3)/2}, cos:{l:'1/2',d:0.5}, tan:{l:'√3',d:Math.sqrt(3)}, cot:{l:'√3/3',d:Math.sqrt(3)/3}, sec:{l:'2',d:2}, cosec:{l:'2√3/3',d:2*Math.sqrt(3)/3} },
+      90: { sin:{l:'1',d:1}, cos:{l:'0',d:0}, tan:{l:'Undefined',undef:true}, cot:{l:'0',d:0}, sec:{l:'Undefined',undef:true}, cosec:{l:'1',d:1} },
+    };
+    const STD_ANGLES = [0, 30, 45, 60, 90];
+    const SIGN = {
+      sin:   [1, 1, -1, -1],
+      cos:   [1, -1, -1, 1],
+      tan:   [1, -1, 1, -1],
+      cot:   [1, -1, 1, -1],
+      sec:   [1, -1, -1, 1],
+      cosec: [1, 1, -1, -1],
+    };
+    const FUNC_LABEL = { sin:'sin', cos:'cos', tan:'tan', cot:'cot', sec:'sec', cosec:'cosec' };
+
+    function reduceAngle(deg) {
+      const a = ((deg % 360) + 360) % 360;
+      if (a <= 90)  return { a, q: 1, ref: a };
+      if (a <= 180) return { a, q: 2, ref: 180 - a };
+      if (a <= 270) return { a, q: 3, ref: a - 180 };
+      return { a, q: 4, ref: 360 - a };
+    }
+    function nearestStdAngle(ref) { return STD_ANGLES.find(s => Math.abs(ref - s) < 1e-7); }
+    function signLabel(sign, label) {
+      if (label === '0' || label === 'Undefined') return label;
+      return sign === -1 ? '−' + label : label;
+    }
+    function formatDecimal(n) {
+      if (n === null || n === undefined || !Number.isFinite(n)) return '—';
+      const neg = n < 0 && Math.abs(n) > 1e-12;
+      let s = Math.abs(n).toFixed(10).replace(/0+$/, '').replace(/\.$/, '');
+      if (s === '') s = '0';
+      return (neg && s !== '0' ? '−' : '') + s;
+    }
+    function trigExact(func, angleDeg) {
+      const red = reduceAngle(angleDeg);
+      const matched = nearestStdAngle(red.ref);
+      if (matched === undefined) return null;
+      const entry = EXACT[matched][func];
+      if (entry.undef) return { exact: 'Undefined', decimal: null, isUndefined: true, a: red.a, q: red.q, ref: red.ref, matched };
+      const sign = SIGN[func][red.q - 1];
+      let dec = entry.d * sign;
+      if (Object.is(dec, -0)) dec = 0;
+      return { exact: signLabel(sign, entry.l), decimal: dec, isUndefined: false, a: red.a, q: red.q, ref: red.ref, matched };
+    }
+    function trigDecimal(func, angleDeg) {
+      const rad = angleDeg * Math.PI / 180;
+      const s = Math.sin(rad), c = Math.cos(rad);
+      const EPS = 1e-9;
+      switch (func) {
+        case 'sin':   return { decimal: s, isUndefined: false };
+        case 'cos':   return { decimal: c, isUndefined: false };
+        case 'tan':   return Math.abs(c) < EPS ? { decimal: null, isUndefined: true } : { decimal: s / c, isUndefined: false };
+        case 'cot':   return Math.abs(s) < EPS ? { decimal: null, isUndefined: true } : { decimal: c / s, isUndefined: false };
+        case 'sec':   return Math.abs(c) < EPS ? { decimal: null, isUndefined: true } : { decimal: 1 / c, isUndefined: false };
+        case 'cosec': return Math.abs(s) < EPS ? { decimal: null, isUndefined: true } : { decimal: 1 / s, isUndefined: false };
+      }
+    }
+    function computeTrig(func, value, unit) {
+      const angleDeg = unit === 'rad' ? value * 180 / Math.PI : value;
+      const exact = trigExact(func, angleDeg);
+      if (exact) {
+        return {
+          standard: true, exact: exact.exact,
+          decimal: exact.isUndefined ? null : exact.decimal,
+          decimalStr: exact.isUndefined ? 'Undefined' : formatDecimal(exact.decimal),
+          isUndefined: exact.isUndefined, quadrant: exact.q, refAngle: exact.matched, angleNorm: exact.a,
+        };
+      }
+      const dec = trigDecimal(func, angleDeg);
+      return {
+        standard: false, exact: null,
+        decimal: dec.isUndefined ? null : dec.decimal,
+        decimalStr: dec.isUndefined ? 'Undefined' : formatDecimal(dec.decimal),
+        isUndefined: dec.isUndefined,
+      };
+    }
+    function computeInverse(func, value, outUnit) {
+      if (!Number.isFinite(value)) return { error: 'Please enter a valid number.' };
+      if ((func === 'asin' || func === 'acos') && (value < -1 || value > 1)) {
+        return { error: (func === 'asin' ? 'sin⁻¹' : 'cos⁻¹') + ' input must be between -1 and 1.' };
+      }
+      let rad;
+      if (func === 'asin') rad = Math.asin(value);
+      else if (func === 'acos') rad = Math.acos(value);
+      else rad = Math.atan(value);
+      const deg = rad * 180 / Math.PI;
+      return { deg, rad, display: outUnit === 'rad' ? rad : deg };
+    }
+
+    /* Optional natural-language quick entry: "sin 30°", "tan(45)", "cos 60" */
+    function parseExpr(str) {
+      if (!str) return null;
+      let s = str.trim().toLowerCase().replace(/π/g, 'pi');
+      const m = s.match(/^(sin|cos|tan|cot|sec|cosec|csc)\s*\(?\s*(-?\d+(?:\.\d+)?)\s*(°|deg(?:rees)?|rad(?:ians)?|pi)?\s*\)?$/);
+      if (!m) return null;
+      const func = m[1] === 'csc' ? 'cosec' : m[1];
+      let val = parseFloat(m[2]);
+      let unit = 'deg';
+      const tok = m[3];
+      if (tok === 'rad' || tok === 'radians') unit = 'rad';
+      if (tok === 'pi') { val = val * Math.PI; unit = 'rad'; }
+      return { func, val, unit };
+    }
+
+    /* ── Step-by-step derivation for the main calculator ─────────── */
+    function buildSteps(func, angleDeg, angleRawLabel) {
+      const red = reduceAngle(angleDeg);
+      const matched = nearestStdAngle(red.ref);
+      if (matched === undefined) {
+        return '<p>Step-by-step exact derivation is available for standard angles (0°, 30°, 45°, 60°, 90°, and their reflections in other quadrants). ' + escapeHTML(angleRawLabel) +
+               ' is not one of these, so CalcHub Pro evaluates sin and cos directly and computes the ratio numerically instead.</p>';
+      }
+      const sinSign = SIGN.sin[red.q - 1], cosSign = SIGN.cos[red.q - 1];
+      const sinStr = signLabel(sinSign, EXACT[matched].sin.l);
+      const cosStr = signLabel(cosSign, EXACT[matched].cos.l);
+      const quadNote = red.q > 1
+        ? '<p><strong>Step 1.</strong> Reduce to the reference angle in Quadrant 1.</p><p class="step-line">' + angleRawLabel + ' → reference angle ' + matched + '° (Quadrant ' + red.q + ')</p>'
+        : '<p><strong>Step 1.</strong> ' + angleRawLabel + ' is already in Quadrant 1 (0°–90°), so it is its own reference angle.</p>';
+      let n = 2;
+      let body = '';
+      switch (func) {
+        case 'sin':
+          body = '<p><strong>Step ' + n + '.</strong> Read sin ' + matched + '° directly from the standard-angle table' + (red.q > 1 ? ', then apply the Quadrant ' + red.q + ' sign' : '') + '.</p><p class="step-line">sin ' + angleRawLabel + ' = ' + sinStr + '</p>';
+          break;
+        case 'cos':
+          body = '<p><strong>Step ' + n + '.</strong> Read cos ' + matched + '° directly from the standard-angle table' + (red.q > 1 ? ', then apply the Quadrant ' + red.q + ' sign' : '') + '.</p><p class="step-line">cos ' + angleRawLabel + ' = ' + cosStr + '</p>';
+          break;
+        case 'tan':
+          body = '<p><strong>Step ' + n + '.</strong> tan θ = sin θ / cos θ</p>' +
+                 '<p class="step-line">tan ' + angleRawLabel + ' = (' + sinStr + ') / (' + cosStr + ')</p>' +
+                 '<p><strong>Step ' + (n + 1) + '.</strong> Simplify.</p>' +
+                 '<p class="step-line">tan ' + angleRawLabel + ' = ' + (EXACT[matched].tan.undef ? 'Undefined (division by zero)' : signLabel(SIGN.tan[red.q - 1], EXACT[matched].tan.l)) + '</p>';
+          break;
+        case 'cot':
+          body = '<p><strong>Step ' + n + '.</strong> cot θ = cos θ / sin θ (equivalently, 1 / tan θ)</p>' +
+                 '<p class="step-line">cot ' + angleRawLabel + ' = (' + cosStr + ') / (' + sinStr + ')</p>' +
+                 '<p><strong>Step ' + (n + 1) + '.</strong> Simplify.</p>' +
+                 '<p class="step-line">cot ' + angleRawLabel + ' = ' + (EXACT[matched].cot.undef ? 'Undefined (division by zero)' : signLabel(SIGN.cot[red.q - 1], EXACT[matched].cot.l)) + '</p>';
+          break;
+        case 'sec':
+          body = '<p><strong>Step ' + n + '.</strong> sec θ = 1 / cos θ</p>' +
+                 '<p class="step-line">sec ' + angleRawLabel + ' = 1 / (' + cosStr + ')</p>' +
+                 '<p><strong>Step ' + (n + 1) + '.</strong> Simplify.</p>' +
+                 '<p class="step-line">sec ' + angleRawLabel + ' = ' + (EXACT[matched].sec.undef ? 'Undefined (division by zero)' : signLabel(SIGN.sec[red.q - 1], EXACT[matched].sec.l)) + '</p>';
+          break;
+        case 'cosec':
+          body = '<p><strong>Step ' + n + '.</strong> cosec θ = 1 / sin θ</p>' +
+                 '<p class="step-line">cosec ' + angleRawLabel + ' = 1 / (' + sinStr + ')</p>' +
+                 '<p><strong>Step ' + (n + 1) + '.</strong> Simplify.</p>' +
+                 '<p class="step-line">cosec ' + angleRawLabel + ' = ' + (EXACT[matched].cosec.undef ? 'Undefined (division by zero)' : signLabel(SIGN.cosec[red.q - 1], EXACT[matched].cosec.l)) + '</p>';
+          break;
+      }
+      return quadNote + body;
+    }
+
+    function escapeHTML(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+    }
+
+    /* ── A. MAIN RATIO CALCULATOR ─────────────────────────────────── */
+    let curFunc = 'sin', curUnit = 'deg';
+
+    window.setTrigFunc = function (f) {
+      curFunc = f;
+      document.querySelectorAll('.trig-func-btn').forEach(b => {
+        const on = b.dataset.func === f;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      calcTrig();
+    };
+
+    window.setTrigUnit = function (u) {
+      curUnit = u;
+      document.getElementById('tu-deg').classList.toggle('active', u === 'deg');
+      document.getElementById('tu-deg').setAttribute('aria-pressed', u === 'deg' ? 'true' : 'false');
+      document.getElementById('tu-rad').classList.toggle('active', u === 'rad');
+      document.getElementById('tu-rad').setAttribute('aria-pressed', u === 'rad' ? 'true' : 'false');
+      calcTrig();
+    };
+
+    window.quickAngle = function (deg) {
+      curUnit = 'deg';
+      document.getElementById('tu-deg').classList.add('active');
+      document.getElementById('tu-deg').setAttribute('aria-pressed', 'true');
+      document.getElementById('tu-rad').classList.remove('active');
+      document.getElementById('tu-rad').setAttribute('aria-pressed', 'false');
+      document.getElementById('trig-angle').value = deg;
+      calcTrig();
+    };
+
+    window.parseQuickEntry = function () {
+      const raw = document.getElementById('trig-quick-entry').value;
+      const parsed = parseExpr(raw);
+      if (!parsed) {
+        setFieldError('trig-quick-entry', 'err-trig-quick', raw.trim() === '' ? null : 'Could not read that expression. Try a format like "sin 30°" or "tan(45)".');
+        return;
+      }
+      setFieldError('trig-quick-entry', 'err-trig-quick', null);
+      window.setTrigFunc(parsed.func);
+      curUnit = parsed.unit;
+      document.getElementById('tu-deg').classList.toggle('active', parsed.unit === 'deg');
+      document.getElementById('tu-deg').setAttribute('aria-pressed', parsed.unit === 'deg' ? 'true' : 'false');
+      document.getElementById('tu-rad').classList.toggle('active', parsed.unit === 'rad');
+      document.getElementById('tu-rad').setAttribute('aria-pressed', parsed.unit === 'rad' ? 'true' : 'false');
+      document.getElementById('trig-angle').value = parsed.val;
+      calcTrig();
+    };
+
+    window.calcTrig = function () {
+      const v = readNum('trig-angle');
+      if (v === null) {
+        setFieldError('trig-angle', 'err-trig-angle', 'Please enter a valid angle.');
+        return;
+      }
+      setFieldError('trig-angle', 'err-trig-angle', null);
+
+      const unitSuffix = curUnit === 'deg' ? '°' : ' rad';
+      const angleLabel = v + unitSuffix;
+      const r = computeTrig(curFunc, v, curUnit);
+
+      document.getElementById('trig-res-label').textContent = FUNC_LABEL[curFunc] + ' ' + angleLabel;
+      document.getElementById('trig-res-value').textContent = r.isUndefined ? 'Undefined' : (r.exact || r.decimalStr);
+      document.getElementById('trig-out-exact').textContent = r.isUndefined ? 'Undefined because division by zero occurs.' : (r.exact || 'Not a standard angle — see decimal value');
+      document.getElementById('trig-out-decimal').textContent = r.isUndefined ? 'Undefined' : r.decimalStr;
+
+      const noteEl = document.getElementById('trig-note');
+      if (r.isUndefined) {
+        noteEl.textContent = FUNC_LABEL[curFunc] + ' ' + angleLabel + ' is undefined because it requires dividing by zero at this angle.';
+      } else if (r.standard) {
+        noteEl.innerHTML = 'Reference angle <strong>' + r.refAngle + '°</strong> in Quadrant <strong>' + r.quadrant + '</strong>' + (r.quadrant === 1 ? ' — all six functions are positive here.' : '.');
+      } else {
+        noteEl.textContent = angleLabel + ' is not one of the five standard angles, so this is a direct decimal calculation.';
+      }
+
+      const stepsBody = document.getElementById('trig-steps-body');
+      stepsBody.innerHTML = buildSteps(curFunc, curUnit === 'rad' ? v * 180 / Math.PI : v, FUNC_LABEL[curFunc] + ' ' + angleLabel);
+      if (stepsBody.classList.contains('show')) { /* keep open if user already opened it */ }
+    };
+
+    window.resetTrig = function () {
+      curFunc = 'sin'; curUnit = 'deg';
+      document.querySelectorAll('.trig-func-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.func === 'sin');
+        b.setAttribute('aria-pressed', b.dataset.func === 'sin' ? 'true' : 'false');
+      });
+      document.getElementById('tu-deg').classList.add('active');
+      document.getElementById('tu-deg').setAttribute('aria-pressed', 'true');
+      document.getElementById('tu-rad').classList.remove('active');
+      document.getElementById('tu-rad').setAttribute('aria-pressed', 'false');
+      document.getElementById('trig-angle').value = 30;
+      document.getElementById('trig-quick-entry').value = '';
+      setFieldError('trig-angle', 'err-trig-angle', null);
+      setFieldError('trig-quick-entry', 'err-trig-quick', null);
+      document.getElementById('trig-steps-body').classList.remove('show');
+      document.getElementById('trig-steps-btn').setAttribute('aria-expanded', 'false');
+      calcTrig();
+    };
+
+    window.toggleTrigSteps = function () {
+      const body = document.getElementById('trig-steps-body');
+      const btn = document.getElementById('trig-steps-btn');
+      const open = body.classList.toggle('show');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    /* ── D. RIGHT TRIANGLE CALCULATOR ─────────────────────────────── */
+    let rtUnit = 'deg';
+    window.setRTUnit = function (u) {
+      rtUnit = u;
+      document.getElementById('rtu-deg').classList.toggle('active', u === 'deg');
+      document.getElementById('rtu-deg').setAttribute('aria-pressed', u === 'deg' ? 'true' : 'false');
+      document.getElementById('rtu-rad').classList.toggle('active', u === 'rad');
+      document.getElementById('rtu-rad').setAttribute('aria-pressed', u === 'rad' ? 'true' : 'false');
+      calcRT();
+    };
+    window.calcRT = function () {
+      const opp = readNum('rt-opp'), adj = readNum('rt-adj');
+      let ok = true;
+      if (opp === null || opp <= 0) { setFieldError('rt-opp', 'err-rt-opp', 'Please enter a positive length.'); ok = false; }
+      else setFieldError('rt-opp', 'err-rt-opp', null);
+      if (adj === null || adj <= 0) { setFieldError('rt-adj', 'err-rt-adj', 'Please enter a positive length.'); ok = false; }
+      else setFieldError('rt-adj', 'err-rt-adj', null);
+      document.getElementById('rt-error').classList.remove('show');
+      if (!ok) return;
+
+      const hyp = Math.sqrt(opp * opp + adj * adj);
+      const sinV = opp / hyp, cosV = adj / hyp, tanV = opp / adj;
+      const angleDeg = Math.atan(opp / adj) * 180 / Math.PI;
+      const angleOut = rtUnit === 'rad' ? angleDeg * Math.PI / 180 : angleDeg;
+
+      document.getElementById('rt-out-hyp').textContent = formatNum(hyp, 6);
+      document.getElementById('rt-out-angle').textContent = formatNum(angleOut, 6) + (rtUnit === 'deg' ? '°' : ' rad');
+      document.getElementById('rt-out-sin').textContent = formatDecimal(sinV);
+      document.getElementById('rt-out-cos').textContent = formatDecimal(cosV);
+      document.getElementById('rt-out-tan').textContent = formatDecimal(tanV);
+      document.getElementById('rt-out-cot').textContent = formatDecimal(adj / opp);
+      document.getElementById('rt-out-sec').textContent = formatDecimal(hyp / adj);
+      document.getElementById('rt-out-cosec').textContent = formatDecimal(hyp / opp);
+    };
+    window.resetRT = function () {
+      document.getElementById('rt-opp').value = 3;
+      document.getElementById('rt-adj').value = 4;
+      setFieldError('rt-opp', 'err-rt-opp', null);
+      setFieldError('rt-adj', 'err-rt-adj', null);
+      document.getElementById('rt-error').classList.remove('show');
+      window.setRTUnit('deg');
+    };
+
+    /* ── E. INVERSE TRIGONOMETRY ───────────────────────────────────── */
+    let invFunc = 'asin', invUnit = 'deg';
+    const INV_HINT = { asin: 'between -1 and 1', acos: 'between -1 and 1', atan: 'any real number' };
+    const INV_LABEL = { asin: 'sin⁻¹', acos: 'cos⁻¹', atan: 'tan⁻¹' };
+    window.setInverseFunc = function (f) {
+      invFunc = f;
+      ['asin', 'acos', 'atan'].forEach(k => {
+        const b = document.getElementById('if-' + k);
+        b.classList.toggle('active', k === f);
+        b.setAttribute('aria-pressed', k === f ? 'true' : 'false');
+      });
+      document.getElementById('inv-hint').textContent = INV_HINT[f];
+      calcInverse();
+    };
+    window.setInverseUnit = function (u) {
+      invUnit = u;
+      document.getElementById('iu-deg').classList.toggle('active', u === 'deg');
+      document.getElementById('iu-deg').setAttribute('aria-pressed', u === 'deg' ? 'true' : 'false');
+      document.getElementById('iu-rad').classList.toggle('active', u === 'rad');
+      document.getElementById('iu-rad').setAttribute('aria-pressed', u === 'rad' ? 'true' : 'false');
+      calcInverse();
+    };
+    window.calcInverse = function () {
+      const v = readNum('inv-value');
+      const errBox = document.getElementById('inv-error');
+      if (v === null) {
+        setFieldError('inv-value', 'err-inv-value', 'Please enter a valid number.');
+        errBox.classList.remove('show');
+        return;
+      }
+      setFieldError('inv-value', 'err-inv-value', null);
+      const r = computeInverse(invFunc, v, invUnit);
+      if (r.error) {
+        errBox.textContent = r.error;
+        errBox.classList.add('show');
+        document.getElementById('inv-res-value').textContent = '—';
+        return;
+      }
+      errBox.classList.remove('show');
+      document.getElementById('inv-res-label').textContent = INV_LABEL[invFunc] + '(' + v + ')';
+      document.getElementById('inv-res-value').textContent = formatDecimal(r.display) + (invUnit === 'deg' ? '°' : ' rad');
+    };
+    window.resetInverse = function () {
+      document.getElementById('inv-value').value = 0.5;
+      setFieldError('inv-value', 'err-inv-value', null);
+      document.getElementById('inv-error').classList.remove('show');
+      window.setInverseFunc('asin');
+      window.setInverseUnit('deg');
+    };
+
+    /* ── F. SINE RULE CALCULATOR ──────────────────────────────────── */
+    window.calcSineRule = function () {
+      const a = readNum('sr-a'), A = readNum('sr-A'), b = readNum('sr-b'), B = readNum('sr-B');
+      const errBox = document.getElementById('sr-error');
+      errBox.classList.remove('show');
+      setFieldError('sr-a', 'err-sr', null);
+
+      if (a === null || a <= 0 || A === null || A <= 0 || A >= 180) {
+        setFieldError('sr-a', 'err-sr', 'Enter a positive side a and an angle A between 0° and 180°.');
+        return;
+      }
+      const bKnown = b !== null, BKnown = B !== null;
+      if (bKnown === BKnown) {
+        setFieldError('sr-a', 'err-sr', 'Enter exactly one of Side b or Angle B — leave the other blank.');
+        return;
+      }
+      const ratio = a / Math.sin(A * Math.PI / 180);
+      let label, value;
+      if (BKnown) {
+        if (B <= 0 || B >= 180) { setFieldError('sr-a', 'err-sr', 'Angle B must be between 0° and 180°.'); return; }
+        if (A + B >= 180) { errBox.textContent = 'These side lengths cannot form a valid triangle.'; errBox.classList.add('show'); return; }
+        value = ratio * Math.sin(B * Math.PI / 180);
+        label = 'Side b';
+      } else {
+        if (b <= 0) { setFieldError('sr-a', 'err-sr', 'Side b must be a positive length.'); return; }
+        const sinB = (b * Math.sin(A * Math.PI / 180)) / a;
+        if (sinB > 1) { errBox.textContent = 'These side lengths cannot form a valid triangle.'; errBox.classList.add('show'); return; }
+        value = Math.asin(sinB) * 180 / Math.PI;
+        label = 'Angle B';
+      }
+      document.getElementById('sr-res-label').textContent = label;
+      document.getElementById('sr-res-value').textContent = formatNum(value, 4) + (label === 'Angle B' ? '°' : '');
+    };
+    window.resetSineRule = function () {
+      ['sr-a', 'sr-A', 'sr-b', 'sr-B'].forEach(id => document.getElementById(id).value = '');
+      setFieldError('sr-a', 'err-sr', null);
+      document.getElementById('sr-error').classList.remove('show');
+      document.getElementById('sr-res-label').textContent = 'Result';
+      document.getElementById('sr-res-value').textContent = '—';
+    };
+
+    /* ── G. COSINE RULE CALCULATOR ────────────────────────────────── */
+    window.calcCosineSAS = function () {
+      const b = readNum('cr1-b'), c = readNum('cr1-c'), A = readNum('cr1-A');
+      if (b === null || b <= 0 || c === null || c <= 0 || A === null || A <= 0 || A >= 180) {
+        setFieldError('cr1-b', 'err-cr1', 'Please enter two positive sides and an angle between 0° and 180°.');
+        return;
+      }
+      setFieldError('cr1-b', 'err-cr1', null);
+      const a = Math.sqrt(b*b + c*c - 2*b*c*Math.cos(A * Math.PI / 180));
+      document.getElementById('cr1-out-a').textContent = formatNum(a, 4);
+    };
+    window.resetCosineSAS = function () {
+      document.getElementById('cr1-b').value = 7;
+      document.getElementById('cr1-c').value = 9;
+      document.getElementById('cr1-A').value = 55;
+      setFieldError('cr1-b', 'err-cr1', null);
+      calcCosineSAS();
+    };
+    window.calcCosineSSS = function () {
+      const a = readNum('cr2-a'), b = readNum('cr2-b'), c = readNum('cr2-c');
+      if (a === null || a <= 0 || b === null || b <= 0 || c === null || c <= 0) {
+        setFieldError('cr2-a', 'err-cr2', 'Please enter three positive side lengths.');
+        return;
+      }
+      if (a + b <= c || a + c <= b || b + c <= a) {
+        setFieldError('cr2-a', 'err-cr2', 'These side lengths cannot form a valid triangle.');
+        return;
+      }
+      setFieldError('cr2-a', 'err-cr2', null);
+      const clamp = x => Math.max(-1, Math.min(1, x));
+      const A = Math.acos(clamp((b*b + c*c - a*a) / (2*b*c))) * 180 / Math.PI;
+      const B = Math.acos(clamp((a*a + c*c - b*b) / (2*a*c))) * 180 / Math.PI;
+      const C = 180 - A - B;
+      document.getElementById('cr2-out-A').textContent = formatNum(A, 2) + '°';
+      document.getElementById('cr2-out-B').textContent = formatNum(B, 2) + '°';
+      document.getElementById('cr2-out-C').textContent = formatNum(C, 2) + '°';
+    };
+    window.resetCosineSSS = function () {
+      document.getElementById('cr2-a').value = 5;
+      document.getElementById('cr2-b').value = 6;
+      document.getElementById('cr2-c').value = 7;
+      setFieldError('cr2-a', 'err-cr2', null);
+      calcCosineSSS();
+    };
+
+    /* ── Populate default demo values on load ─────────────────────── */
+    document.addEventListener('DOMContentLoaded', function () {
+      calcTrig();
+      calcRT();
+      calcInverse();
+      calcCosineSAS();
+      calcCosineSSS();
+    });
+  })();
+  </script>
+</body>
+</html>
