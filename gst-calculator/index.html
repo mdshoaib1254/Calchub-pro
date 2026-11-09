@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Calculator India – Add or Remove GST | CalcHub Pro</title>
+  <meta name="description" content="Add or remove GST using the current slabs (0%, 5%, 18%, 40%) or a custom rate, with CGST/SGST and IGST shown. Free online GST calculator.">
+  <link rel="canonical" href="https://calchubpro.in/gst-calculator/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GST Calculator India – Add or Remove GST | CalcHub Pro">
+  <meta property="og:description" content="Add or remove GST using the current slabs (0%, 5%, 18%, 40%) or a custom rate, with CGST/SGST and IGST shown. Free online GST calculator.">
+  <meta property="og:url" content="https://calchubpro.in/gst-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+  <meta property="og:site_name" content="CalcHub Pro">
+  <meta property="og:locale" content="en_IN">
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GST Calculator India – Add or Remove GST | CalcHub Pro">
+  <meta name="twitter:description" content="Add or remove GST using the current slabs (0%, 5%, 18%, 40%) or a custom rate, with CGST/SGST and IGST shown. Free online GST calculator.">
+  <meta name="twitter:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Consent Mode v2: everything is denied until the visitor accepts (see calc-core.js)
+    gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied', 'wait_for_update': 500});
+    try { if (localStorage.getItem('ck_consent') === 'accept') { gtag('consent', 'update', {'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted'}); } } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://calchubpro.in/gst-calculator/#app",
+        "name": "GST Calculator – CalcHub Pro",
+        "url": "https://calchubpro.in/gst-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        },
+        "description": "Fast online GST calculator to add or remove GST from product prices with CGST and SGST splits."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://calchubpro.in/gst-calculator/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://calchubpro.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Finance Calculators",
+            "item": "https://calchubpro.in/#directory"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "GST Calculator",
+            "item": "https://calchubpro.in/gst-calculator/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://calchubpro.in/gst-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is GST calculated on a product?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To add GST: GST Amount = (Base Price × GST Rate) / 100. Total Price = Base Price + GST Amount. To remove GST from an inclusive price: Base Price = (Gross Price × 100) / (100 + GST Rate)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the current GST tax slabs in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Since 22 September 2025 (GST 2.0), most goods and services fall under 5% or 18%, with a 40% rate for luxury and sin goods and a 0% (nil) rate for certain items. The old 12% and 28% slabs were removed. Always confirm the rate for a specific item or service in the official GST notification or with a tax professional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between CGST, SGST, and IGST?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For intra-state transactions (within the same state), GST is split equally into Central GST (CGST) and State GST (SGST). For inter-state transactions (between two different states), Integrated GST (IGST) is collected by the Central Government."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="/" class="nav-logo">
+      <div class="logo-mark"><img src="../logo.png" alt=""></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#directory">Finance</a></li>
+      <li><a href="/#directory">Math</a></li>
+      <li><a href="/#directory">Health</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="/" class="nav-btn">All Calculators →</a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <a href="/" onclick="closeDrawer()">Home</a>
+    <a href="/#directory" onclick="closeDrawer()">Finance Calculators</a>
+    <a href="/#directory" onclick="closeDrawer()">Math Calculators</a>
+    <a href="/#directory" onclick="closeDrawer()">Health Calculators</a>
+    <a href="../about.html" onclick="closeDrawer()">About CalcHub Pro</a>
+    <a href="../contact.html" onclick="closeDrawer()">Contact</a>
+    <a href="/" class="dcta" onclick="closeDrawer()">All 18 Calculators</a>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs" aria-label="Breadcrumbs">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <a href="/#directory">Finance</a>
+    <span class="sep">/</span>
+    <span class="current">GST Calculator</span>
+  </div>
+
+  <!-- Calculator Hero -->
+  <header class="calc-hero">
+    <div class="badge-chip">🏷️ Tax Computation Tool</div>
+    <h1>GST <em>Calculator</em></h1>
+    <p>Calculate Goods and Services Tax (GST) easily. Add GST to net amounts or extract GST from gross prices with standard tax slabs and CGST/SGST breakdowns.</p>
+  </header>
+
+  <!-- Ad Slot Top -->
+  <div class="ad-slot-wrap">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-container" data-ad-slot="responsive"></div>
+  </div>
+
+  <!-- Main Calculator Layout -->
+  <main id="main-content" tabindex="-1" class="calc-main-wrap">
+    <!-- Interactive Card -->
+    <section class="calc-box" aria-labelledby="gst-title">
+      <div class="calc-box-head">
+        <h2 class="calc-box-title" id="gst-title">🏷️ Enter Amount &amp; GST Rate</h2>
+        <button type="button" class="calc-box-reset" onclick="resetGST()">Reset</button>
+      </div>
+
+      <div class="field">
+        <label for="gst-amount">
+          Initial Amount
+          <span class="field-hint">Base Price or Gross Value</span>
+        </label>
+        <div class="input-wrap">
+          <span class="input-affix input-prefix">₹</span>
+          <input type="number" id="gst-amount" class="has-prefix" value="1000" min="1" step="10" placeholder="e.g. 1000">
+        </div>
+        <div class="ferr" id="err-gst-amount">Enter a valid positive amount.</div>
+      </div>
+
+      <div class="field">
+        <label>
+          Calculation Type
+          <span class="field-hint">Add or Remove Tax</span>
+        </label>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <button type="button" id="btn-gst-add" class="calc-box-reset" style="background: var(--red); color: #fff; padding: 10px; border-color: var(--red); font-size: 0.9rem;" onclick="setGSTMode('exclusive')">Add GST (Exclusive)</button>
+          <button type="button" id="btn-gst-sub" class="calc-box-reset" style="padding: 10px; font-size: 0.9rem;" onclick="setGSTMode('inclusive')">Remove GST (Inclusive)</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>
+          GST Rate Slab
+          <span class="field-hint">Select standard Indian slab</span>
+        </label>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 8px;">
+          <button type="button" class="calc-box-reset gst-slab-btn" onclick="selectGSTSlab(0)">0%</button>
+          <button type="button" class="calc-box-reset gst-slab-btn" onclick="selectGSTSlab(5)">5%</button>
+          <button type="button" class="calc-box-reset gst-slab-btn active" style="background: var(--red); color: #fff; border-color: var(--red);" onclick="selectGSTSlab(18)">18%</button>
+          <button type="button" class="calc-box-reset gst-slab-btn" onclick="selectGSTSlab(40)">40%</button>
+        </div>
+        <p class="field-hint" style="margin:0 0 8px">The 12% and 28% slabs were removed from 22 September 2025. For older invoices, type the old rate in the custom field below.</p>
+        <div class="input-wrap">
+          <input type="number" id="gst-custom-rate" aria-label="GST rate in percent" class="has-suffix" value="18" min="0" max="100" step="0.1" placeholder="Custom Rate %">
+          <span class="input-affix input-suffix">% GST</span>
+        </div>
+        <div class="ferr" id="err-gst-rate">Enter a rate between 0% and 100%.</div>
+      </div>
+
+      <div class="calc-btn-row">
+        <button type="button" class="calc-submit" onclick="calcGST()">Calculate GST →</button>
+        <button type="button" class="calc-reset-btn" onclick="resetGST()">Clear</button>
+      </div>
+    </section>
+
+    <!-- Result Card -->
+    <section class="res-card" aria-label="GST Results" aria-live="polite">
+      <div class="res-banner">
+        <div class="res-banner-label" id="res-mode-label">Total Amount (Inclusive of GST)</div>
+        <div class="res-banner-value highlight" id="out-gst-total">₹1,180.00</div>
+      </div>
+
+      <div class="res-grid">
+        <div class="rrow">
+          <span class="rl">Net Amount (Excl. Tax)</span>
+          <span class="rv" id="out-gst-net">₹1,000.00</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Total GST Amount</span>
+          <span class="rv" style="color: var(--amber);" id="out-gst-tax">₹180.00</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Central GST (CGST) &ndash; intra-state sale</span>
+          <span class="rv" style="color: var(--teal);" id="out-gst-cgst">₹90.00 (9%)</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">State GST (SGST) &ndash; intra-state sale</span>
+          <span class="rv" style="color: var(--teal);" id="out-gst-sgst">₹90.00 (9%)</span>
+        </div>
+        <div class="rrow">
+          <span class="rl">Integrated GST (IGST) &ndash; inter-state sale (instead of CGST+SGST)</span>
+          <span class="rv" id="out-gst-igst">₹180.00 (18%)</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- In-Depth Content & Explanation -->
+  <article class="article-section">
+    <h2>How GST Calculation Works</h2>
+    <p>The <strong>Goods and Services Tax (GST)</strong> is a destination-based, multi-stage indirect tax implemented in India in July 2017 to replace many earlier indirect taxes such as VAT, excise duty and service tax.</p>
+    <p>When generating an invoice or purchasing goods, GST can be applied in two directions:</p>
+    <ul>
+      <li><strong>Exclusive GST (Add Tax):</strong> Starting with a net wholesale or base manufacturing cost and adding statutory tax to calculate the customer billing amount.</li>
+      <li><strong>Inclusive GST (Extract Tax):</strong> Starting with a maximum retail price (MRP) or final gross bill and removing the built-in tax to reveal the true underlying merchant cost.</li>
+    </ul>
+
+    <!-- Formula Box -->
+    <div class="formula-box">
+      Adding GST (Exclusive):<br>
+      • GST Amount = (Base Amount × GST Rate) ÷ 100<br>
+      • Gross Total = Base Amount + GST Amount<br><br>
+      Removing GST (Inclusive):<br>
+      • Base Amount = (Gross Total × 100) ÷ (100 + GST Rate)<br>
+      • GST Amount = Gross Total − Base Amount
+      <span>
+        Intra-State Split: CGST = GST ÷ 2 &nbsp;|&nbsp; SGST = GST ÷ 2<br>
+        Inter-State Transaction: IGST = Full GST Amount
+      </span>
+    </div>
+
+    <h2>Worked Example: Adding &amp; Removing 18% GST</h2>
+    <div class="example-card">
+      <h4>Case A: Adding 18% GST to ₹1,000 (Exclusive)</h4>
+      <ol class="example-steps">
+        <li>Base price = ₹1,000</li>
+        <li>GST = (1000 × 18) / 100 = <strong>₹180</strong></li>
+        <li>Total invoice value = ₹1,000 + ₹180 = <strong>₹1,180</strong></li>
+        <li>Tax breakdown: CGST (9%) = ₹90, SGST (9%) = ₹90</li>
+      </ol>
+      <h4 style="margin-top: 14px;">Case B: Extracting 18% GST from ₹1,180 (Inclusive MRP)</h4>
+      <ol class="example-steps">
+        <li>Gross total = ₹1,180</li>
+        <li>Base price = (1,180 × 100) / (100 + 18) = 118000 / 118 = <strong>₹1,000</strong></li>
+        <li>Embedded GST = ₹1,180 - ₹1,000 = <strong>₹180</strong></li>
+      </ol>
+    </div>
+
+    <h2>Current Indian GST Rate Slabs (from 22 September 2025)</h2>
+    <p>The GST Council's 56th meeting restructured the rate slabs, and the new rates took effect on 22 September 2025. The main slabs are now 5% and 18%, plus a 40% rate for luxury and sin goods and a 0% (nil) rate for certain items. The earlier 12% and 28% slabs no longer exist. The examples below are only illustrations of what reporting on the reform describes &mdash; the rate for any specific product or service depends on its HSN/SAC classification and the official notification.</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tax Slab</th>
+            <th>Examples reported for the slab</th>
+            <th>CGST + SGST Split (intra-state)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>0% (Nil)</strong></td>
+            <td>Certain essentials, including life-saving medicines and individual health/life insurance premiums.</td>
+            <td>0% + 0%</td>
+          </tr>
+          <tr>
+            <td><strong>5%</strong></td>
+            <td>Many everyday goods such as butter, ghee, cheese, packaged snacks, shampoo and toothpaste.</td>
+            <td>2.5% + 2.5%</td>
+          </tr>
+          <tr>
+            <td><strong>18%</strong></td>
+            <td>The standard rate for most other goods and services, including small cars and many consumer appliances.</td>
+            <td>9% + 9%</td>
+          </tr>
+          <tr>
+            <td><strong>40%</strong></td>
+            <td>Luxury and sin goods such as tobacco products, aerated beverages and high-end cars.</td>
+            <td>20% + 20%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><em>Rates are changed by the GST Council and the government, so check the latest CBIC/GST portal notification before relying on a rate for filing or invoicing.</em></p>
+
+
+    <h2>What This Calculator Does Not Cover</h2>
+    <ul>
+      <li><strong>Which rate applies.</strong> The calculator applies the rate you choose. It does not look up the rate for a product or service (that depends on its HSN/SAC code).</li>
+      <li><strong>Intra-state or inter-state.</strong> The result shows both the CGST + SGST split and the IGST amount. Use only the one that matches your sale: CGST and SGST for supplies within one state, IGST for supplies between states. Both total the same tax.</li>
+      <li><strong>Other levies and rules.</strong> Cess (if applicable to a product), composition scheme, reverse charge, input tax credit and invoice-level rounding are not included.</li>
+      <li><strong>Rounding.</strong> Amounts are shown to two decimals, so on very small amounts CGST + SGST may differ from the total by one paisa.</li>
+    </ul>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          How is GST calculated on a product?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>To add GST: GST Amount = (Base Price × GST Rate) / 100. Total Price = Base Price + GST Amount. To remove GST from an inclusive price: Base Price = (Gross Price × 100) / (100 + GST Rate).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What are the current GST tax slabs in India?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Since 22 September 2025 (GST 2.0), most goods and services fall under 5% or 18%, with a 40% rate for luxury and sin goods and a 0% (nil) rate for certain items. The old 12% and 28% slabs were removed. Always confirm the rate for a specific item or service in the official GST notification or with a tax professional.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          What is the difference between CGST, SGST, and IGST?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>For intra-state transactions (within the same state), GST is split equally into Central GST (CGST) and State GST (SGST). For inter-state transactions (between two different states), Integrated GST (IGST) is collected by the Central Government.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <div class="legal-disc">
+      <h4>⚠️ Tax Disclaimer</h4>
+      <p>This GST calculator is provided for computational assistance. Tax rates and HSN/SAC codes are subject to amendments by the GST Council. Always verify with official GST portal documentation or your chartered accountant.</p>
+    </div>
+  </article>
+
+  <!-- Related Calculators -->
+  <aside class="related-section">
+    <div class="related-inner">
+      <div class="related-hdr">
+        <h2>Related Commerce &amp; Math Tools</h2>
+        <p>Calculate discounts, profits, margins, and percentages.</p>
+      </div>
+      <div class="related-grid">
+        <a href="../discount-calculator/" class="rel-card">
+          <div class="rel-ico">🏷️</div>
+          <div class="rel-name">Discount Calculator</div>
+          <div class="rel-desc">Find final sale prices and savings from promotional discounts.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../percentage-calculator/" class="rel-card">
+          <div class="rel-ico">🔢</div>
+          <div class="rel-name">Percentage Calculator</div>
+          <div class="rel-desc">Calculate percentages, percentage increases, and portions with ease.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../profit-and-loss-calculator/" class="rel-card">
+          <div class="rel-ico">📊</div>
+          <div class="rel-name">Profit &amp; Loss Calculator</div>
+          <div class="rel-desc">Determine margins, markups, net profit, and loss percentages.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+        <a href="../simple-interest-calculator/" class="rel-card">
+          <div class="rel-ico">💰</div>
+          <div class="rel-name">Simple Interest</div>
+          <div class="rel-desc">Compute basic interest growth without compounding over customized timeframes.</div>
+          <div class="rel-arrow">Calculate →</div>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a href="/" class="nav-logo">
+            <div class="logo-mark"><img src="../logo.png" alt=""></div>
+            <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+          </a>
+          <p class="foot-brand-desc">Free, fast, and accurate online calculators for finance, mathematics, health, and everyday life. No signup required. Calculations run in your browser.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Finance &amp; Loans</h4>
+          <ul>
+            <li><a href="../emi-calculator/">EMI Calculator</a></li>
+            <li><a href="../home-loan-calculator/">Home Loan Calculator</a></li>
+            <li><a href="../car-loan-calculator/">Car Loan Calculator</a></li>
+            <li><a href="../personal-loan-calculator/">Personal Loan Calculator</a></li>
+            <li><a href="../gst-calculator/">GST Calculator</a></li>
+            <li><a href="../simple-interest-calculator/">Simple Interest</a></li>
+            <li><a href="../compound-interest-calculator/">Compound Interest</a></li>
+            <li><a href="../profit-and-loss-calculator/">Profit & Loss</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Math, Dates &amp; Health</h4>
+          <ul>
+            <li><a href="../percentage-calculator/">Percentage Calculator</a></li>
+            <li><a href="../discount-calculator/">Discount Calculator</a></li>
+            <li><a href="../average-calculator/">Average Calculator</a></li>
+            <li><a href="../basic-calculator/">Basic Calculator</a></li>
+            <li><a href="../scientific-calculator/">Scientific Calculator</a></li>
+            <li><a href="../trigonometry-calculator/">Trigonometry Calculator</a></li>
+            <li><a href="../age-calculator/">Age Calculator</a></li>
+            <li><a href="../birthday-calculator/">Birthday Calculator</a></li>
+            <li><a href="../date-difference-calculator/">Date Difference</a></li>
+            <li><a href="../bmi-calculator/">BMI Calculator</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>About & Legal</h4>
+          <ul>
+            <li><a href="../about.html">About CalcHub Pro</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="foot-copy">© 2026 CalcHub Pro. All rights reserved. | <a href="https://calchubpro.in">calchubpro.in</a></span>
+        <div class="foot-status">
+          <div class="status-dot"></div>
+          Calculations run in your browser
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../calc-core.js"></script>
+  <script>
+    let currentMode = 'exclusive'; // 'exclusive' (add) or 'inclusive' (remove)
+
+    function setGSTMode(mode) {
+      currentMode = mode;
+      const btnAdd = document.getElementById('btn-gst-add');
+      const btnSub = document.getElementById('btn-gst-sub');
+      const label = document.getElementById('res-mode-label');
+
+      if (mode === 'exclusive') {
+        btnAdd.style.background = 'var(--red)';
+        btnAdd.style.color = '#fff';
+        btnAdd.style.borderColor = 'var(--red)';
+        btnSub.style.background = 'var(--glass)';
+        btnSub.style.color = 'var(--muted)';
+        btnSub.style.borderColor = 'var(--border)';
+        label.textContent = 'Total Amount (Inclusive of GST)';
+      } else {
+        btnSub.style.background = 'var(--red)';
+        btnSub.style.color = '#fff';
+        btnSub.style.borderColor = 'var(--red)';
+        btnAdd.style.background = 'var(--glass)';
+        btnAdd.style.color = 'var(--muted)';
+        btnAdd.style.borderColor = 'var(--border)';
+        label.textContent = 'Net Amount (Exclusive of GST)';
+      }
+      calcGST();
+    }
+
+    function selectGSTSlab(rate) {
+      document.querySelectorAll('.gst-slab-btn').forEach(b => {
+        b.style.background = 'var(--glass)';
+        b.style.color = 'var(--muted)';
+        b.style.borderColor = 'var(--border)';
+      });
+      event.target.style.background = 'var(--red)';
+      event.target.style.color = '#fff';
+      event.target.style.borderColor = 'var(--red)';
+      document.getElementById('gst-custom-rate').value = rate;
+      calcGST();
+    }
+
+    function calcGST() {
+      const amtInp = document.getElementById('gst-amount');
+      const rateInp = document.getElementById('gst-custom-rate');
+
+      const amount = parseFloat(amtInp.value) || 0;
+      const rate = parseFloat(rateInp.value) || 0;
+
+      let valid = true;
+
+      if (amount <= 0) {
+        amtInp.classList.add('bad');
+        document.getElementById('err-gst-amount').classList.add('show');
+        valid = false;
+      } else {
+        amtInp.classList.remove('bad');
+        document.getElementById('err-gst-amount').classList.remove('show');
+      }
+
+      if (rate < 0 || rate > 100) {
+        rateInp.classList.add('bad');
+        document.getElementById('err-gst-rate').classList.add('show');
+        valid = false;
+      } else {
+        rateInp.classList.remove('bad');
+        document.getElementById('err-gst-rate').classList.remove('show');
+      }
+
+      if (!valid) return;
+
+      let net, tax, total;
+
+      if (currentMode === 'exclusive') {
+        net = amount;
+        tax = (amount * rate) / 100;
+        total = net + tax;
+      } else {
+        total = amount;
+        net = (amount * 100) / (100 + rate);
+        tax = total - net;
+      }
+
+      const halfTax = tax / 2;
+      const halfRate = (rate / 2).toFixed(1);
+
+      document.getElementById('out-gst-total').textContent = '₹' + formatNum(total, 2);
+      document.getElementById('out-gst-net').textContent = '₹' + formatNum(net, 2);
+      document.getElementById('out-gst-tax').textContent = '₹' + formatNum(tax, 2);
+      document.getElementById('out-gst-cgst').textContent = `₹${formatNum(halfTax, 2)} (${halfRate}%)`;
+      document.getElementById('out-gst-sgst').textContent = `₹${formatNum(halfTax, 2)} (${halfRate}%)`;
+      document.getElementById('out-gst-igst').textContent = `₹${formatNum(tax, 2)} (${rate}%)`;
+    }
+
+    function resetGST() {
+      document.getElementById('gst-amount').value = '1000';
+      document.getElementById('gst-custom-rate').value = '18';
+      setGSTMode('exclusive');
+      selectGSTSlab(18);
+
+      document.getElementById('gst-amount').classList.remove('bad');
+      document.getElementById('gst-custom-rate').classList.remove('bad');
+      document.getElementById('err-gst-amount').classList.remove('show');
+      document.getElementById('err-gst-rate').classList.remove('show');
+
+      calcGST();
+    }
+
+    document.getElementById('gst-amount').addEventListener('input', calcGST);
+    document.getElementById('gst-custom-rate').addEventListener('input', calcGST);
+
+    calcGST();
+  </script>
+</body>
+</html>

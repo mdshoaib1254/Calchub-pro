@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | CalcHub Pro</title>
+  <meta name="description" content="How CalcHub Pro handles calculator inputs, cookies and consent, Google Analytics, Google AdSense and messages sent through the contact form.">
+  <link rel="canonical" href="https://calchubpro.in/privacy-policy.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Privacy Policy | CalcHub Pro">
+  <meta property="og:description" content="How CalcHub Pro handles calculator inputs, cookies and consent, Google Analytics, Google AdSense and messages sent through the contact form.">
+  <meta property="og:url" content="https://calchubpro.in/privacy-policy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://calchubpro.in/logo.png">
+  <meta property="og:site_name" content="CalcHub Pro">
+  <meta property="og:locale" content="en_IN">
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Privacy Policy | CalcHub Pro">
+  <meta name="twitter:description" content="How CalcHub Pro handles calculator inputs, cookies and consent, Google Analytics, Google AdSense and messages sent through the contact form.">
+  <meta name="twitter:image" content="https://calchubpro.in/logo.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNLZJ1ZD02"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Consent Mode v2: everything is denied until the visitor accepts (see calc-core.js)
+    gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied', 'wait_for_update': 500});
+    try { if (localStorage.getItem('ck_consent') === 'accept') { gtag('consent', 'update', {'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted'}); } } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'G-DNLZJ1ZD02');
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4210376416554457" crossorigin="anonymous"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .legal-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px max(20px, 5vw) 80px;
+    }
+    .legal-wrap h2 {
+      font-family: var(--ff-head);
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 36px 0 12px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legal-wrap h2::before {
+      content: '';
+      width: 3px;
+      height: 22px;
+      background: var(--red);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .legal-wrap p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .legal-wrap ul {
+      margin: 0 0 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .legal-wrap li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+    .legal-wrap strong {
+      color: var(--text);
+    }
+    .privacy-highlight {
+      background: rgba(56,189,248,0.06);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-left: 4px solid var(--sky);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .privacy-highlight p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- HEADER / NAV -->
+<header>
+  <nav class="nav" id="nav" aria-label="Main Navigation">
+    <a href="/" class="nav-logo">
+      <div class="logo-mark"><img src="logo.png" alt=""></div>
+      <span class="logo-text">Calc<span class="hi">Hub</span> Pro</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/"><span class="nl-ico" aria-hidden="true">⌂</span>Home</a></li>
+      <li><a href="/#directory">All 18 Calculators</a></li>
+      <li><a href="/#calc-zone">Quick Tool</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="/#directory" class="nav-btn">Explore Calculators <span aria-hidden="true">→</span></a>
+    <button class="hbg" id="hbg" onclick="toggleDrawer()" aria-label="Open Navigation Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+  <a href="/" onclick="closeDrawer()">Home</a>
+  <a href="/#directory" onclick="closeDrawer()">All 18 Calculators</a>
+  <a href="about.html" onclick="closeDrawer()">About Us</a>
+  <a href="contact.html" onclick="closeDrawer()">Contact</a>
+  <a href="privacy-policy.html" onclick="closeDrawer()">Privacy Policy</a>
+  <a href="terms.html" onclick="closeDrawer()">Terms of Service</a>
+  <a href="disclaimer.html" onclick="closeDrawer()">Disclaimer</a>
+</div>
+
+<main id="main-content" tabindex="-1" class="legal-wrap">
+  <div style="margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border)">
+    <div class="section-chip">🔒 Privacy &amp; Data Protection</div>
+    <h1 class="sec-h" style="margin-bottom:10px">Privacy <em>Policy</em></h1>
+    <p style="color:var(--dim);font-size:0.85rem">Last Updated: October 2026 · Effective for https://calchubpro.in/</p>
+  </div>
+
+  <div class="privacy-highlight">
+    <p>
+      <strong>Summary:</strong> CalcHub Pro performs all computational tasks locally within your browser. We never log, store, or transmit the loan amounts, salary inputs, body weights, or birthdates you enter. We do not run user accounts or sell personal data. Google, our analytics and advertising provider, may collect usage data as described below.
+    </p>
+  </div>
+
+  <p>
+    Welcome to <strong>CalcHub Pro</strong> ("we", "our", or "us"). This Privacy Policy explains how personal and technical information is collected, processed, and safeguarded when you visit <strong>https://calchubpro.in/</strong> and use our suite of 18 online calculators.
+  </p>
+
+  <h2>1. Zero Storage of Calculator Inputs</h2>
+  <p>
+    CalcHub Pro was architected from the ground up on a client-side execution model. When you use any calculator (such as EMI, Home Loan, Car Loan, GST, Simple/Compound Interest, Percentage, BMI, or Age Calculators):
+  </p>
+  <ul>
+    <li>All inputs and mathematical computations occur strictly on your local device via JavaScript.</li>
+    <li>None of your numbers, financial figures, or dates are transmitted across the internet to our web servers.</li>
+    <li>When you refresh or close your browser tab, your calculator session inputs are immediately wiped from memory.</li>
+  </ul>
+
+  <h2>2. Technical &amp; Analytics Data We Collect</h2>
+  <p>
+    Like virtually all modern web properties, we collect standard non-identifying diagnostic data to ensure web stability and performance:
+  </p>
+  <ul>
+    <li><strong>Server Logs:</strong> Standard HTTP request data collected by our web hosting infrastructure (GitHub Pages / Fastly CDN), including IP address, browser user-agent, operating system, and timestamp.</li>
+    <li><strong>Google Analytics:</strong> We use Google Analytics 4 (Measurement ID: <code>G-DNLZJ1ZD02</code>) to measure aggregated metrics such as page views, visitor country, and average session duration. Google states that Google Analytics 4 does not log or store individual IP addresses. Analytics cookies are only used if you click &ldquo;Accept All&rdquo; on the cookie banner.</li>
+  </ul>
+
+  <h2>3. Advertising &amp; Google AdSense</h2>
+  <p>
+    Our pages include the Google AdSense script (Publisher ID: <code>ca-pub-4210376416554457</code>) so that advertisements can be shown on the site. Whether ads actually appear depends on the status of our AdSense account, so you may or may not see ads on any given page. If ads are shown:
+  </p>
+  <ul>
+    <li>Google and its advertising partners may use cookies to serve ads based on your visits to this and other websites, but only after you choose &ldquo;Accept All&rdquo; on our cookie banner. If you decline, any ads shown are limited to non-personalized ones.</li>
+    <li>You can manage personalized advertising through <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color:var(--sky)">Google Ads Settings</a> or <a href="https://www.aboutads.info" target="_blank" rel="noopener" style="color:var(--sky)">AboutAds.info</a>.</li>
+  </ul>
+
+  <h2>4. Cookies, Consent &amp; Local Storage</h2>
+  <p>
+    Every page tells Google (Analytics and AdSense) that analytics and advertising storage is <strong>denied by default</strong>. A cookie banner then lets you choose:
+  </p>
+  <ul>
+    <li><strong>Accept All:</strong> allows Google Analytics cookies (such as <code>_ga</code>) and advertising cookies from Google AdSense.</li>
+    <li><strong>Decline:</strong> we do not allow those cookies. Google may still receive limited, cookie-less technical signals (such as that a page was loaded) because the Google scripts are present on the page.</li>
+    <li><strong>Your choice is remembered</strong> in your browser&rsquo;s local storage under the key <code>ck_consent</code>. This is the only item we store ourselves, and it never contains calculator inputs. <a href="#" onclick="openCookieSettings();return false;" style="color:var(--sky)">Change your cookie choice</a>.</li>
+  </ul>
+  <p>
+    The site also loads fonts from Google Fonts, which means your browser contacts Google&rsquo;s servers (and shares your IP address and browser details with them) when a page opens.
+  </p>
+
+  <h2>5. Direct Inquiries &amp; Contact Data</h2>
+  <p>
+    If you choose to contact us through our <a href="contact.html" style="color:var(--sky)">Contact Page</a>, the name, email address, subject and message you type are sent through <strong>FormSubmit</strong> (formsubmit.co), a third-party form-to-email service, which delivers them to our email inbox. We use them only to respond to you. We do not add your address to marketing lists or sell it to third parties, and we do not store submissions on this website. Please do not include sensitive personal or financial information in your message. You can also email us directly instead of using the form.
+  </p>
+
+  <h2>6. Data Rights (GDPR, CCPA &amp; Indian DPDPA)</h2>
+  <p>
+    Depending on your geographical jurisdiction, you have statutory rights regarding your personal data, including the right to request access, correction, deletion, or objection to automated processing. CalcHub Pro does not create user accounts or store calculator inputs on any server, so the only personal data we hold is the content of any emails you send us. Data collected by Google Analytics and Google AdSense is processed by Google under its own policies. For any privacy queries, please reach out via our contact page.
+  </p>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-bottom" style="border-top:none;padding-top:0">
+      <div class="foot-copy">
+        © 2026 CalcHub Pro. All rights reserved. Created with care by Suhaib.
+      </div>
+      <div style="display:flex;gap:16px;font-size:0.78rem">
+        <a href="/">Home</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="calc-core.js"></script>
+</body>
+</html>

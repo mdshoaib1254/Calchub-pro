@@ -1,0 +1,119 @@
+{
+  "_note": "Single source of truth for the calculator list. Run: node dev-tools/check-site.js after any change.",
+  "categories": {
+    "finance": "Finance & Loans",
+    "math": "Math & Arithmetic",
+    "dates": "Dates & Age",
+    "health": "Health"
+  },
+  "calculators": [
+    {
+      "name": "EMI Calculator",
+      "slug": "emi-calculator",
+      "category": "finance",
+      "url": "/emi-calculator/"
+    },
+    {
+      "name": "Home Loan Calculator",
+      "slug": "home-loan-calculator",
+      "category": "finance",
+      "url": "/home-loan-calculator/"
+    },
+    {
+      "name": "Car Loan Calculator",
+      "slug": "car-loan-calculator",
+      "category": "finance",
+      "url": "/car-loan-calculator/"
+    },
+    {
+      "name": "Personal Loan Calculator",
+      "slug": "personal-loan-calculator",
+      "category": "finance",
+      "url": "/personal-loan-calculator/"
+    },
+    {
+      "name": "GST Calculator",
+      "slug": "gst-calculator",
+      "category": "finance",
+      "url": "/gst-calculator/"
+    },
+    {
+      "name": "Simple Interest Calculator",
+      "slug": "simple-interest-calculator",
+      "category": "finance",
+      "url": "/simple-interest-calculator/"
+    },
+    {
+      "name": "Compound Interest Calculator",
+      "slug": "compound-interest-calculator",
+      "category": "finance",
+      "url": "/compound-interest-calculator/"
+    },
+    {
+      "name": "Profit and Loss Calculator",
+      "slug": "profit-and-loss-calculator",
+      "category": "finance",
+      "url": "/profit-and-loss-calculator/"
+    },
+    {
+      "name": "Percentage Calculator",
+      "slug": "percentage-calculator",
+      "category": "math",
+      "url": "/percentage-calculator/"
+    },
+    {
+      "name": "Discount Calculator",
+      "slug": "discount-calculator",
+      "category": "math",
+      "url": "/discount-calculator/"
+    },
+    {
+      "name": "Average Calculator",
+      "slug": "average-calculator",
+      "category": "math",
+      "url": "/average-calculator/"
+    },
+    {
+      "name": "Basic Calculator",
+      "slug": "basic-calculator",
+      "category": "math",
+      "url": "/basic-calculator/"
+    },
+    {
+      "name": "Scientific Calculator",
+      "slug": "scientific-calculator",
+      "category": "math",
+      "url": "/scientific-calculator/"
+    },
+    {
+      "name": "Trigonometry Calculator",
+      "slug": "trigonometry-calculator",
+      "category": "math",
+      "url": "/trigonometry-calculator/"
+    },
+    {
+      "name": "Age Calculator",
+      "slug": "age-calculator",
+      "category": "dates",
+      "url": "/age-calculator/"
+    },
+    {
+      "name": "Birthday Calculator",
+      "slug": "birthday-calculator",
+      "category": "dates",
+      "url": "/birthday-calculator/"
+    },
+    {
+      "name": "Date Difference Calculator",
+      "slug": "date-difference-calculator",
+      "category": "dates",
+      "url": "/date-difference-calculator/"
+    },
+    {
+      "name": "BMI Calculator",
+      "slug": "bmi-calculator",
+      "category": "health",
+      "url": "/bmi-calculator/"
+    }
+  ]
+}
